@@ -1,0 +1,12 @@
+# These are NOT part of Frappe's default requirements.txt handling --
+# install them into the bench's Python environment manually:
+#
+#   cd frappe-bench
+#   ./env/bin/pip install -r apps/ai_dispatch/requirements.txt
+#
+torch>=2.2.0
+transformers>=4.44.0
+sentence-transformers>=3.0.1
+chromadb>=0.5.5
+accelerate>=0.33.0
+scikit-learn>=1.4.0

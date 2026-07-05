@@ -1,0 +1,377 @@
+[
+  {
+    "doctype": "Router Training Example",
+    "agent": "tech_support",
+    "query_text": "My laptop won't turn on"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "tech_support",
+    "query_text": "How do I reset my password"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "tech_support",
+    "query_text": "The app keeps crashing on startup"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "tech_support",
+    "query_text": "I'm getting a 404 error on the website"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "tech_support",
+    "query_text": "How do I install the software update"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "tech_support",
+    "query_text": "My internet connection keeps dropping"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "tech_support",
+    "query_text": "The printer is not responding"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "tech_support",
+    "query_text": "I forgot my login credentials"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "tech_support",
+    "query_text": "How do I connect to the VPN"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "tech_support",
+    "query_text": "The system is running very slow"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "tech_support",
+    "query_text": "I can't access my email account"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "tech_support",
+    "query_text": "How do I fix a blue screen error"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "tech_support",
+    "query_text": "My screen is flickering"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "tech_support",
+    "query_text": "How do I clear my browser cache"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "tech_support",
+    "query_text": "The application shows a bug when I click save"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "tech_support",
+    "query_text": "How do I recover a deleted file"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "tech_support",
+    "query_text": "My microphone is not working on the call"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "tech_support",
+    "query_text": "How do I set up two factor authentication"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "tech_support",
+    "query_text": "The server is down, when will it be back"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "tech_support",
+    "query_text": "How do I update my device drivers"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "tech_support",
+    "query_text": "I need help troubleshooting a network issue"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "tech_support",
+    "query_text": "Why is my software license expired"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "tech_support",
+    "query_text": "How do I uninstall this program"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "tech_support",
+    "query_text": "My computer keeps freezing randomly"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "tech_support",
+    "query_text": "I need to report a security vulnerability"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "hr",
+    "query_text": "How many vacation days do I have left"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "hr",
+    "query_text": "When is the next payroll date"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "hr",
+    "query_text": "How do I apply for parental leave"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "hr",
+    "query_text": "What is the company policy on remote work"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "hr",
+    "query_text": "How do I update my bank details for salary"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "hr",
+    "query_text": "I want to raise a complaint about a coworker"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "hr",
+    "query_text": "How do I enroll in the health insurance plan"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "hr",
+    "query_text": "What are the working hours policy"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "hr",
+    "query_text": "How do I request a promotion review"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "hr",
+    "query_text": "I need a copy of my employment contract"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "hr",
+    "query_text": "How do I report a workplace harassment issue"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "hr",
+    "query_text": "What is the process for resigning from the company"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "hr",
+    "query_text": "How do I apply for sick leave"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "hr",
+    "query_text": "When will I receive my performance appraisal"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "hr",
+    "query_text": "How do I update my emergency contact information"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "hr",
+    "query_text": "What is the maternity leave policy"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "hr",
+    "query_text": "I need help with my provident fund withdrawal"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "hr",
+    "query_text": "How do I submit my reimbursement claims"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "hr",
+    "query_text": "What is the notice period for resignation"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "hr",
+    "query_text": "How do I access my payslips online"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "hr",
+    "query_text": "I want to know about the employee referral bonus"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "hr",
+    "query_text": "How do I change my department or team"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "hr",
+    "query_text": "What is the dress code policy"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "hr",
+    "query_text": "I need information about the retirement benefits"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "hr",
+    "query_text": "How do I file a grievance with HR"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "sales",
+    "query_text": "What is the price of your premium plan"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "sales",
+    "query_text": "Can I get a discount for bulk purchase"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "sales",
+    "query_text": "Do you offer a free trial"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "sales",
+    "query_text": "What is included in the enterprise package"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "sales",
+    "query_text": "How do I upgrade my current subscription"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "sales",
+    "query_text": "Can you send me a product demo"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "sales",
+    "query_text": "What payment methods do you accept"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "sales",
+    "query_text": "Is there a student discount available"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "sales",
+    "query_text": "I want to know about your refund policy"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "sales",
+    "query_text": "Can I speak to a sales representative"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "sales",
+    "query_text": "What is the difference between basic and pro plan"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "sales",
+    "query_text": "Do you have any ongoing promotions"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "sales",
+    "query_text": "How do I get a custom quote for my business"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "sales",
+    "query_text": "What is your annual subscription pricing"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "sales",
+    "query_text": "Can I cancel my subscription anytime"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "sales",
+    "query_text": "Do you offer volume licensing for teams"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "sales",
+    "query_text": "I want to negotiate the contract terms"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "sales",
+    "query_text": "What features are included in the starter plan"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "sales",
+    "query_text": "How long does the free trial last"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "sales",
+    "query_text": "Can you provide a comparison with competitors"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "sales",
+    "query_text": "I am interested in becoming a reseller partner"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "sales",
+    "query_text": "What is the minimum contract duration"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "sales",
+    "query_text": "Do you offer educational institution pricing"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "sales",
+    "query_text": "How do I renew my expiring license"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "sales",
+    "query_text": "Can I get an invoice for my purchase"
+  }
+]
