@@ -81,7 +81,7 @@ def train_router() -> dict:
                 val_preds = model(X_val_t).argmax(dim=-1)
                 final_val_acc = (val_preds == y_val_t).float().mean().item()
 
-    save_model(model, labels)
+    save_model(model, labels, input_dim=EMBEDDING_DIM)
 
     return {
         "labels": labels,

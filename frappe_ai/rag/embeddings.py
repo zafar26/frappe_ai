@@ -12,7 +12,7 @@ from sentence_transformers import SentenceTransformer
 from frappe_ai.utils import ensure_hf_login
 
 DEFAULT_EMBEDDING_MODEL = "sentence-transformers/all-mpnet-base-v2"
-EMBEDDING_DIM = 768
+EMBEDDING_DIM = 384
 
 
 def get_embedding_model_name() -> str:

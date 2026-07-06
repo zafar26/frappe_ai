@@ -16,7 +16,7 @@ import torch.nn as nn
 
 
 class RouterClassifier(nn.Module):
-    def __init__(self, input_dim: int = 384, hidden_dim: int = 64, num_classes: int = 3):
+    def __init__(self, input_dim: int = 768, hidden_dim: int = 64, num_classes: int = 3):
         super().__init__()
         self.net = nn.Sequential(
             nn.Linear(input_dim, hidden_dim),
@@ -45,10 +45,12 @@ def _labels_path() -> str:
     return os.path.join(_weights_dir(), "router_labels.json")
 
 
-def save_model(model: RouterClassifier, label_list: List[str]) -> None:
+def save_model(model: RouterClassifier, label_list: List[str],  input_dim: int) -> None:
     torch.save(model.state_dict(), _weights_path())
     with open(_labels_path(), "w") as f:
-        json.dump(label_list, f)
+        # json.dump(label_list, f)
+        json.dump({"labels": label_list, "input_dim": input_dim}, f)
+
 
 
 def load_model() -> Tuple[RouterClassifier, List[str]]:
@@ -60,9 +62,21 @@ def load_model() -> Tuple[RouterClassifier, List[str]]:
         )
 
     with open(labels_path, "r") as f:
-        label_list = json.load(f)
+        meta = json.load(f)
 
-    model = RouterClassifier(num_classes=len(label_list))
+    # ✅ Handle both old format (list) and new format (dict)
+    if isinstance(meta, list):
+        label_list = meta
+        input_dim = 768  # old default
+    else:
+        label_list = meta["labels"]
+        input_dim = meta["input_dim"]
+
+    # ✅ Build model with correct input_dim from saved metadata
+    model = RouterClassifier(
+        input_dim=input_dim,
+        num_classes=len(label_list)
+    )
     model.load_state_dict(torch.load(weights_path, map_location="cpu"))
     model.eval()
     return model, label_list

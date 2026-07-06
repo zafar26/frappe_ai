@@ -1,6 +1,7 @@
 [
   {
     "doctype": "AI Agent",
+    "name": "Internal",
     "enabled": 1,
     "agent_key": "internal",
     "agent_label": "Internal (General)",
@@ -9,6 +10,7 @@
   },
   {
     "doctype": "AI Agent",
+    "name": "Accounts",
     "enabled": 1,
     "agent_key": "accounts",
     "agent_label": "Accounts",
@@ -17,6 +19,7 @@
   },
   {
     "doctype": "AI Agent",
+    "name": "Buying",
     "enabled": 1,
     "agent_key": "buying",
     "agent_label": "Buying (Procurement)",
@@ -25,6 +28,7 @@
   },
   {
     "doctype": "AI Agent",
+    "name": "Selling",
     "enabled": 1,
     "agent_key": "selling",
     "agent_label": "Selling (Sales)",
@@ -33,6 +37,7 @@
   },
   {
     "doctype": "AI Agent",
+    "name": "CRM",
     "enabled": 1,
     "agent_key": "crm",
     "agent_label": "CRM",
@@ -41,6 +46,7 @@
   },
   {
     "doctype": "AI Agent",
+    "name": "HR",
     "enabled": 1,
     "agent_key": "hr",
     "agent_label": "HR",
@@ -49,6 +55,7 @@
   },
   {
     "doctype": "AI Agent",
+    "name": "Manufacturing",
     "enabled": 1,
     "agent_key": "manufacturing",
     "agent_label": "Manufacturing",
@@ -57,6 +64,7 @@
   },
   {
     "doctype": "AI Agent",
+    "name": "Projects",
     "enabled": 1,
     "agent_key": "projects",
     "agent_label": "Project",
@@ -65,6 +73,7 @@
   },
   {
     "doctype": "AI Agent",
+    "name": "Stock",
     "enabled": 1,
     "agent_key": "stock",
     "agent_label": "Inventory (Stock)",
@@ -73,6 +82,7 @@
   },
   {
     "doctype": "AI Agent",
+    "name": "Support",
     "enabled": 1,
     "agent_key": "support",
     "agent_label": "Support (Helpdesk)",
