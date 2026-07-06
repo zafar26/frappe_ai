@@ -1,0 +1,67 @@
+{
+  "actions": [],
+  "creation": "2026-07-05 00:00:00",
+  "doctype": "DocType",
+  "engine": "InnoDB",
+  "field_order": [
+    "llm_model_name",
+    "embedding_model_name",
+    "column_break_1",
+    "top_k",
+    "max_new_tokens"
+  ],
+  "fields": [
+    {
+      "fieldname": "llm_model_name",
+      "fieldtype": "Data",
+      "label": "Local LLM Model",
+      "default": "Qwen/Qwen2.5-0.5B-Instruct",
+      "description": "Any Hugging Face transformers-compatible causal LM. Bigger models need a GPU for reasonable latency."
+    },
+    {
+      "fieldname": "embedding_model_name",
+      "fieldtype": "Data",
+      "label": "Embedding Model",
+      "default": "sentence-transformers/all-MiniLM-L6-v2"
+    },
+    {
+      "fieldname": "column_break_1",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "top_k",
+      "fieldtype": "Int",
+      "label": "Retrieved Chunks (top_k)",
+      "default": "3"
+    },
+    {
+      "fieldname": "max_new_tokens",
+      "fieldtype": "Int",
+      "label": "Max Response Tokens",
+      "default": "256"
+    }
+  ],
+  "index_web_view": 0,
+  "issingle": 1,
+  "links": [],
+  "modified": "2026-07-05 00:00:00",
+  "modified_by": "Administrator",
+  "module": "AI Dispatch",
+  "name": "AI Dispatch Settings",
+  "owner": "Administrator",
+  "permissions": [
+    {
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "print": 1,
+      "read": 1,
+      "role": "System Manager",
+      "share": 1,
+      "write": 1
+    }
+  ],
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "track_changes": 1
+}

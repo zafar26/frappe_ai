@@ -1,0 +1,1377 @@
+[
+  {
+    "doctype": "Router Training Example",
+    "agent": "accounts",
+    "query_text": "How do I create a journal entry"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "accounts",
+    "query_text": "How do I record a payment entry against an invoice"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "accounts",
+    "query_text": "How do I generate a sales invoice"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "accounts",
+    "query_text": "How do I set up a chart of accounts"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "accounts",
+    "query_text": "How do I close a fiscal year"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "accounts",
+    "query_text": "How do I reconcile bank transactions"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "accounts",
+    "query_text": "How do I apply a tax template to an invoice"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "accounts",
+    "query_text": "How do I create a purchase invoice"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "accounts",
+    "query_text": "How do I check the general ledger report"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "accounts",
+    "query_text": "How do I write off a bad debt"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "accounts",
+    "query_text": "How do I set up a cost center"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "accounts",
+    "query_text": "How do I create a credit note"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "accounts",
+    "query_text": "How do I create a debit note"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "accounts",
+    "query_text": "How do I set up multi-currency accounting"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "accounts",
+    "query_text": "How do I generate a trial balance report"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "accounts",
+    "query_text": "How do I configure accounting dimensions"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "accounts",
+    "query_text": "How do I record an advance payment from a customer"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "accounts",
+    "query_text": "How do I set up a payment terms template"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "accounts",
+    "query_text": "How do I do a bank reconciliation statement"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "accounts",
+    "query_text": "How do I create a recurring sales invoice"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "accounts",
+    "query_text": "How do I check accounts receivable aging"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "accounts",
+    "query_text": "How do I set up a default tax category"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "accounts",
+    "query_text": "How do I post a depreciation entry manually"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "accounts",
+    "query_text": "How do I create an opening balance entry"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "accounts",
+    "query_text": "How do I check the profit and loss statement"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "buying",
+    "query_text": "How do I create a purchase order"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "buying",
+    "query_text": "How do I create a request for quotation"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "buying",
+    "query_text": "How do I record a supplier quotation"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "buying",
+    "query_text": "How do I raise a material request for purchase"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "buying",
+    "query_text": "How do I add a new supplier"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "buying",
+    "query_text": "How do I create a purchase receipt"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "buying",
+    "query_text": "How do I set up a supplier scorecard"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "buying",
+    "query_text": "How do I compare quotations from multiple suppliers"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "buying",
+    "query_text": "How do I set a default supplier for an item"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "buying",
+    "query_text": "How do I create a blanket purchase order"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "buying",
+    "query_text": "How do I track pending purchase orders"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "buying",
+    "query_text": "How do I set up a supplier group"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "buying",
+    "query_text": "How do I handle a rejected purchase receipt"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "buying",
+    "query_text": "How do I create a purchase invoice from a purchase order"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "buying",
+    "query_text": "How do I set reorder level for purchasing"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "buying",
+    "query_text": "How do I approve a purchase order"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "buying",
+    "query_text": "How do I cancel a purchase order"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "buying",
+    "query_text": "How do I set up landed cost voucher"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "buying",
+    "query_text": "How do I track supplier payment terms"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "buying",
+    "query_text": "How do I generate a purchase analytics report"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "buying",
+    "query_text": "How do I create a subcontracting purchase order"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "buying",
+    "query_text": "How do I add taxes to a purchase order"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "buying",
+    "query_text": "How do I set up a price list for suppliers"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "buying",
+    "query_text": "How do I track open material requests"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "buying",
+    "query_text": "How do I return goods to a supplier"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "selling",
+    "query_text": "How do I create a sales order"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "selling",
+    "query_text": "How do I create a customer quotation"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "selling",
+    "query_text": "How do I add a new customer"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "selling",
+    "query_text": "How do I apply a discount on a sales order"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "selling",
+    "query_text": "How do I create a sales invoice from a sales order"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "selling",
+    "query_text": "How do I set up a pricing rule"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "selling",
+    "query_text": "How do I track pending sales orders"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "selling",
+    "query_text": "How do I set a customer credit limit"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "selling",
+    "query_text": "How do I create a delivery note"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "selling",
+    "query_text": "How do I set up a sales commission for a partner"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "selling",
+    "query_text": "How do I generate a sales analytics report"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "selling",
+    "query_text": "How do I handle a sales return"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "selling",
+    "query_text": "How do I set a payment schedule on a sales order"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "selling",
+    "query_text": "How do I create a point of sale invoice"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "selling",
+    "query_text": "How do I set up a customer group"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "selling",
+    "query_text": "How do I apply a coupon code on an order"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "selling",
+    "query_text": "How do I create a recurring sales order"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "selling",
+    "query_text": "How do I check the sales order fulfillment status"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "selling",
+    "query_text": "How do I set a territory for a customer"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "selling",
+    "query_text": "How do I add shipping charges to a sales order"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "selling",
+    "query_text": "How do I create a sales partner"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "selling",
+    "query_text": "How do I set up a loyalty program"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "selling",
+    "query_text": "How do I cancel a sales invoice"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "selling",
+    "query_text": "How do I track customer outstanding balance"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "selling",
+    "query_text": "How do I create a blanket sales order"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "stock",
+    "query_text": "How do I create a stock entry"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "stock",
+    "query_text": "How do I do a stock reconciliation"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "stock",
+    "query_text": "How do I add a new warehouse"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "stock",
+    "query_text": "How do I set up batch tracking for an item"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "stock",
+    "query_text": "How do I set up serial number tracking"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "stock",
+    "query_text": "How do I check the stock ledger report"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "stock",
+    "query_text": "How do I transfer stock between warehouses"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "stock",
+    "query_text": "How do I set a reorder level for an item"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "stock",
+    "query_text": "How do I do a material transfer for manufacturing"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "stock",
+    "query_text": "How do I check stock valuation"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "stock",
+    "query_text": "How do I set up a UOM conversion"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "stock",
+    "query_text": "How do I do a stock reconciliation for a specific warehouse"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "stock",
+    "query_text": "How do I check the stock balance report"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "stock",
+    "query_text": "How do I set up a bin for an item"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "stock",
+    "query_text": "How do I create a delivery trip"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "stock",
+    "query_text": "How do I handle a stock adjustment for damaged goods"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "stock",
+    "query_text": "How do I set up a pick list"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "stock",
+    "query_text": "How do I check item-wise stock aging"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "stock",
+    "query_text": "How do I set up a putaway rule"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "stock",
+    "query_text": "How do I do a physical stock count"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "stock",
+    "query_text": "How do I set a minimum order quantity for an item"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "stock",
+    "query_text": "How do I check the stock projected quantity"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "stock",
+    "query_text": "How do I set up a quality inspection template for stock"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "stock",
+    "query_text": "How do I compare FIFO vs moving average valuation"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "stock",
+    "query_text": "How do I set up item variants"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "manufacturing",
+    "query_text": "How do I create a bill of materials"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "manufacturing",
+    "query_text": "How do I create a work order"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "manufacturing",
+    "query_text": "How do I create a job card"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "manufacturing",
+    "query_text": "How do I set up a production plan"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "manufacturing",
+    "query_text": "How do I raise a material request for manufacturing"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "manufacturing",
+    "query_text": "How do I track work order progress"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "manufacturing",
+    "query_text": "How do I set up a routing for a BOM"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "manufacturing",
+    "query_text": "How do I calculate BOM cost"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "manufacturing",
+    "query_text": "How do I do a subcontracted manufacturing process"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "manufacturing",
+    "query_text": "How do I set up a workstation"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "manufacturing",
+    "query_text": "How do I track operations in a job card"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "manufacturing",
+    "query_text": "How do I close a completed work order"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "manufacturing",
+    "query_text": "How do I set up scrap items in a BOM"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "manufacturing",
+    "query_text": "How do I do a multi-level BOM"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "manufacturing",
+    "query_text": "How do I check manufacturing capacity planning"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "manufacturing",
+    "query_text": "How do I set up a default BOM for an item"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "manufacturing",
+    "query_text": "How do I do a stock entry for manufacture"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "manufacturing",
+    "query_text": "How do I track downtime on a workstation"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "manufacturing",
+    "query_text": "How do I set up a production plan from sales orders"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "manufacturing",
+    "query_text": "How do I check the work order operations report"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "manufacturing",
+    "query_text": "How do I set up hourly rate for a workstation"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "manufacturing",
+    "query_text": "How do I handle rework in manufacturing"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "manufacturing",
+    "query_text": "How do I set up a job card time log"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "manufacturing",
+    "query_text": "How do I use the BOM comparison tool"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "manufacturing",
+    "query_text": "How do I set up backflush of raw materials"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "hr",
+    "query_text": "How do I apply for a leave"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "hr",
+    "query_text": "How do I check my leave balance"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "hr",
+    "query_text": "How do I mark attendance for an employee"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "hr",
+    "query_text": "How do I generate a salary slip"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "hr",
+    "query_text": "How do I set up a payroll structure"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "hr",
+    "query_text": "How do I add a new employee record"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "hr",
+    "query_text": "How do I set up a holiday list"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "hr",
+    "query_text": "How do I process payroll for the month"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "hr",
+    "query_text": "How do I set up an employee onboarding checklist"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "hr",
+    "query_text": "How do I create an appraisal cycle"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "hr",
+    "query_text": "How do I set up a leave policy"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "hr",
+    "query_text": "How do I check the employee attendance report"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "hr",
+    "query_text": "How do I set up an expense claim"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "hr",
+    "query_text": "How do I approve an expense claim"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "hr",
+    "query_text": "How do I set up a shift type"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "hr",
+    "query_text": "How do I create an employee separation process"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "hr",
+    "query_text": "How do I track employee advances"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "hr",
+    "query_text": "How do I set up a compensatory leave request"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "hr",
+    "query_text": "How do I generate Form 16 for an employee"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "hr",
+    "query_text": "How do I set up a performance feedback cycle"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "hr",
+    "query_text": "How do I check the leave ledger for an employee"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "hr",
+    "query_text": "How do I set up an employee grievance"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "hr",
+    "query_text": "How do I create a job opening"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "hr",
+    "query_text": "How do I track candidate applications"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "hr",
+    "query_text": "How do I set up an interview schedule"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "projects",
+    "query_text": "How do I create a new project"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "projects",
+    "query_text": "How do I add a task to a project"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "projects",
+    "query_text": "How do I log a timesheet entry"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "projects",
+    "query_text": "How do I track project profitability"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "projects",
+    "query_text": "How do I set up a project template"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "projects",
+    "query_text": "How do I bill a client based on timesheets"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "projects",
+    "query_text": "How do I set a project budget"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "projects",
+    "query_text": "How do I track task dependencies"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "projects",
+    "query_text": "How do I assign a task to a team member"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "projects",
+    "query_text": "How do I check the project Gantt chart"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "projects",
+    "query_text": "How do I set up recurring tasks"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "projects",
+    "query_text": "How do I track project milestones"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "projects",
+    "query_text": "How do I generate a project status report"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "projects",
+    "query_text": "How do I set up a project type"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "projects",
+    "query_text": "How do I track billable vs non-billable hours"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "projects",
+    "query_text": "How do I close a completed project"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "projects",
+    "query_text": "How do I set up a project cost estimate"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "projects",
+    "query_text": "How do I link a sales order to a project"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "projects",
+    "query_text": "How do I check overdue tasks in a project"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "projects",
+    "query_text": "How do I set up a task checklist"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "projects",
+    "query_text": "How do I add project collaborators"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "projects",
+    "query_text": "How do I track project expenses"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "projects",
+    "query_text": "How do I set up a project timeline view"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "projects",
+    "query_text": "How do I generate an invoice from project timesheets"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "projects",
+    "query_text": "How do I check resource allocation across projects"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "assets",
+    "query_text": "How do I register a new asset"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "assets",
+    "query_text": "How do I set up a depreciation schedule"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "assets",
+    "query_text": "How do I record an asset purchase"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "assets",
+    "query_text": "How do I create an asset movement entry"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "assets",
+    "query_text": "How do I schedule asset maintenance"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "assets",
+    "query_text": "How do I dispose of an asset"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "assets",
+    "query_text": "How do I transfer an asset between locations"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "assets",
+    "query_text": "How do I set up an asset category"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "assets",
+    "query_text": "How do I check the accumulated depreciation report"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "assets",
+    "query_text": "How do I do a partial asset sale"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "assets",
+    "query_text": "How do I set up an asset repair log"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "assets",
+    "query_text": "How do I capitalize a work in progress asset"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "assets",
+    "query_text": "How do I set up an asset value adjustment"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "assets",
+    "query_text": "How do I track asset insurance details"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "assets",
+    "query_text": "How do I set a useful life for an asset"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "assets",
+    "query_text": "How do I choose between straight line and written down value depreciation"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "assets",
+    "query_text": "How do I scrap an asset"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "assets",
+    "query_text": "How do I check asset utilization"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "assets",
+    "query_text": "How do I set up an asset warranty"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "assets",
+    "query_text": "How do I do an asset revaluation"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "assets",
+    "query_text": "How do I track asset custodian assignment"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "assets",
+    "query_text": "How do I generate an asset depreciation ledger"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "assets",
+    "query_text": "How do I set up low value asset write off"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "assets",
+    "query_text": "How do I split an asset record"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "assets",
+    "query_text": "How do I merge duplicate asset records"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "quality",
+    "query_text": "How do I create a quality inspection"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "quality",
+    "query_text": "How do I set up a quality inspection template"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "quality",
+    "query_text": "How do I raise a non-conformance report"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "quality",
+    "query_text": "How do I set up a quality goal"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "quality",
+    "query_text": "How do I create a quality procedure"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "quality",
+    "query_text": "How do I track quality review meetings"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "quality",
+    "query_text": "How do I set up a corrective action plan"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "quality",
+    "query_text": "How do I do incoming quality inspection for purchases"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "quality",
+    "query_text": "How do I do in-process quality inspection during manufacturing"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "quality",
+    "query_text": "How do I set up a quality feedback form"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "quality",
+    "query_text": "How do I track quality metrics over time"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "quality",
+    "query_text": "How do I set acceptance criteria for inspection"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "quality",
+    "query_text": "How do I set up a quality action for a non-conformance"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "quality",
+    "query_text": "How do I check the quality inspection report"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "quality",
+    "query_text": "How do I set sample size for inspection"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "quality",
+    "query_text": "How do I set up a quality review checklist"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "quality",
+    "query_text": "How do I link a quality inspection to a stock entry"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "quality",
+    "query_text": "How do I do outgoing quality inspection before delivery"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "quality",
+    "query_text": "How do I set up ISO compliance tracking"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "quality",
+    "query_text": "How do I record a quality audit"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "quality",
+    "query_text": "How do I set up quality procedure steps"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "quality",
+    "query_text": "How do I track rejected quality inspections"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "quality",
+    "query_text": "How do I set inspection type as sample vs full"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "quality",
+    "query_text": "How do I set a quality goal target date"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "quality",
+    "query_text": "How do I review quality objectives progress"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "crm",
+    "query_text": "How do I create a new lead"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "crm",
+    "query_text": "How do I convert a lead into an opportunity"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "crm",
+    "query_text": "How do I add a contact to CRM"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "crm",
+    "query_text": "How do I track a sales opportunity"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "crm",
+    "query_text": "How do I set up a lead source"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "crm",
+    "query_text": "How do I schedule a follow-up call with a lead"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "crm",
+    "query_text": "How do I set an opportunity probability"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "crm",
+    "query_text": "How do I track lost opportunities and reasons"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "crm",
+    "query_text": "How do I set up a CRM pipeline view"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "crm",
+    "query_text": "How do I assign a lead to a sales person"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "crm",
+    "query_text": "How do I log an email communication with a lead"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "crm",
+    "query_text": "How do I set up a lead scoring system"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "crm",
+    "query_text": "How do I create a campaign in CRM"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "crm",
+    "query_text": "How do I track newsletter subscribers"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "crm",
+    "query_text": "How do I set an opportunity expected closing date"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "crm",
+    "query_text": "How do I convert an opportunity into a quotation"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "crm",
+    "query_text": "How do I set up territory-wise lead assignment"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "crm",
+    "query_text": "How do I check the CRM sales funnel report"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "crm",
+    "query_text": "How do I track customer touchpoints"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "crm",
+    "query_text": "How do I set up an automated lead nurture sequence"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "crm",
+    "query_text": "How do I merge duplicate leads"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "crm",
+    "query_text": "How do I set a lead qualification status"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "crm",
+    "query_text": "How do I track referral leads"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "crm",
+    "query_text": "How do I set up a CRM dashboard"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "crm",
+    "query_text": "How do I check open opportunities by sales stage"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "support",
+    "query_text": "How do I raise a support ticket"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "support",
+    "query_text": "How do I set an SLA for a support ticket"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "support",
+    "query_text": "How do I escalate an unresolved ticket"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "support",
+    "query_text": "How do I check ticket response time report"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "support",
+    "query_text": "How do I set up a support ticket type"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "support",
+    "query_text": "How do I assign a ticket to an agent"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "support",
+    "query_text": "How do I close a resolved support ticket"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "support",
+    "query_text": "How do I set up a knowledge base article"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "support",
+    "query_text": "How do I reopen a closed ticket"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "support",
+    "query_text": "How do I set up canned responses for support"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "support",
+    "query_text": "I'm getting an error when I try to submit a document in Frappe"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "support",
+    "query_text": "How do I reset my Frappe desk password"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "support",
+    "query_text": "The Frappe system is showing a permission error"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "support",
+    "query_text": "How do I fix a duplicate entry error in Frappe"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "support",
+    "query_text": "How do I clear the cache in a Frappe site"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "support",
+    "query_text": "My ERPNext report is not loading"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "support",
+    "query_text": "How do I check error logs in Frappe"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "support",
+    "query_text": "How do I restart the bench after a code change"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "support",
+    "query_text": "How do I fix a broken scheduled job in Frappe"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "support",
+    "query_text": "How do I troubleshoot slow page loads in ERPNext"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "support",
+    "query_text": "How do I check background job failures"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "support",
+    "query_text": "How do I fix a not permitted error on a doctype"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "support",
+    "query_text": "How do I recover from a failed migration"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "support",
+    "query_text": "How do I check the Frappe error log for a stack trace"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "support",
+    "query_text": "How do I contact support for a critical production issue"
+  }
+]
