@@ -1,0 +1,3502 @@
+[
+  {
+    "doctype": "Router Training Example",
+    "agent": "internal",
+    "query_text": "Steps to create a Address"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "internal",
+    "query_text": "How can I edit an existing primary Contact"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "internal",
+    "query_text": "How do I set up a Email Account"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "internal",
+    "query_text": "Can you walk me through creating a primary Contact"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "internal",
+    "query_text": "Where is the Email Account option in the Desk"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "internal",
+    "query_text": "How do I set up a Item Group"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "internal",
+    "query_text": "Can you walk me through creating a Company"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "internal",
+    "query_text": "Where do I find the Company"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "internal",
+    "query_text": "Can you show me how to create a Address"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "internal",
+    "query_text": "Can you show me how to create a Item"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "internal",
+    "query_text": "How do I search for a Item Group"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "internal",
+    "query_text": "I need help setting up a child Company"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "internal",
+    "query_text": "How do I cancel a submitted Item Group"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "internal",
+    "query_text": "How do I search for a Address"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "internal",
+    "query_text": "Is there a way to bulk create Company default currency records"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "internal",
+    "query_text": "How can I edit an existing child Company"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "internal",
+    "query_text": "What's the process for creating a Item"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "internal",
+    "query_text": "I need help setting up a Item Group"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "internal",
+    "query_text": "I need help setting up a Warehouse"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "internal",
+    "query_text": "I want to add a new Company"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "internal",
+    "query_text": "How do I link a Company default currency to another record"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "internal",
+    "query_text": "How do I approve a Company"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "internal",
+    "query_text": "Where do I find the Item"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "internal",
+    "query_text": "Steps to create a Item Group"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "internal",
+    "query_text": "Steps to create a primary Contact"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "internal",
+    "query_text": "Where do I find the child Company"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "internal",
+    "query_text": "How can I edit an existing Item"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "internal",
+    "query_text": "I need help setting up a Email Account"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "internal",
+    "query_text": "What's the process for creating a Company"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "internal",
+    "query_text": "What fields are required for a primary Contact"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "internal",
+    "query_text": "I'm stuck trying to create a Warehouse"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "internal",
+    "query_text": "Where do I find the Item Group"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "internal",
+    "query_text": "How do I check the Company"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "internal",
+    "query_text": "How do I search for a Warehouse"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "internal",
+    "query_text": "Can you walk me through creating a Company default currency"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "internal",
+    "query_text": "How do I delete a Address"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "internal",
+    "query_text": "How do I set up a Address"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "internal",
+    "query_text": "How do I approve a primary Contact"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "internal",
+    "query_text": "How do I check the Warehouse"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "internal",
+    "query_text": "How do I check the child Company"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "internal",
+    "query_text": "Where is the child Company option in the Desk"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "internal",
+    "query_text": "How do I create a Address"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "internal",
+    "query_text": "I need help setting up a Company"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "internal",
+    "query_text": "Can you show me how to create a Company default currency"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "internal",
+    "query_text": "How do I create a child Company"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "internal",
+    "query_text": "How do I check the Item"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "internal",
+    "query_text": "What's the process for creating a Item Group"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "internal",
+    "query_text": "Steps to create a Email Account"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "internal",
+    "query_text": "Can you walk me through creating a Address"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "internal",
+    "query_text": "Can you walk me through creating a Email Account"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "internal",
+    "query_text": "What's the process for creating a Email Account"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "internal",
+    "query_text": "How do I approve a Contact"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "internal",
+    "query_text": "I want to add a new Email Account"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "internal",
+    "query_text": "What's the process for creating a Company default currency"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "internal",
+    "query_text": "I want to add a new Item"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "internal",
+    "query_text": "How do I create a Company"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "internal",
+    "query_text": "How do I set up a child Company"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "internal",
+    "query_text": "How do I check the primary Contact"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "internal",
+    "query_text": "How do I search for a Company"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "internal",
+    "query_text": "How do I create a Contact"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "internal",
+    "query_text": "Where do I find the Email Account"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "internal",
+    "query_text": "Is there a way to bulk create Warehouse records"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "internal",
+    "query_text": "How do I search for a Company default currency"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "internal",
+    "query_text": "How do I search for a child Company"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "internal",
+    "query_text": "How do I approve a Item Group"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "internal",
+    "query_text": "Is there a way to bulk create Address records"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "internal",
+    "query_text": "How do I approve a Email Account"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "internal",
+    "query_text": "How do I link a Company to another record"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "internal",
+    "query_text": "What fields are required for a Company"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "internal",
+    "query_text": "I'm stuck trying to create a child Company"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "accounts",
+    "query_text": "What's the process for creating a Balance Sheet"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "accounts",
+    "query_text": "I'm stuck trying to create a Journal Entry"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "accounts",
+    "query_text": "Where is the Asset option in the Desk"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "accounts",
+    "query_text": "How do I create a Fiscal Year"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "accounts",
+    "query_text": "How do I search for a General Ledger report"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "accounts",
+    "query_text": "Can you show me how to create a Journal Entry"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "accounts",
+    "query_text": "Can you show me how to create a Profit and Loss Statement"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "accounts",
+    "query_text": "How do I search for a Debit Note"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "accounts",
+    "query_text": "Can you show me how to create a Purchase Invoice"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "accounts",
+    "query_text": "What's the process for creating a Sales Invoice"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "accounts",
+    "query_text": "Is there a way to bulk create Fiscal Year records"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "accounts",
+    "query_text": "How do I check the Period Closing Voucher"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "accounts",
+    "query_text": "Can you walk me through creating a Asset"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "accounts",
+    "query_text": "How do I set up a Account"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "accounts",
+    "query_text": "Where do I find the Purchase Invoice"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "accounts",
+    "query_text": "How do I link a Account to another record"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "accounts",
+    "query_text": "How do I cancel a submitted Payment Entry"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "accounts",
+    "query_text": "How do I create a Asset Depreciation"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "accounts",
+    "query_text": "Steps to create a Profit and Loss Statement"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "accounts",
+    "query_text": "What's the process for creating a Purchase Invoice"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "accounts",
+    "query_text": "What's the process for creating a Asset Depreciation"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "accounts",
+    "query_text": "I'm stuck trying to create a Debit Note"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "accounts",
+    "query_text": "How do I cancel a submitted Journal Entry"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "accounts",
+    "query_text": "What fields are required for a Asset Depreciation"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "accounts",
+    "query_text": "How do I create a Profit and Loss Statement"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "accounts",
+    "query_text": "Can you show me how to create a Debit Note"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "accounts",
+    "query_text": "Steps to create a Purchase Invoice"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "accounts",
+    "query_text": "How do I delete a Trial Balance report"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "accounts",
+    "query_text": "What fields are required for a Profit and Loss Statement"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "accounts",
+    "query_text": "Is there a way to bulk create Sales Invoice records"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "accounts",
+    "query_text": "Is there a way to bulk create Debit Note records"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "accounts",
+    "query_text": "I need help setting up a Period Closing Voucher"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "accounts",
+    "query_text": "How do I link a Asset to another record"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "accounts",
+    "query_text": "Where is the Period Closing Voucher option in the Desk"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "accounts",
+    "query_text": "How can I edit an existing Payment Entry"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "accounts",
+    "query_text": "How do I approve a Balance Sheet"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "accounts",
+    "query_text": "Can you show me how to create a Account"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "accounts",
+    "query_text": "Where is the General Ledger report option in the Desk"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "accounts",
+    "query_text": "How do I link a Sales Invoice to another record"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "accounts",
+    "query_text": "Steps to create a Debit Note"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "accounts",
+    "query_text": "How do I check the Debit Note"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "accounts",
+    "query_text": "I want to add a new Account"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "accounts",
+    "query_text": "How do I link a Profit and Loss Statement to another record"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "accounts",
+    "query_text": "How do I approve a General Ledger report"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "accounts",
+    "query_text": "How do I set up a Journal Entry"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "accounts",
+    "query_text": "I'm stuck trying to create a Cost Center"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "accounts",
+    "query_text": "I'm stuck trying to create a Account"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "accounts",
+    "query_text": "How do I approve a Purchase Invoice"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "accounts",
+    "query_text": "How do I create a Asset"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "accounts",
+    "query_text": "Where is the Account option in the Desk"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "accounts",
+    "query_text": "Is there a way to bulk create Account records"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "accounts",
+    "query_text": "Where is the Fiscal Year option in the Desk"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "accounts",
+    "query_text": "What's the process for creating a Asset"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "accounts",
+    "query_text": "I want to add a new Cost Center"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "accounts",
+    "query_text": "Where is the Purchase Invoice option in the Desk"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "accounts",
+    "query_text": "How do I set up a Cost Center"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "accounts",
+    "query_text": "How do I cancel a submitted Sales Invoice"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "accounts",
+    "query_text": "How do I set up a Balance Sheet"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "accounts",
+    "query_text": "How can I edit an existing Credit Note"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "accounts",
+    "query_text": "Where is the Balance Sheet option in the Desk"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "accounts",
+    "query_text": "Can you walk me through creating a Credit Note"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "accounts",
+    "query_text": "Where is the Debit Note option in the Desk"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "accounts",
+    "query_text": "I need help setting up a Cost Center"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "accounts",
+    "query_text": "How do I check the Balance Sheet"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "accounts",
+    "query_text": "Where do I find the General Ledger report"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "accounts",
+    "query_text": "How do I check the Purchase Invoice"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "accounts",
+    "query_text": "How do I approve a Cost Center"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "accounts",
+    "query_text": "How can I edit an existing Period Closing Voucher"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "accounts",
+    "query_text": "Where is the Asset Depreciation option in the Desk"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "accounts",
+    "query_text": "How do I link a General Ledger report to another record"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "buying",
+    "query_text": "How do I set up a Supplier Quotation"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "buying",
+    "query_text": "How do I link a Supplier group to another record"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "buying",
+    "query_text": "Steps to create a Purchase Analytics report"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "buying",
+    "query_text": "How do I delete a Purchase Receipt"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "buying",
+    "query_text": "How do I check the Supplier"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "buying",
+    "query_text": "Where is the Purchase Receipt option in the Desk"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "buying",
+    "query_text": "What's the process for creating a Landed Cost Voucher"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "buying",
+    "query_text": "I want to add a new Material Request"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "buying",
+    "query_text": "How do I check the Purchase Analytics report"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "buying",
+    "query_text": "How do I delete a Purchase Analytics report"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "buying",
+    "query_text": "How do I approve a Material Request"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "buying",
+    "query_text": "I'm stuck trying to create a Supplier group"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "buying",
+    "query_text": "How do I delete a Supplier"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "buying",
+    "query_text": "How do I approve a Supplier Quotation"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "buying",
+    "query_text": "How do I search for a Material Request"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "buying",
+    "query_text": "Steps to create a Supplier Quotation"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "buying",
+    "query_text": "Can you walk me through creating a Material Request"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "buying",
+    "query_text": "I need help setting up a Purchase Receipt"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "buying",
+    "query_text": "What fields are required for a Purchase Order"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "buying",
+    "query_text": "Steps to create a Supplier group"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "buying",
+    "query_text": "How do I search for a Purchase Analytics report"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "buying",
+    "query_text": "How do I cancel a submitted Request for Quotation"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "buying",
+    "query_text": "I need help setting up a Purchase Analytics report"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "buying",
+    "query_text": "How do I link a Request for Quotation to another record"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "buying",
+    "query_text": "I want to add a new subcontracting Purchase Order"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "buying",
+    "query_text": "Is there a way to bulk create Landed Cost Voucher records"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "buying",
+    "query_text": "Where is the Supplier group option in the Desk"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "buying",
+    "query_text": "How do I cancel a submitted Supplier group"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "buying",
+    "query_text": "I need help setting up a Supplier group"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "buying",
+    "query_text": "Where do I find the Supplier group"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "buying",
+    "query_text": "Can you show me how to create a Material Request"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "buying",
+    "query_text": "Can you walk me through creating a Landed Cost Voucher"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "buying",
+    "query_text": "What's the process for creating a Material Request"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "buying",
+    "query_text": "Can you walk me through creating a Purchase Receipt"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "buying",
+    "query_text": "Steps to create a Purchase Receipt"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "buying",
+    "query_text": "How do I set up a subcontracting Purchase Order"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "buying",
+    "query_text": "Where is the Supplier Quotation option in the Desk"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "buying",
+    "query_text": "How do I approve a subcontracting Purchase Order"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "buying",
+    "query_text": "How do I create a Supplier"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "buying",
+    "query_text": "Can you show me how to create a Purchase Receipt"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "buying",
+    "query_text": "What's the process for creating a Request for Quotation"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "buying",
+    "query_text": "How do I create a subcontracting Purchase Order"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "buying",
+    "query_text": "Is there a way to bulk create Supplier Quotation records"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "buying",
+    "query_text": "I'm stuck trying to create a Landed Cost Voucher"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "buying",
+    "query_text": "How do I link a Purchase Analytics report to another record"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "buying",
+    "query_text": "How do I approve a Supplier"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "buying",
+    "query_text": "Can you walk me through creating a Supplier group"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "buying",
+    "query_text": "Where do I find the Landed Cost Voucher"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "buying",
+    "query_text": "How do I set up a Supplier"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "buying",
+    "query_text": "What fields are required for a Material Request"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "buying",
+    "query_text": "Is there a way to bulk create Request for Quotation records"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "buying",
+    "query_text": "I'm stuck trying to create a Supplier"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "buying",
+    "query_text": "What's the process for creating a subcontracting Purchase Order"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "buying",
+    "query_text": "How can I edit an existing Supplier Quotation"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "buying",
+    "query_text": "How do I cancel a submitted Purchase Receipt"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "buying",
+    "query_text": "What fields are required for a subcontracting Purchase Order"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "buying",
+    "query_text": "How do I cancel a submitted Purchase Order"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "buying",
+    "query_text": "Where is the Supplier option in the Desk"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "buying",
+    "query_text": "Can you show me how to create a Request for Quotation"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "buying",
+    "query_text": "What's the process for creating a Purchase Order"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "buying",
+    "query_text": "What fields are required for a Purchase Analytics report"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "buying",
+    "query_text": "Where do I find the Request for Quotation"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "buying",
+    "query_text": "What's the process for creating a Supplier"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "buying",
+    "query_text": "How do I search for a subcontracting Purchase Order"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "buying",
+    "query_text": "How do I set up a Purchase Order"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "buying",
+    "query_text": "How do I cancel a submitted Supplier Quotation"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "buying",
+    "query_text": "Where do I find the Material Request"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "buying",
+    "query_text": "How do I check the subcontracting Purchase Order"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "buying",
+    "query_text": "How can I edit an existing Purchase Analytics report"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "buying",
+    "query_text": "Steps to create a Request for Quotation"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "selling",
+    "query_text": "How do I search for a Quotation"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "selling",
+    "query_text": "How do I search for a Customer group"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "selling",
+    "query_text": "What fields are required for a Customer credit limit"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "selling",
+    "query_text": "Can you walk me through creating a Customer"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "selling",
+    "query_text": "How do I create a Sales Order"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "selling",
+    "query_text": "How can I edit an existing Customer credit limit"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "selling",
+    "query_text": "Can you walk me through creating a Sales Invoice"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "selling",
+    "query_text": "What's the process for creating a Customer group"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "selling",
+    "query_text": "Can you walk me through creating a Quotation"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "selling",
+    "query_text": "How do I set up a Sales Order"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "selling",
+    "query_text": "How do I check the Delivery Note"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "selling",
+    "query_text": "Steps to create a Customer group"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "selling",
+    "query_text": "How do I search for a Sales Order"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "selling",
+    "query_text": "Can you show me how to create a Delivery Note"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "selling",
+    "query_text": "I'm stuck trying to create a Pricing Rule"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "selling",
+    "query_text": "How do I delete a Quotation"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "selling",
+    "query_text": "What fields are required for a Customer"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "selling",
+    "query_text": "Can you show me how to create a Quotation"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "selling",
+    "query_text": "Steps to create a Customer credit limit"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "selling",
+    "query_text": "How do I search for a Pick List"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "selling",
+    "query_text": "How do I delete a Pick List"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "selling",
+    "query_text": "What's the process for creating a Sales Order"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "selling",
+    "query_text": "I want to add a new Customer"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "selling",
+    "query_text": "Can you show me how to create a Customer credit limit"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "selling",
+    "query_text": "How do I create a Sales Invoice"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "selling",
+    "query_text": "How do I delete a Customer group"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "selling",
+    "query_text": "What's the process for creating a Sales Invoice"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "selling",
+    "query_text": "Is there a way to bulk create Pricing Rule records"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "selling",
+    "query_text": "How do I link a Sales Analytics report to another record"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "selling",
+    "query_text": "Steps to create a Customer"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "selling",
+    "query_text": "Can you walk me through creating a Sales Analytics report"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "selling",
+    "query_text": "How do I check the Customer group"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "selling",
+    "query_text": "How do I search for a Sales Analytics report"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "selling",
+    "query_text": "I need help setting up a Sales Analytics report"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "selling",
+    "query_text": "How do I link a Pick List to another record"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "selling",
+    "query_text": "Can you walk me through creating a Pick List"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "selling",
+    "query_text": "What fields are required for a Pricing Rule"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "selling",
+    "query_text": "How do I approve a Customer group"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "selling",
+    "query_text": "Is there a way to bulk create Sales Invoice records"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "selling",
+    "query_text": "Is there a way to bulk create Customer credit limit records"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "selling",
+    "query_text": "Can you show me how to create a Customer group"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "selling",
+    "query_text": "Can you show me how to create a Customer"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "selling",
+    "query_text": "What fields are required for a Customer group"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "selling",
+    "query_text": "How do I cancel a submitted Quotation"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "selling",
+    "query_text": "Can you walk me through creating a Delivery Note"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "selling",
+    "query_text": "How do I approve a Delivery Note"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "selling",
+    "query_text": "How do I create a Quotation"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "selling",
+    "query_text": "I need help setting up a Customer group"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "selling",
+    "query_text": "How do I approve a Sales Invoice"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "selling",
+    "query_text": "How can I edit an existing Sales Analytics report"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "selling",
+    "query_text": "What fields are required for a Quotation"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "selling",
+    "query_text": "Is there a way to bulk create Delivery Note records"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "selling",
+    "query_text": "How do I check the Quotation"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "selling",
+    "query_text": "I'm stuck trying to create a Customer group"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "selling",
+    "query_text": "Is there a way to bulk create Quotation records"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "selling",
+    "query_text": "Is there a way to bulk create Sales Order records"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "selling",
+    "query_text": "I need help setting up a Customer credit limit"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "selling",
+    "query_text": "How do I cancel a submitted Pick List"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "selling",
+    "query_text": "I need help setting up a Sales Invoice"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "selling",
+    "query_text": "Steps to create a Pick List"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "selling",
+    "query_text": "How do I search for a Pricing Rule"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "selling",
+    "query_text": "How do I link a Sales Invoice to another record"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "selling",
+    "query_text": "I want to add a new Sales Invoice"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "selling",
+    "query_text": "What fields are required for a Sales Analytics report"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "selling",
+    "query_text": "How do I set up a Pricing Rule"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "selling",
+    "query_text": "How do I create a Pricing Rule"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "selling",
+    "query_text": "Where do I find the Pricing Rule"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "selling",
+    "query_text": "How do I create a Pick List"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "selling",
+    "query_text": "How do I check the Pricing Rule"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "selling",
+    "query_text": "How do I approve a Quotation"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "crm",
+    "query_text": "How do I link a Quotation to another record"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "crm",
+    "query_text": "How do I create a Quotation"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "crm",
+    "query_text": "How do I delete a Lead Source"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "crm",
+    "query_text": "Can you walk me through creating a Quotation"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "crm",
+    "query_text": "Can you show me how to create a Quotation"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "crm",
+    "query_text": "I'm stuck trying to create a Enquiry"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "crm",
+    "query_text": "How do I create a Lead Source"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "crm",
+    "query_text": "How do I set up a Enquiry"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "crm",
+    "query_text": "How can I edit an existing lost Opportunity reason"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "crm",
+    "query_text": "Can you show me how to create a CRM pipeline report"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "crm",
+    "query_text": "How do I delete a CRM pipeline report"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "crm",
+    "query_text": "I need help setting up a CRM pipeline report"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "crm",
+    "query_text": "Can you show me how to create a Deal"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "crm",
+    "query_text": "How can I edit an existing Enquiry"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "crm",
+    "query_text": "How do I link a Territory assignment to another record"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "crm",
+    "query_text": "How do I check the CRM pipeline report"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "crm",
+    "query_text": "How do I check the Lead"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "crm",
+    "query_text": "Where do I find the CRM pipeline report"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "crm",
+    "query_text": "How do I approve a Territory assignment"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "crm",
+    "query_text": "How do I delete a Opportunity"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "crm",
+    "query_text": "How do I approve a lost Opportunity reason"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "crm",
+    "query_text": "Is there a way to bulk create Territory assignment records"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "crm",
+    "query_text": "I need help setting up a Enquiry"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "crm",
+    "query_text": "How do I approve a Quotation"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "crm",
+    "query_text": "How do I set up a Lead Source"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "crm",
+    "query_text": "Where is the lost Opportunity reason option in the Desk"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "crm",
+    "query_text": "How do I search for a Lead"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "crm",
+    "query_text": "Steps to create a lost Opportunity reason"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "crm",
+    "query_text": "Can you walk me through creating a CRM pipeline report"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "crm",
+    "query_text": "Can you walk me through creating a Enquiry"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "crm",
+    "query_text": "I want to add a new Opportunity"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "crm",
+    "query_text": "How do I delete a Lead"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "crm",
+    "query_text": "How do I delete a lost Opportunity reason"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "crm",
+    "query_text": "Is there a way to bulk create Lead Source records"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "crm",
+    "query_text": "How can I edit an existing Opportunity"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "crm",
+    "query_text": "Where is the Deal option in the Desk"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "crm",
+    "query_text": "Steps to create a Lead Source"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "crm",
+    "query_text": "Steps to create a Enquiry"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "crm",
+    "query_text": "What's the process for creating a Opportunity"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "crm",
+    "query_text": "Can you show me how to create a lost Opportunity reason"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "crm",
+    "query_text": "I'm stuck trying to create a Territory assignment"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "crm",
+    "query_text": "How can I edit an existing Territory assignment"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "crm",
+    "query_text": "How can I edit an existing CRM pipeline report"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "crm",
+    "query_text": "How do I cancel a submitted Territory assignment"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "crm",
+    "query_text": "What's the process for creating a lost Opportunity reason"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "crm",
+    "query_text": "Where do I find the Territory assignment"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "crm",
+    "query_text": "How do I set up a Lead"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "crm",
+    "query_text": "How can I edit an existing Lead"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "crm",
+    "query_text": "Where is the Quotation option in the Desk"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "crm",
+    "query_text": "I need help setting up a Quotation"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "crm",
+    "query_text": "How do I search for a Deal"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "crm",
+    "query_text": "Where do I find the lost Opportunity reason"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "crm",
+    "query_text": "How do I link a lost Opportunity reason to another record"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "crm",
+    "query_text": "Is there a way to bulk create Quotation records"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "crm",
+    "query_text": "I'm stuck trying to create a Lead"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "crm",
+    "query_text": "I want to add a new Territory assignment"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "crm",
+    "query_text": "How do I set up a Territory assignment"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "crm",
+    "query_text": "I need help setting up a Territory assignment"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "crm",
+    "query_text": "How do I cancel a submitted Enquiry"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "crm",
+    "query_text": "Can you show me how to create a Territory assignment"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "crm",
+    "query_text": "How do I search for a CRM pipeline report"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "crm",
+    "query_text": "How do I cancel a submitted Opportunity"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "crm",
+    "query_text": "How do I link a Enquiry to another record"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "crm",
+    "query_text": "Steps to create a Opportunity"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "crm",
+    "query_text": "Can you show me how to create a Enquiry"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "crm",
+    "query_text": "Steps to create a Lead"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "crm",
+    "query_text": "Where do I find the Quotation"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "crm",
+    "query_text": "Can you walk me through creating a lost Opportunity reason"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "crm",
+    "query_text": "What's the process for creating a Territory assignment"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "crm",
+    "query_text": "What's the process for creating a Deal"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "hr",
+    "query_text": "Can you walk me through creating a Leave Type"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "hr",
+    "query_text": "What fields are required for a expense claim"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "hr",
+    "query_text": "I need help setting up a Holiday list"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "hr",
+    "query_text": "What's the process for creating a Salary Structure Assignment"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "hr",
+    "query_text": "What fields are required for a Leave Application"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "hr",
+    "query_text": "I'm stuck trying to create a Salary Structure Assignment"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "hr",
+    "query_text": "How do I create a Employee"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "hr",
+    "query_text": "Where do I find the Salary Structure Assignment"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "hr",
+    "query_text": "How do I create a Leave Type"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "hr",
+    "query_text": "How do I link a Shift Type Assignment to another record"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "hr",
+    "query_text": "Where is the expense claim option in the Desk"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "hr",
+    "query_text": "How can I edit an existing Leave Application"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "hr",
+    "query_text": "How do I check the Shift Type"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "hr",
+    "query_text": "How do I cancel a submitted Salary Structure Assignment"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "hr",
+    "query_text": "How do I approve a Leave Ledger report"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "hr",
+    "query_text": "Where is the Holiday list option in the Desk"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "hr",
+    "query_text": "I want to add a new expense claim"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "hr",
+    "query_text": "How do I approve a Shift Type"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "hr",
+    "query_text": "Is there a way to bulk create Leave Type records"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "hr",
+    "query_text": "Where do I find the Leave Ledger report"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "hr",
+    "query_text": "I need help setting up a Shift Type"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "hr",
+    "query_text": "How do I approve a Employee"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "hr",
+    "query_text": "Can you show me how to create a Leave Application"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "hr",
+    "query_text": "Can you show me how to create a Salary Structure Assignment"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "hr",
+    "query_text": "How do I delete a Shift Type"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "hr",
+    "query_text": "Can you walk me through creating a Leave Application"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "hr",
+    "query_text": "How do I check the expense claim"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "hr",
+    "query_text": "Where is the Leave Ledger report option in the Desk"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "hr",
+    "query_text": "How do I delete a expense claim"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "hr",
+    "query_text": "How do I create a Shift Type"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "hr",
+    "query_text": "Can you show me how to create a Employee"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "hr",
+    "query_text": "I'm stuck trying to create a Salary Structure"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "hr",
+    "query_text": "How do I delete a Holiday list"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "hr",
+    "query_text": "Steps to create a Leave Application"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "hr",
+    "query_text": "Where is the Shift Type option in the Desk"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "hr",
+    "query_text": "How do I search for a Leave Type"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "hr",
+    "query_text": "What's the process for creating a Employee"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "hr",
+    "query_text": "Can you walk me through creating a Salary Structure"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "hr",
+    "query_text": "How do I approve a Shift Type Assignment"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "hr",
+    "query_text": "Where is the Salary Structure Assignment option in the Desk"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "hr",
+    "query_text": "How can I edit an existing Leave Type"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "hr",
+    "query_text": "How do I cancel a submitted Leave Application"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "hr",
+    "query_text": "What fields are required for a Leave Type"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "hr",
+    "query_text": "I need help setting up a Salary Structure Assignment"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "hr",
+    "query_text": "How do I set up a Salary Structure"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "hr",
+    "query_text": "Can you show me how to create a Leave Type"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "hr",
+    "query_text": "Steps to create a Salary Structure Assignment"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "hr",
+    "query_text": "What's the process for creating a expense claim"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "hr",
+    "query_text": "How do I cancel a submitted Employee"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "hr",
+    "query_text": "Is there a way to bulk create expense claim records"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "hr",
+    "query_text": "How do I check the Holiday list"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "hr",
+    "query_text": "How do I delete a Shift Type Assignment"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "hr",
+    "query_text": "Steps to create a Salary Structure"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "hr",
+    "query_text": "How do I cancel a submitted Shift Type Assignment"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "hr",
+    "query_text": "I want to add a new Salary Structure"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "hr",
+    "query_text": "How do I search for a Employee"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "hr",
+    "query_text": "How do I approve a Leave Type"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "hr",
+    "query_text": "How do I check the Employee"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "hr",
+    "query_text": "How do I create a Salary Structure"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "hr",
+    "query_text": "How can I edit an existing Holiday list"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "hr",
+    "query_text": "Can you walk me through creating a Holiday list"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "hr",
+    "query_text": "Where is the Salary Structure option in the Desk"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "hr",
+    "query_text": "How do I set up a expense claim"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "hr",
+    "query_text": "I want to add a new Shift Type Assignment"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "hr",
+    "query_text": "What fields are required for a Shift Type"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "hr",
+    "query_text": "Steps to create a Shift Type Assignment"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "hr",
+    "query_text": "Steps to create a Employee"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "hr",
+    "query_text": "How can I edit an existing expense claim"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "hr",
+    "query_text": "How do I approve a Leave Application"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "hr",
+    "query_text": "I need help setting up a Salary Structure"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "manufacturing",
+    "query_text": "How do I cancel a submitted Workstation"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "manufacturing",
+    "query_text": "How do I link a BOM to another record"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "manufacturing",
+    "query_text": "I want to add a new Job Card"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "manufacturing",
+    "query_text": "How do I link a Operation to another record"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "manufacturing",
+    "query_text": "Can you show me how to create a Job Card"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "manufacturing",
+    "query_text": "Steps to create a multi-level BOM"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "manufacturing",
+    "query_text": "I need help setting up a Job Card"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "manufacturing",
+    "query_text": "Steps to create a Stock Entry (Manufacture)"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "manufacturing",
+    "query_text": "How do I create a multi-level BOM"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "manufacturing",
+    "query_text": "How do I approve a Workstation"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "manufacturing",
+    "query_text": "How do I search for a Work Order"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "manufacturing",
+    "query_text": "What's the process for creating a Production Plan"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "manufacturing",
+    "query_text": "How do I create a Production Plan"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "manufacturing",
+    "query_text": "How do I set up a Work Order"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "manufacturing",
+    "query_text": "I need help setting up a multi-level BOM"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "manufacturing",
+    "query_text": "I need help setting up a Stock Entry (Manufacture)"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "manufacturing",
+    "query_text": "Can you show me how to create a multi-level BOM"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "manufacturing",
+    "query_text": "How do I check the Job Card"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "manufacturing",
+    "query_text": "I need help setting up a BOM Comparison tool"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "manufacturing",
+    "query_text": "Is there a way to bulk create Operation records"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "manufacturing",
+    "query_text": "How do I delete a Stock Entry (Manufacture)"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "manufacturing",
+    "query_text": "Where do I find the Production Plan"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "manufacturing",
+    "query_text": "How do I delete a Job Card"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "manufacturing",
+    "query_text": "How do I cancel a submitted Operation"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "manufacturing",
+    "query_text": "How do I check the Workstation"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "manufacturing",
+    "query_text": "Can you walk me through creating a Stock Entry (Manufacture)"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "manufacturing",
+    "query_text": "How do I delete a Workstation"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "manufacturing",
+    "query_text": "How can I edit an existing Workstation"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "manufacturing",
+    "query_text": "I'm stuck trying to create a Stock Entry (Material Transfer for Manufacturing)"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "manufacturing",
+    "query_text": "I need help setting up a BOM"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "manufacturing",
+    "query_text": "I'm stuck trying to create a BOM Comparison tool"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "manufacturing",
+    "query_text": "Where do I find the multi-level BOM"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "manufacturing",
+    "query_text": "How can I edit an existing multi-level BOM"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "manufacturing",
+    "query_text": "How can I edit an existing Job Card"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "manufacturing",
+    "query_text": "I want to add a new Operation"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "manufacturing",
+    "query_text": "Is there a way to bulk create Stock Entry (Manufacture) records"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "manufacturing",
+    "query_text": "How can I edit an existing Stock Entry (Manufacture)"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "manufacturing",
+    "query_text": "How do I approve a Stock Entry (Material Transfer for Manufacturing)"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "manufacturing",
+    "query_text": "How do I search for a multi-level BOM"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "manufacturing",
+    "query_text": "How do I check the Stock Entry (Material Transfer for Manufacturing)"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "manufacturing",
+    "query_text": "What fields are required for a Stock Entry (Material Transfer for Manufacturing)"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "manufacturing",
+    "query_text": "How do I cancel a submitted Stock Entry (Manufacture)"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "manufacturing",
+    "query_text": "What fields are required for a Operation"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "manufacturing",
+    "query_text": "How do I link a BOM Comparison tool to another record"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "manufacturing",
+    "query_text": "How can I edit an existing Production Plan"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "manufacturing",
+    "query_text": "How do I set up a multi-level BOM"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "manufacturing",
+    "query_text": "What's the process for creating a Stock Entry (Material Transfer for Manufacturing)"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "manufacturing",
+    "query_text": "I'm stuck trying to create a Work Order"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "manufacturing",
+    "query_text": "How do I create a Job Card"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "manufacturing",
+    "query_text": "How do I approve a Production Plan"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "manufacturing",
+    "query_text": "I'm stuck trying to create a BOM"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "manufacturing",
+    "query_text": "Where do I find the Stock Entry (Manufacture)"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "manufacturing",
+    "query_text": "How do I set up a Stock Entry (Manufacture)"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "manufacturing",
+    "query_text": "How do I delete a BOM Comparison tool"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "manufacturing",
+    "query_text": "How do I search for a BOM Comparison tool"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "manufacturing",
+    "query_text": "How do I create a Work Order"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "manufacturing",
+    "query_text": "I want to add a new Workstation"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "manufacturing",
+    "query_text": "How do I cancel a submitted BOM Comparison tool"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "manufacturing",
+    "query_text": "Can you show me how to create a BOM"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "manufacturing",
+    "query_text": "Can you walk me through creating a Operation"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "manufacturing",
+    "query_text": "Where do I find the Stock Entry (Material Transfer for Manufacturing)"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "manufacturing",
+    "query_text": "How do I set up a Production Plan"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "manufacturing",
+    "query_text": "What fields are required for a Workstation"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "manufacturing",
+    "query_text": "I'm stuck trying to create a Production Plan"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "manufacturing",
+    "query_text": "Where is the Workstation option in the Desk"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "manufacturing",
+    "query_text": "Where is the Job Card option in the Desk"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "manufacturing",
+    "query_text": "How do I set up a Operation"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "manufacturing",
+    "query_text": "How can I edit an existing BOM"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "manufacturing",
+    "query_text": "How do I link a Stock Entry (Material Transfer for Manufacturing) to another record"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "manufacturing",
+    "query_text": "Is there a way to bulk create Job Card records"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "projects",
+    "query_text": "How do I check the Task dependency"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "projects",
+    "query_text": "Is there a way to bulk create Project budget records"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "projects",
+    "query_text": "How do I delete a Task"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "projects",
+    "query_text": "Where do I find the Task checklist"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "projects",
+    "query_text": "Where do I find the Timesheet invoice"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "projects",
+    "query_text": "How do I set up a Project budget"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "projects",
+    "query_text": "Is there a way to bulk create Task checklist records"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "projects",
+    "query_text": "How do I approve a Task"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "projects",
+    "query_text": "I need help setting up a Project budget"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "projects",
+    "query_text": "Can you walk me through creating a Timesheet"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "projects",
+    "query_text": "How can I edit an existing Timesheet invoice"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "projects",
+    "query_text": "I want to add a new Timesheet"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "projects",
+    "query_text": "I'm stuck trying to create a Timesheet"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "projects",
+    "query_text": "I want to add a new Project budget"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "projects",
+    "query_text": "How do I link a Task checklist to another record"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "projects",
+    "query_text": "How do I set up a Timesheet"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "projects",
+    "query_text": "I need help setting up a Timesheet"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "projects",
+    "query_text": "How do I set up a Task checklist"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "projects",
+    "query_text": "What's the process for creating a billable hours"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "projects",
+    "query_text": "I'm stuck trying to create a Task checklist"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "projects",
+    "query_text": "How do I search for a Project Gantt chart"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "projects",
+    "query_text": "Can you show me how to create a Task checklist"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "projects",
+    "query_text": "How do I delete a Project Gantt chart"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "projects",
+    "query_text": "How do I approve a Task checklist"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "projects",
+    "query_text": "What fields are required for a Project budget"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "projects",
+    "query_text": "Is there a way to bulk create billable hours records"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "projects",
+    "query_text": "How do I check the Timesheet invoice"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "projects",
+    "query_text": "How do I link a Timesheet invoice to another record"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "projects",
+    "query_text": "How do I link a Project Gantt chart to another record"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "projects",
+    "query_text": "Is there a way to bulk create Timesheet invoice records"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "projects",
+    "query_text": "How do I check the Task"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "projects",
+    "query_text": "I need help setting up a Task checklist"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "projects",
+    "query_text": "How do I create a Project budget"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "projects",
+    "query_text": "Steps to create a Project budget"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "projects",
+    "query_text": "How do I delete a Task dependency"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "projects",
+    "query_text": "How do I create a Task dependency"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "projects",
+    "query_text": "How do I link a Task dependency to another record"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "projects",
+    "query_text": "I'm stuck trying to create a Timesheet invoice"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "projects",
+    "query_text": "How do I create a Project Gantt chart"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "projects",
+    "query_text": "How do I cancel a submitted Timesheet invoice"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "projects",
+    "query_text": "How do I cancel a submitted billable hours"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "projects",
+    "query_text": "Where do I find the Task"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "projects",
+    "query_text": "What's the process for creating a Timesheet"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "projects",
+    "query_text": "Can you show me how to create a Task"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "projects",
+    "query_text": "Where do I find the Timesheet"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "projects",
+    "query_text": "Where do I find the Task dependency"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "projects",
+    "query_text": "How do I approve a Timesheet"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "projects",
+    "query_text": "How do I check the Timesheet"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "projects",
+    "query_text": "Can you walk me through creating a billable hours"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "projects",
+    "query_text": "What's the process for creating a Task dependency"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "projects",
+    "query_text": "I want to add a new billable hours"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "projects",
+    "query_text": "Can you show me how to create a Timesheet"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "projects",
+    "query_text": "How do I set up a Timesheet invoice"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "projects",
+    "query_text": "How do I search for a Task checklist"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "projects",
+    "query_text": "Can you show me how to create a Project budget"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "projects",
+    "query_text": "How can I edit an existing Task checklist"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "projects",
+    "query_text": "Where is the Timesheet option in the Desk"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "projects",
+    "query_text": "How do I approve a Project Gantt chart"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "projects",
+    "query_text": "How do I approve a Timesheet invoice"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "projects",
+    "query_text": "I'm stuck trying to create a billable hours"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "projects",
+    "query_text": "How do I create a Timesheet invoice"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "projects",
+    "query_text": "How do I search for a Task"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "projects",
+    "query_text": "How do I check the Task checklist"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "projects",
+    "query_text": "I'm stuck trying to create a Task"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "projects",
+    "query_text": "Where do I find the billable hours"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "projects",
+    "query_text": "Is there a way to bulk create Timesheet records"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "projects",
+    "query_text": "Where is the Project Gantt chart option in the Desk"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "projects",
+    "query_text": "How do I create a Task"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "projects",
+    "query_text": "What fields are required for a Timesheet invoice"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "projects",
+    "query_text": "I need help setting up a Task dependency"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "stock",
+    "query_text": "I want to add a new UOM conversion"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "stock",
+    "query_text": "How do I check the UOM conversion"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "stock",
+    "query_text": "What fields are required for a reorder level"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "stock",
+    "query_text": "What fields are required for a UOM conversion"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "stock",
+    "query_text": "How do I set up a reorder level"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "stock",
+    "query_text": "How do I approve a Stock Entry (Material Transfer)"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "stock",
+    "query_text": "Where is the Stock Entry (Material Issue) option in the Desk"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "stock",
+    "query_text": "I need help setting up a Stock Entry (Material Receipt)"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "stock",
+    "query_text": "How do I create a Stock Entry (Material Transfer)"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "stock",
+    "query_text": "How do I delete a Stock Entry (Material Receipt)"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "stock",
+    "query_text": "How can I edit an existing reorder level"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "stock",
+    "query_text": "I'm stuck trying to create a Batch tracking"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "stock",
+    "query_text": "What fields are required for a Stock Entry (Material Receipt)"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "stock",
+    "query_text": "What fields are required for a Stock Entry (Material Issue)"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "stock",
+    "query_text": "I'm stuck trying to create a UOM conversion"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "stock",
+    "query_text": "How do I set up a Batch tracking"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "stock",
+    "query_text": "How do I check the Batch tracking"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "stock",
+    "query_text": "Where is the Stock Balance report option in the Desk"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "stock",
+    "query_text": "How do I create a Stock Entry (Material Issue)"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "stock",
+    "query_text": "How do I approve a UOM conversion"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "stock",
+    "query_text": "How do I search for a UOM conversion"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "stock",
+    "query_text": "How do I delete a Stock Balance report"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "stock",
+    "query_text": "How do I create a UOM conversion"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "stock",
+    "query_text": "How do I search for a Stock Entry (Material Transfer)"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "stock",
+    "query_text": "I want to add a new Stock Entry (Material Transfer)"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "stock",
+    "query_text": "I want to add a new reorder level"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "stock",
+    "query_text": "Where do I find the Stock Entry (Material Transfer)"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "stock",
+    "query_text": "How do I cancel a submitted Stock Entry (Material Receipt)"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "stock",
+    "query_text": "Can you show me how to create a Stock Entry (Material Transfer)"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "stock",
+    "query_text": "Is there a way to bulk create Batch tracking records"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "stock",
+    "query_text": "How do I approve a Stock Balance report"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "stock",
+    "query_text": "How do I cancel a submitted Batch tracking"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "stock",
+    "query_text": "How do I cancel a submitted Stock Entry (Material Issue)"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "stock",
+    "query_text": "How do I search for a Batch tracking"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "stock",
+    "query_text": "How do I link a Serial Number tracking to another record"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "stock",
+    "query_text": "Where do I find the Serial Number tracking"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "stock",
+    "query_text": "How do I approve a Stock Entry (Material Issue)"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "stock",
+    "query_text": "How do I set up a Stock Entry (Material Transfer)"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "stock",
+    "query_text": "I want to add a new Stock Entry (Material Receipt)"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "stock",
+    "query_text": "How do I cancel a submitted Stock Balance report"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "stock",
+    "query_text": "How can I edit an existing Stock Entry (Material Receipt)"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "stock",
+    "query_text": "How do I set up a UOM conversion"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "stock",
+    "query_text": "Can you walk me through creating a Stock Entry (Material Issue)"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "stock",
+    "query_text": "Can you walk me through creating a Stock Entry (Material Receipt)"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "stock",
+    "query_text": "I'm stuck trying to create a Serial Number tracking"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "stock",
+    "query_text": "Steps to create a UOM conversion"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "stock",
+    "query_text": "Is there a way to bulk create Stock Entry (Material Issue) records"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "stock",
+    "query_text": "Steps to create a Batch tracking"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "stock",
+    "query_text": "How do I set up a Stock Entry (Material Receipt)"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "stock",
+    "query_text": "Where is the Serial Number tracking option in the Desk"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "stock",
+    "query_text": "Can you show me how to create a Serial Number tracking"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "stock",
+    "query_text": "How do I approve a Stock Entry (Material Receipt)"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "stock",
+    "query_text": "Where do I find the Stock Balance report"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "stock",
+    "query_text": "How do I delete a Batch tracking"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "stock",
+    "query_text": "I need help setting up a UOM conversion"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "stock",
+    "query_text": "Where do I find the UOM conversion"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "stock",
+    "query_text": "What's the process for creating a reorder level"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "stock",
+    "query_text": "What's the process for creating a Stock Entry (Material Receipt)"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "stock",
+    "query_text": "Can you show me how to create a Batch tracking"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "stock",
+    "query_text": "I want to add a new Stock Balance report"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "stock",
+    "query_text": "How can I edit an existing Serial Number tracking"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "stock",
+    "query_text": "How do I set up a Stock Balance report"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "stock",
+    "query_text": "What's the process for creating a Batch tracking"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "stock",
+    "query_text": "Can you walk me through creating a UOM conversion"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "stock",
+    "query_text": "How do I check the reorder level"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "stock",
+    "query_text": "Can you walk me through creating a Batch tracking"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "stock",
+    "query_text": "How do I check the Stock Balance report"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "stock",
+    "query_text": "How do I link a Batch tracking to another record"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "stock",
+    "query_text": "How do I check the Stock Entry (Material Receipt)"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "stock",
+    "query_text": "Where is the reorder level option in the Desk"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "support",
+    "query_text": "How do I delete a HD Ticket"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "support",
+    "query_text": "I want to add a new SLA breach report"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "support",
+    "query_text": "How do I cancel a submitted canned response"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "support",
+    "query_text": "Steps to create a SLA breach report"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "support",
+    "query_text": "How do I link a HD Ticket priority to another record"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "support",
+    "query_text": "How do I delete a SLA"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "support",
+    "query_text": "What fields are required for a HD Ticket priority"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "support",
+    "query_text": "What's the process for creating a Helpdesk portal permission error"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "support",
+    "query_text": "Can you show me how to create a Helpdesk portal permission error"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "support",
+    "query_text": "How do I cancel a submitted Helpdesk Team"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "support",
+    "query_text": "How do I search for a Helpdesk portal permission error"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "support",
+    "query_text": "How can I edit an existing HD Ticket"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "support",
+    "query_text": "What's the process for creating a SLA breach report"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "support",
+    "query_text": "How do I cancel a submitted SLA breach report"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "support",
+    "query_text": "Where do I find the canned response"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "support",
+    "query_text": "What's the process for creating a SLA"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "support",
+    "query_text": "Can you show me how to create a Knowledge Base article"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "support",
+    "query_text": "What's the process for creating a Helpdesk Team"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "support",
+    "query_text": "I need help setting up a HD Ticket priority"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "support",
+    "query_text": "How do I check the Helpdesk Team"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "support",
+    "query_text": "How do I create a SLA"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "support",
+    "query_text": "How do I search for a Helpdesk Team"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "support",
+    "query_text": "How do I check the Helpdesk portal permission error"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "support",
+    "query_text": "How do I approve a Helpdesk Team"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "support",
+    "query_text": "Where do I find the HD Ticket priority"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "support",
+    "query_text": "How do I delete a SLA breach report"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "support",
+    "query_text": "How do I cancel a submitted Knowledge Base article"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "support",
+    "query_text": "Where is the HD Ticket priority option in the Desk"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "support",
+    "query_text": "How do I search for a canned response"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "support",
+    "query_text": "How do I link a Helpdesk portal permission error to another record"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "support",
+    "query_text": "How do I check the Knowledge Base article"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "support",
+    "query_text": "What fields are required for a canned response"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "support",
+    "query_text": "Where is the canned response option in the Desk"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "support",
+    "query_text": "How do I link a SLA breach report to another record"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "support",
+    "query_text": "How can I edit an existing HD Ticket priority"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "support",
+    "query_text": "Is there a way to bulk create Helpdesk portal permission error records"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "support",
+    "query_text": "I want to add a new Helpdesk Team"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "support",
+    "query_text": "How do I search for a HD Ticket"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "support",
+    "query_text": "How do I delete a HD Ticket priority"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "support",
+    "query_text": "Can you walk me through creating a HD Ticket priority"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "support",
+    "query_text": "How do I set up a Knowledge Base article"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "support",
+    "query_text": "Steps to create a canned response"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "support",
+    "query_text": "Can you show me how to create a SLA"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "support",
+    "query_text": "How do I set up a HD Ticket"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "support",
+    "query_text": "How do I set up a Helpdesk portal permission error"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "support",
+    "query_text": "Steps to create a Helpdesk Team"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "support",
+    "query_text": "Steps to create a Knowledge Base article"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "support",
+    "query_text": "What fields are required for a SLA"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "support",
+    "query_text": "Where do I find the Helpdesk portal permission error"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "support",
+    "query_text": "Is there a way to bulk create Knowledge Base article records"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "support",
+    "query_text": "I want to add a new SLA"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "support",
+    "query_text": "Can you walk me through creating a SLA"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "support",
+    "query_text": "What's the process for creating a HD Ticket"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "support",
+    "query_text": "How do I create a Knowledge Base article"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "support",
+    "query_text": "Where do I find the SLA breach report"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "support",
+    "query_text": "Steps to create a HD Ticket priority"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "support",
+    "query_text": "I'm stuck trying to create a Helpdesk portal permission error"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "support",
+    "query_text": "Can you walk me through creating a Knowledge Base article"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "support",
+    "query_text": "How do I approve a canned response"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "support",
+    "query_text": "Where do I find the SLA"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "support",
+    "query_text": "How do I link a SLA to another record"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "support",
+    "query_text": "I'm stuck trying to create a HD Ticket priority"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "support",
+    "query_text": "What's the process for creating a Knowledge Base article"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "support",
+    "query_text": "Where is the Helpdesk portal permission error option in the Desk"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "support",
+    "query_text": "How do I create a SLA breach report"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "support",
+    "query_text": "Can you walk me through creating a canned response"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "support",
+    "query_text": "What's the process for creating a canned response"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "support",
+    "query_text": "How can I edit an existing Knowledge Base article"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "support",
+    "query_text": "I want to add a new canned response"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "support",
+    "query_text": "How do I approve a Helpdesk portal permission error"
+  }
+]
