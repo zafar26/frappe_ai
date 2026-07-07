@@ -9,6 +9,17 @@ with a locally hosted LLM. Fully manageable from the Frappe Desk UI —
 add agents, knowledge base entries, and training examples without
 touching code.
 
+<img width="1212" height="687" alt="Screenshot 2026-07-07 at 4 36 21 PM" src="https://github.com/user-attachments/assets/fe9eee2f-2465-4767-9897-a577612c807e" />
+
+<img width="750" height="687" alt="Screenshot 2026-07-07 at 4 35 49 PM" src="https://github.com/user-attachments/assets/d36013f5-9142-4c1d-a28c-cab6ce14e222" />
+
+<img width="578" height="698" alt="Screenshot 2026-07-07 at 4 40 22 PM" src="https://github.com/user-attachments/assets/b44e838a-1552-4592-a441-096df5ed62e5" />
+
+<img width="578" height="605" alt="Screenshot 2026-07-07 at 4 39 27 PM" src="https://github.com/user-attachments/assets/72ead45f-aa01-4d12-bda1-4898f17ab0ad" />
+
+<img width="578" height="443" alt="Screenshot 2026-07-07 at 4 37 58 PM" src="https://github.com/user-attachments/assets/a997d10e-4bf5-44a9-9ab2-2d159c28fbbc" />
+
+
 ## What's inside
 
 | Piece | How it's implemented |
