@@ -2,7 +2,7 @@
 
 A Frappe custom app: routes user queries to specialized agents mirroring
 real ERPNext modules (Internal, Accounts, Buying, Selling, Stock,
-Manufacturing, HR, Projects, CRM, Support — or any others you add)
+Manufacturing, HR, Projects, CRM, Support)
 using a neural network classifier, retrieves relevant context per agent
 from an isolated ChromaDB collection, and generates grounded answers
 with a locally hosted LLM. Fully manageable from the Frappe Desk UI —
@@ -51,15 +51,9 @@ actual workflows.
 ```bash
 # From your frappe-bench directory
 
-# 1. Get the app (copy this folder into apps/, or push it to a git repo
-#    and use bench get-app <repo-url>)
-cp -r /path/to/frappe_ai apps/frappe_ai
-
-# 2. Install Python dependencies into the bench's virtualenv
-#    (listed in pyproject.toml -- these are heavy: torch, transformers,
-#    chromadb, llama-cpp-python -- expect several minutes and hundreds
-#    of MB downloaded)
-./env/bin/pip install -e apps/frappe_ai
+# 1. Get the app
+#    use 
+bench get-app --branch gguf_llm_super_fast https://github.com/zafar26/frappe_ai.git
 
 # NOTE on llama-cpp-python: prebuilt wheels exist for most common
 # platforms (Linux x86_64, macOS, Windows), so the line above usually
@@ -68,8 +62,12 @@ cp -r /path/to/frappe_ai apps/frappe_ai
 #   sudo apt install build-essential cmake -y   (Debian/Ubuntu)
 # then re-run the pip install command above.
 
-# 3. Install the app on your site
+
+# 2. Install the app on your site
 bench --site <your-site> install-app frappe_ai
+
+# 3. Install Dependencies
+bench setup requirements
 
 # 4. Run migrations (creates the DocTypes, loads AI Agent + Router
 #    Training Example fixtures automatically)

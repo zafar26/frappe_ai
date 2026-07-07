@@ -15,7 +15,11 @@ Run once after `bench install-app frappe_ai` and `bench migrate`:
 import frappe
 
 SAMPLE_DOCS = {
-    "internal": [
+    "Internal": [
+        "Core ERPNext concepts: Company, Warehouse, Item, Address, Contact, Email Account, Item Group, Currency, Fiscal Year, Multi-Company, Item Attribute & Variant.",
+        "Companies can have multiple Companies, each with its own accounting, stock, and reporting -- useful for group structures.",
+        "A Fiscal Year defines the accounting period for a Company, affecting reports, budgets, and tax filings; it can be customized per Company.",
+        "A Currency record defines the exchange rate and formatting for a currency used in transactions, reporting, and multi-currency accounting.",
         "A Company record is the top-level entity in ERPNext; all transactions, accounts, and reports are scoped to a specific Company.",
         "A Warehouse represents a physical or virtual stock location; every stock transaction references a source and/or target Warehouse.",
         "An Item is the master record for anything bought, sold, or stocked -- it defines UOM, item group, valuation method, and default warehouse.",
@@ -27,7 +31,14 @@ SAMPLE_DOCS = {
         "Multiple Companies can exist on one site, each with fully separate accounting, stock, and reporting, useful for group structures.",
         "Item Attributes and Variants let one template Item generate multiple sellable variations (e.g. size, color) without duplicating master data.",
     ],
-    "accounts": [
+    "Accounts": [
+        "Account, General Ledger, Profit & Loss Statement, Balance Sheet, Journal Entry, Payment Entry, Purchase Invoice, Sales Invoice, Asset, Cost Center, and Depreciation are the core accounting documents in ERPNext.",
+        "The Chart of Accounts defines the tree of ledger accounts used across all transactions, and is created per Company at setup time.",
+        "The General Ledger report shows every posted transaction against every account and is the primary tool for auditing financial entries.",
+        "The Profit & Loss Statement summarizes income and expense accounts over a period to show net profit or loss.",
+        "The Balance Sheet shows assets, liabilities, and equity as of a specific date, and must always balance (Assets = Liabilities + Equity).",
+        "Default accounts for Receivables, Payables, Income, Expense, and Equity are set per Company and used across all transactions.",
+        "Payment Entry, Journal Entry, Purchase Invoice, Sales Invoice and Asset are the core documents for recording financial transactions in ERPNext.",
         "A Journal Entry is used to post manual accounting transactions such as adjustments, provisions, or opening balances directly between ledger accounts.",
         "A Payment Entry records money received from a customer or paid to a supplier and can be reconciled against one or more outstanding invoices.",
         "The Account doctype (Chart of Accounts) defines the tree of ledger accounts -- Assets, Liabilities, Income, Expense, Equity -- used across all transactions.",
@@ -39,7 +50,11 @@ SAMPLE_DOCS = {
         "The Balance Sheet shows assets, liabilities, and equity as of a specific date, and must always balance (Assets = Liabilities + Equity).",
         "Depreciation methods (Straight Line or Written Down Value) determine how an Asset's value reduces each period on its Asset Depreciation schedule.",
     ],
-    "buying": [
+    "Buying": [
+        "Send Emails to Suppliers can be sent automatically or manually, Request for Quotation, Supplier Quotation, Purchase Order, and Purchase Receipt are the core documents for buying goods or services from suppliers.",
+        "A Supplier is an individual or organization that provides goods or services to the company.",
+        "Procurement Process, Buying Process, Purchase Process are same",
+        "Purchase process creation, Material Request, Request for Quotation, Supplier Quotation, Purchase Receipt, and Purchase Order are the core documents for buying goods or services from suppliers.",
         "A Supplier record stores vendor details, payment terms, and default currency used across all purchase transactions with them.",
         "A Material Request (type Purchase) is the standard trigger for procurement, raised manually or automatically from low stock levels.",
         "A Request for Quotation (RFQ) is sent to multiple suppliers to gather pricing before deciding on a Purchase Order.",
@@ -51,7 +66,9 @@ SAMPLE_DOCS = {
         "A Blanket Purchase Order sets an agreed quantity and rate with a supplier over a period, against which individual Purchase Orders are released.",
         "Landed Cost Vouchers allocate additional costs like freight and customs duty across received items on a Purchase Receipt for accurate valuation.",
     ],
-    "selling": [
+    "Selling": [
+        "Sales process creation", 
+        "Sales Order, Delivery Note, and Sales Invoice are the core documents for selling goods or services to customers.",
         "A Customer record stores billing details, credit limit, and default price list used across all sales transactions with them.",
         "A Quotation is a non-binding offer sent to a prospective or existing customer, convertible into a Sales Order once accepted.",
         "A Sales Order confirms a customer's order details (items, quantities, rates, delivery date) and is the basis for delivery and invoicing.",
@@ -63,8 +80,13 @@ SAMPLE_DOCS = {
         "A Sales Return is processed as a Sales Invoice with 'Is Return' checked, referencing the original invoice to reverse the transaction.",
         "Territory and Customer Group fields let sales data be sliced by region or customer segment in analytics reports.",
     ],
-    "crm": [
+    "CRM": [
+        "A Lead is a potential customer record capturing basic contact info and interest, which can be converted into a Customer or Opportunity.",
+        "An Opportunity (or Deal) tracks a qualified sales prospect through stages of the sales pipeline",
+        "A Lead Source (e.g., website, referral, campaign) is recorded on Leads and Opportunities to analyze which channels generate the most qualified prospects.",
         "A Lead represents an unqualified prospect and is the entry point into the CRM pipeline before any real sales conversation has occurred.",
+        "A Contact is a specific person within an organization, often associated with a Customer or Lead record.",
+        "A Customer is an individual or organization that has a business relationship with the company, often with a history of purchases.",
         "An Enquiry captures an inbound question or interest (often from a website form) before it's qualified into a Lead or Deal.",
         "A Deal (the CRM equivalent of a qualified prospect being actively pursued) tracks probability of closing, expected value, and pipeline stage.",
         "Converting a Lead into a Deal marks it as a qualified prospect actively being pursued for a specific sale.",
@@ -75,7 +97,8 @@ SAMPLE_DOCS = {
         "Territory-based lead assignment automatically routes new leads to the right sales person based on region rules.",
         "The CRM pipeline / sales funnel report visualizes how many leads and deals exist at each stage, highlighting where prospects stall.",
     ],
-    "hr": [
+    "HR": [
+        "Onboarding, Employee, Leave Application, Salary Structure, Salary Structure Assignment, Shift Type, Shift Type Assignment, Holiday List, Salary Slip, Appraisal Cycle are the core documents for managing human resources in ERPNext.",
         "An Employee record is the master data for a staff member, linking to attendance, leave, payroll, and appraisal records.",
         "A Leave Application is submitted by an employee against a Leave Type and is approved by their reporting manager before leave is deducted.",
         "A Salary Structure defines the earning and deduction components (basic pay, allowances, taxes) that make up a role's compensation.",
@@ -87,7 +110,8 @@ SAMPLE_DOCS = {
         "Appraisal Cycles collect structured performance feedback from managers and peers over a defined review period.",
         "Employee Onboarding uses a checklist-driven process to track document collection, asset assignment, and orientation tasks for new hires.",
     ],
-    "manufacturing": [
+    "Manufacturing": [
+        "BOM, Work Order, Job Card, Operation, Stock Entry (Manufacture), Stock Entry (Material Transfer for Manufacturing), Production Plan, Routing, Multi-level BOM, Backflushing are the core documents for managing manufacturing in ERPNext.",
         "A Bill of Materials (BOM) defines the raw materials, quantities, and Operations required to manufacture one unit of a finished item.",
         "A Work Order is created from a BOM and tracks the manufacturing of a specific quantity of an item, including material and operation status.",
         "Job Cards track the execution of individual Operations within a Work Order, including time logs and operator assignment.",
@@ -99,7 +123,7 @@ SAMPLE_DOCS = {
         "Multi-level BOMs reference other BOMs as sub-assemblies, allowing complex products to be broken into manageable manufacturing stages.",
         "Backflushing automatically consumes raw materials from stock based on the BOM when a Work Order's manufacture is completed, without manual stock entries.",
     ],
-    "projects": [
+    "Projects": [
         "A Task is a unit of work, optionally linked to a Project, with dependencies, assignees, priority, and expected start/end dates.",
         "A Timesheet logs hours worked against specific Tasks and is the basis for billing time-and-materials clients or tracking effort.",
         "Task dependencies let one Task block or be blocked by another, visualized in a Gantt chart view.",
@@ -111,7 +135,18 @@ SAMPLE_DOCS = {
         "Project-level reports aggregate Task completion and Timesheet hours to show overall progress and effort distribution.",
         "Recurring Tasks can be set up for repeating work items, so they don't need to be manually recreated each cycle.",
     ],
-    "stock": [
+    "Stock": [
+        "Stock Entry, Stock Ledger, Stock Balance, Stock Reconciliation, Batch, Serial Number, Reorder Level, Stock Valuation are the core documents for managing inventory in ERPNext.",
+        "Stock Entry records material movement -- transfers, receipts, issues, or manufacturing consumption -- and updates the Stock Ledger.",
+        "Stock Entry type 'Material Transfer' moves stock between two warehouses without changing overall on-hand quantity.",
+        "Stock Entry type 'Material Receipt' brings new stock into the system without a corresponding Purchase Receipt (e.g. found stock, opening stock).",
+        "Stock Entry type 'Material Issue' removes stock from the system for consumption not tied to a sale (e.g. internal use, samples, write-off).",
+        "The Stock Balance report shows current on-hand quantity and valuation for every item across every warehouse as of a selected date.",
+        "Stock Reconciliation adjusts system quantities to match a physical count, and is the standard tool for correcting inventory discrepancies.",
+        "Batch tracking groups stock by manufacturing batch (useful for expiry dates), while Serial Number tracking tracks individual units.",
+        "The Stock Ledger report is the definitive, transaction-level record of every stock movement for an item across all warehouses.",
+        "Reorder levels and reorder quantities, set per item per warehouse, can automatically trigger Material Requests when stock runs low.",
+        "Stock valuation methods (FIFO or Moving Average) determine how the cost of goods sold is calculated as stock moves.",
         "A Stock Entry records material movement -- transfers, receipts, issues, or manufacturing consumption -- and updates the Stock Ledger.",
         "Stock Entry type 'Material Transfer' moves stock between two warehouses without changing overall on-hand quantity.",
         "Stock Entry type 'Material Receipt' brings new stock into the system without a corresponding Purchase Receipt (e.g. found stock, opening stock).",
@@ -123,7 +158,7 @@ SAMPLE_DOCS = {
         "Reorder levels and reorder quantities, set per item per warehouse, can automatically trigger Material Requests when stock runs low.",
         "Stock valuation methods (FIFO or Moving Average) determine how the cost of goods sold is calculated as stock moves.",
     ],
-    "support": [
+    "Support": [
         "An HD Ticket is the core record in the Helpdesk app for a support request, tracking status, priority, assigned agent, and communication history.",
         "An SLA (Service Level Agreement) policy defines response and resolution time targets based on ticket priority or customer type.",
         "Canned Responses let support agents insert pre-written replies for common questions to speed up response time.",
@@ -132,7 +167,7 @@ SAMPLE_DOCS = {
         "A 'permission error' in Frappe usually means the user's Role doesn't have the required permission level on that DocType -- check Role Permissions Manager.",
         "A 'duplicate entry' error typically means a unique field (like a naming series value) collided -- check for an existing record with the same ID.",
         "Clearing the cache (bench clear-cache) resolves many stale-data issues after code or configuration changes.",
-        "Background job failures can be inspected under 'Background Jobs' in the Desk, or via bench --site <site> show-pending-jobs from the CLI.",
+        "Background job failures can be inspected under Background Jobs in the Desk, or show-pending-jobs from the CLI.",
         "A failed migration should be diagnosed via the bench error log before retrying bench migrate, since re-running blind can mask the root cause.",
     ],
 }
@@ -145,10 +180,11 @@ def run():
             print(f"Skipping '{agent_key}' -- no AI Agent record with that key exists.")
             continue
         for content in docs:
-            frappe.get_doc(
-                {"doctype": "AI Agent Document", "agent": agent_key, "content": content}
-            ).insert(ignore_permissions=True)
-            created += 1
+            if not frappe.db.exists("AI Agent Document", {"agent": agent_key,"content": content}):
+                frappe.get_doc(
+                    {"doctype": "AI Agent Document", "agent": agent_key, "content": content}
+                ).insert(ignore_permissions=True)
+                created += 1
 
     frappe.db.commit()
     print(f"Seeded {created} sample knowledge base documents across {len(SAMPLE_DOCS)} agents.")

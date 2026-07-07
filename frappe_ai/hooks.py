@@ -1,4 +1,3 @@
-from . import __version__ as app_version  # noqa: F401
 
 app_name = "frappe_ai"
 app_title = "Frappe AI"

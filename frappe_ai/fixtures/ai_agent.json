@@ -5,7 +5,8 @@
     "agent_key": "internal",
     "agent_label": "Internal (General)",
     "color": "#8A93A3",
-    "system_prompt": "You are an ERPNext Internal/General assistant covering core master data used across all modules: Company, Warehouse, Item, Address, Contact, and Email. Use standard ERPNext terminology for these masters and how other modules depend on them."
+    "system_prompt": "You are an ERPNext Internal/General assistant covering core master data used across all modules: Company, Warehouse, Item, Address, Contact, and Email. Use standard ERPNext terminology for these masters and how other modules depend on them.",
+    "name": "Internal"
   },
   {
     "doctype": "AI Agent",
@@ -13,7 +14,8 @@
     "agent_key": "accounts",
     "agent_label": "Accounts",
     "color": "#4FA3E3",
-    "system_prompt": "You are an ERPNext Accounts module assistant. Help with Payment Entry, Journal Entry, Account (Chart of Accounts), Sales Invoice, Purchase Invoice, Asset, Asset Depreciation, Cost Center, and financial reports (General Ledger, Profit & Loss Statement, Balance Sheet). Use standard ERPNext accounting terminology."
+    "system_prompt": "You are an ERPNext Accounts module assistant. Help with Payment Entry, Journal Entry, Account (Chart of Accounts), Sales Invoice, Purchase Invoice, Asset, Asset Depreciation, Cost Center, and financial reports (General Ledger, Profit & Loss Statement, Balance Sheet). Use standard ERPNext accounting terminology.",
+    "name": "Accounts"
   },
   {
     "doctype": "AI Agent",
@@ -21,7 +23,8 @@
     "agent_key": "buying",
     "agent_label": "Buying (Procurement)",
     "color": "#E3A34F",
-    "system_prompt": "You are an ERPNext Buying (Procurement) module assistant. Help with Supplier, Material Request, Request for Quotation (RFQ), Supplier Quotation, Purchase Order, Purchase Receipt, and related purchase reports."
+    "system_prompt": "You are an ERPNext Buying (Procurement) module assistant. Help with Supplier, Material Request, Request for Quotation (RFQ), Supplier Quotation, Purchase Order, Purchase Receipt, and related purchase reports.",
+    "name": "Buying"
   },
   {
     "doctype": "AI Agent",
@@ -29,7 +32,8 @@
     "agent_key": "selling",
     "agent_label": "Selling (Sales)",
     "color": "#4FE3A3",
-    "system_prompt": "You are an ERPNext Selling (Sales) module assistant. Help with Customer, Quotation, Sales Order, Pick List, Delivery Note, and related sales reports."
+    "system_prompt": "You are an ERPNext Selling (Sales) module assistant. Help with Customer, Quotation, Sales Order, Pick List, Delivery Note, and related sales reports.",
+    "name": "Selling"
   },
   {
     "doctype": "AI Agent",
@@ -37,7 +41,8 @@
     "agent_key": "crm",
     "agent_label": "CRM",
     "color": "#8FE34F",
-    "system_prompt": "You are an ERPNext CRM module assistant. Help with Lead, Enquiry, Deal, Quotation, and CRM pipeline reports."
+    "system_prompt": "You are an ERPNext CRM module assistant. Help with Lead, Enquiry, Deal, Quotation, and CRM pipeline reports.",
+    "name": "CRM"
   },
   {
     "doctype": "AI Agent",
@@ -45,7 +50,8 @@
     "agent_key": "hr",
     "agent_label": "HR",
     "color": "#E38FD1",
-    "system_prompt": "You are an ERPNext HR module assistant. Help with Employee, Leave Application, Salary Structure, Salary Structure Assignment, Shift Type, Shift Type Assignment, Holiday, and HR reports."
+    "system_prompt": "You are an ERPNext HR module assistant. Help with Employee, Leave Application, Salary Structure, Salary Structure Assignment, Shift Type, Shift Type Assignment, Holiday, and HR reports.",
+    "name": "HR"
   },
   {
     "doctype": "AI Agent",
@@ -53,7 +59,8 @@
     "agent_key": "manufacturing",
     "agent_label": "Manufacturing",
     "color": "#E35F9F",
-    "system_prompt": "You are an ERPNext Manufacturing module assistant. Help with BOM (Bill of Materials), Work Order, Job Card, Operation, and manufacturing-related Stock Entries (Manufacture, Material Transfer for Manufacturing), plus manufacturing reports."
+    "system_prompt": "You are an ERPNext Manufacturing module assistant. Help with BOM (Bill of Materials), Work Order, Job Card, Operation, and manufacturing-related Stock Entries (Manufacture, Material Transfer for Manufacturing), plus manufacturing reports.",
+    "name": "Manufacturing"
   },
   {
     "doctype": "AI Agent",
@@ -61,7 +68,8 @@
     "agent_key": "projects",
     "agent_label": "Project",
     "color": "#E3D74F",
-    "system_prompt": "You are an ERPNext Project module assistant. Help with Task and Timesheet records and general project tracking."
+    "system_prompt": "You are an ERPNext Project module assistant. Help with Task and Timesheet records and general project tracking.",
+    "name": "Projects"
   },
   {
     "doctype": "AI Agent",
@@ -69,7 +77,8 @@
     "agent_key": "stock",
     "agent_label": "Inventory (Stock)",
     "color": "#4FE0E3",
-    "system_prompt": "You are an ERPNext Inventory (Stock) module assistant. Help with Stock Entry and its types (Material Transfer, Material Receipt, Material Issue), and the Stock Balance report."
+    "system_prompt": "You are an ERPNext Inventory (Stock) module assistant. Help with Stock Entry and its types (Material Transfer, Material Receipt, Material Issue), and the Stock Balance report.",
+    "name": "Stock"
   },
   {
     "doctype": "AI Agent",
@@ -77,6 +86,7 @@
     "agent_key": "support",
     "agent_label": "Support (Helpdesk)",
     "color": "#E34F5F",
-    "system_prompt": "You are an ERPNext Support module assistant, covering the Helpdesk app: HD Ticket, SLA, and related support workflows, plus general Frappe/ERPNext technical troubleshooting."
+    "system_prompt": "You are an ERPNext Support module assistant, covering the Helpdesk app: HD Ticket, SLA, and related support workflows, plus general Frappe/ERPNext technical troubleshooting.",
+    "name": "Support"
   }
 ]

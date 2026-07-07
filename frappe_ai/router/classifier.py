@@ -16,7 +16,7 @@ import torch.nn as nn
 
 
 class RouterClassifier(nn.Module):
-    def __init__(self, input_dim: int = 384, hidden_dim: int = 64, num_classes: int = 3):
+    def __init__(self, input_dim: int = 768, hidden_dim: int = 64, num_classes: int = 3):
         super().__init__()
         self.net = nn.Sequential(
             nn.Linear(input_dim, hidden_dim),

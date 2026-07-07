@@ -177,12 +177,12 @@
     </div>
 
     <div class="console">
-      <div>
+      <!-- <div>
         <div class="console-section-label">Routing console</div>
         <div id="routingLanes">
           <div class="console-empty">No query classified yet.</div>
         </div>
-      </div>
+      </div> -->
       <div>
         <div class="console-section-label">Retrieved context</div>
         <div id="contextPanel" class="console-empty">Nothing retrieved yet.</div>
@@ -207,7 +207,7 @@
   const input = document.getElementById('queryInput');
   const sendBtn = document.getElementById('sendBtn');
   const legendEl = document.getElementById('legend');
-  const routingLanes = document.getElementById('routingLanes');
+ //const routingLanes = document.getElementById('routingLanes');
   const contextPanel = document.getElementById('contextPanel');
   const statusDot = document.getElementById('statusDot');
   const statusText = document.getElementById('statusText');
@@ -245,15 +245,31 @@
           color: a.color || FALLBACK_COLORS[i % FALLBACK_COLORS.length],
         };
       });
+      //legendEl.innerHTML = Object.entries(AGENTS)
+      // .map(([key, a]) => `<div class="legend-item"><div class="legend-chip" style="background:${a.color}"></div>${escapeHtml(a.label)}</div>`)
+      // .join('');
 
-      legendEl.innerHTML = Object.entries(AGENTS)
-        .map(([key, a]) => `<div class="legend-item"><div class="legend-chip" style="background:${a.color}"></div>${escapeHtml(a.label)}</div>`)
-        .join('');
 
-      renderLanes(null, null);
-      statusDot.className = 'status-dot ok';
-      statusText.textContent = `${agentList.length} agent(s) online`;
+      const mssg = await callMethod('frappe_ai.api.get_chats', { user: "Administrator" });
+      
+      for(let i=0; i < mssg.chats.length; i++) {
+        const chat = mssg.chats[i];
+        console.log(chat, 'CHAT\n\n');
+        if(chat.role == "User" ){
+
+          addUserMessage(chat.content);
+        }else{
+
+          addAgentMessage(chat.agent, chat.agent, chat.content, [chat.retrieved_context]);
+        }
+      }
+      //renderContext(mssg.retrieved_context);
+
+     // renderLanes(null, null);
+     statusDot.className = 'status-dot ok';
+     statusText.textContent = `${agentList.length} agent(s) online`;
     } catch (err) {
+      console.error('Failed to load agents:', err);
       statusDot.className = 'status-dot err';
       statusText.textContent = 'Could not load agents — is the router trained?';
     }
@@ -262,11 +278,11 @@
   function renderLanes(scores, predicted) {
     const keys = Object.keys(AGENTS);
     if (keys.length === 0) {
-      routingLanes.innerHTML = '<div class="console-empty">No agents configured yet.</div>';
+      //routingLanes.innerHTML = '<div class="console-empty">No agents configured yet.</div>';
       return;
     }
 
-    routingLanes.innerHTML = '';
+    //routingLanes.innerHTML = '';
     keys.forEach(agentKey => {
       const agent = AGENTS[agentKey];
       const pct = scores && scores[agentKey] !== undefined ? Math.round(scores[agentKey] * 100) : 0;
@@ -281,7 +297,7 @@
         </div>
         <div class="lane-track"><div class="lane-fill" style="width:0%;background:${agent.color}"></div></div>
       `;
-      routingLanes.appendChild(lane);
+      //routingLanes.appendChild(lane);
       requestAnimationFrame(() => { lane.querySelector('.lane-fill').style.width = pct + '%'; });
     });
   }
