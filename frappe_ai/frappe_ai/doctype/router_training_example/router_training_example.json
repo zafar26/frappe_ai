@@ -1,0 +1,54 @@
+{
+  "actions": [],
+  "allow_rename": 0,
+  "autoname": "hash",
+  "creation": "2026-07-05 00:00:00",
+  "doctype": "DocType",
+  "engine": "InnoDB",
+  "field_order": [
+    "agent",
+    "query_text"
+  ],
+  "fields": [
+    {
+      "fieldname": "agent",
+      "fieldtype": "Link",
+      "label": "Agent",
+      "options": "AI Agent",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "query_text",
+      "fieldtype": "Small Text",
+      "label": "Example Query",
+      "reqd": 1,
+      "in_list_view": 1,
+      "description": "An example of the kind of question this agent should handle. Add 20-30+ varied examples per agent for a well-trained router."
+    }
+  ],
+  "index_web_view": 0,
+  "links": [],
+  "modified": "2026-07-05 00:00:00",
+  "modified_by": "Administrator",
+  "module": "Frappe AI",
+  "name": "Router Training Example",
+  "owner": "Administrator",
+  "permissions": [
+    {
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1,
+      "read": 1,
+      "report": 1,
+      "role": "System Manager",
+      "share": 1,
+      "write": 1
+    }
+  ],
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "track_changes": 0
+}
