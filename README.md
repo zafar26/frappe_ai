@@ -65,7 +65,10 @@ bench get-app --branch gguf_llm_super_fast https://github.com/zafar26/frappe_ai.
 # 2. Install the app on your site
 bench --site <your-site> install-app frappe_ai
 
-# 3. Run migrations (creates the DocTypes, loads AI Agent + Router
+# 3. Install Dependencies
+bench setup requirements
+
+# 4. Run migrations (creates the DocTypes, loads AI Agent + Router
 #    Training Example fixtures automatically)
 bench --site <your-site> migrate
 ```

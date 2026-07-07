@@ -30,7 +30,7 @@ def get_cached_agents():
     agents = frappe.get_all(
         "AI Agent",
         filters={"enabled": 1},
-        fields=["agent_key", "agent_label", "system_prompt", "color"],
+        fields=["name", "agent_key", "agent_label", "system_prompt", "color"],
     )
     agent_map = {a["name"]: a for a in agents}
     frappe.cache().set_value("frappe_ai:agents", agent_map)
@@ -132,14 +132,18 @@ def ingest_document(agent_key: str, content: str, source_label: str = None):
     if not frappe.db.exists("AI Agent", agent_key):
         frappe.throw(f"No AI Agent with key '{agent_key}' exists.")
 
-    doc = frappe.get_doc(
-        {
-            "doctype": "AI Agent Document",
-            "agent": agent_key,
-            "content": content,
-            "source_label": source_label,
-        }
-    ).insert()
+    doc = ''
+    if frappe.db.exists("AI Agent Document", {"agent": agent_key,"content": content}):
+        doc = frappe.get_doc("AI Agent Document", {"agent": agent_key,"content": content})
+    else:
+        doc = frappe.get_doc(
+            {
+                "doctype": "AI Agent Document",
+                "agent": agent_key,
+                "content": content,
+                "source_label": source_label,
+            }
+        ).insert()
 
     return {"name": doc.name, "agent": agent_key}
 
@@ -152,3 +156,21 @@ def train_router():
     result = _train()
     frappe.cache().delete_value("frappe_ai:agents")
     return result
+
+
+
+
+@frappe.whitelist()
+def get_chats(user: str):
+    if not user:
+        frappe.throw("user is required.")
+
+    # print(frappe.session.user, 'USER \n\n\n\n')
+    messages = frappe.get_all(
+        "AI Chat Message",
+        filters={"user": frappe.session.user, "creation": [">", frappe.utils.add_days(frappe.utils.now(), -7)]},
+        fields=["role", "agent", "content", "retrieved_context", "creation"],
+        order_by="creation asc",
+    )
+
+    return {"chats": messages}

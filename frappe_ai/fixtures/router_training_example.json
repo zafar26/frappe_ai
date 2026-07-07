@@ -4198,5 +4198,29 @@
     "agent": "Support",
     "query_text": "How do I approve a Helpdesk portal permission error",
     "name": "700"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "Selling",
+    "query_text": "Selling Process, How do I create a Quotation",
+    "name": "701"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "Selling",
+    "query_text": "Sales Process, where do I find the Quotation",
+    "name": "702"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "Selling",
+    "query_text": "How do I check the Quotation",
+    "name": "703"
+  },
+  {
+    "doctype": "Router Training Example",
+    "agent": "Selling",
+    "query_text": "Steps to create Sales",
+    "name": "704"
   }
 ]
