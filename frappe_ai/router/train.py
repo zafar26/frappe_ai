@@ -25,7 +25,7 @@ def _load_training_data():
     if len(agents) < 2:
         frappe.throw("Need at least 2 enabled AI Agent records to train a router.")
 
-    labels = sorted(a["agent_key"] for a in agents)
+    labels = sorted(a["name"] for a in agents)
 
     texts, y = [], []
     for label in labels:

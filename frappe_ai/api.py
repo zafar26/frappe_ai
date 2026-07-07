@@ -32,7 +32,7 @@ def get_cached_agents():
         filters={"enabled": 1},
         fields=["agent_key", "agent_label", "system_prompt", "color"],
     )
-    agent_map = {a["agent_key"]: a for a in agents}
+    agent_map = {a["name"]: a for a in agents}
     frappe.cache().set_value("frappe_ai:agents", agent_map)
     return agent_map
 
