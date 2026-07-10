@@ -1,0 +1,105 @@
+{
+  "actions": [],
+  "allow_rename": 0,
+  "autoname": "hash",
+  "creation": "2026-07-05 00:00:00",
+  "doctype": "DocType",
+  "engine": "InnoDB",
+  "field_order": [
+    "session_id",
+    "role",
+    "agent",
+    "user",
+    "column_break_1",
+    "content",
+    "confidence_scores",
+    "retrieved_context",
+    "tool_trace"
+  ],
+  "fields": [
+    {
+      "fieldname": "session_id",
+      "fieldtype": "Data",
+      "label": "Session ID",
+      "in_list_view": 1,
+      "in_standard_filter": 1,
+      "description": "Generated client-side per browser session, groups messages into one conversation."
+    },
+    {
+      "fieldname": "role",
+      "fieldtype": "Select",
+      "label": "Role",
+      "options": "User\nAgent",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "agent",
+      "fieldtype": "Link",
+      "label": "Agent",
+      "options": "AI Agent",
+      "in_list_view": 1,
+      "description": "Which agent handled this turn (empty for user messages)."
+    },
+    {
+      "fieldname": "user",
+      "fieldtype": "Link",
+      "label": "User",
+      "options": "User",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "column_break_1",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "content",
+      "fieldtype": "Text",
+      "label": "Content",
+      "reqd": 1
+    },
+    {
+      "fieldname": "confidence_scores",
+      "fieldtype": "Code",
+      "options": "JSON",
+      "label": "Router Confidence Scores"
+    },
+    {
+      "fieldname": "retrieved_context",
+      "fieldtype": "Code",
+      "options": "JSON",
+      "label": "Retrieved Context"
+    },
+    {
+      "fieldname": "tool_trace",
+      "fieldtype": "Code",
+      "options": "JSON",
+      "label": "Tool Call Trace",
+      "description": "For agentic (tool-enabled) agents: which tools were called, with what arguments, and their results."
+    }
+  ],
+  "index_web_view": 0,
+  "links": [],
+  "modified": "2026-07-05 00:00:00",
+  "modified_by": "Administrator",
+  "module": "Frappe AI",
+  "name": "AI Chat Message",
+  "owner": "Administrator",
+  "permissions": [
+    {
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1,
+      "read": 1,
+      "report": 1,
+      "role": "System Manager",
+      "share": 1,
+      "write": 1
+    }
+  ],
+  "sort_field": "creation",
+  "sort_order": "DESC",
+  "track_changes": 0
+}

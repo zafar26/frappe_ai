@@ -1,0 +1,87 @@
+{
+  "actions": [],
+  "allow_rename": 1,
+  "autoname": "field:agent_key",
+  "creation": "2026-07-05 00:00:00",
+  "doctype": "DocType",
+  "engine": "InnoDB",
+  "field_order": [
+    "agent_key",
+    "agent_label",
+    "enabled",
+    "enable_tools",
+    "color",
+    "column_break_1",
+    "system_prompt"
+  ],
+  "fields": [
+    {
+      "fieldname": "agent_key",
+      "fieldtype": "Data",
+      "label": "Agent Key",
+      "reqd": 1,
+      "unique": 1,
+      "description": "Lowercase, no spaces. Used internally to link training examples, documents, and routing (e.g. tech_support, hr, sales)."
+    },
+    {
+      "fieldname": "agent_label",
+      "fieldtype": "Data",
+      "label": "Display Label",
+      "reqd": 1,
+      "description": "Human-friendly name shown in the chat UI (e.g. Tech Support)."
+    },
+    {
+      "fieldname": "enabled",
+      "fieldtype": "Check",
+      "label": "Enabled",
+      "default": "1"
+    },
+    {
+      "fieldname": "enable_tools",
+      "fieldtype": "Check",
+      "label": "Enable Agentic Tools (live data)",
+      "default": "0",
+      "description": "If checked, this agent uses a ReAct-style tool-calling loop to query LIVE ERPNext data (e.g. real Sales Invoices, outstanding balances) instead of only answering from static knowledge base text. Currently only implemented for the accounts agent -- see tools/accounts_tools.py and agents/agentic_loop.py. Enabling this on an agent with no matching tool registry has no effect."
+    },
+    {
+      "fieldname": "color",
+      "fieldtype": "Color",
+      "label": "UI Color"
+    },
+    {
+      "fieldname": "column_break_1",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "system_prompt",
+      "fieldtype": "Text",
+      "label": "System Prompt",
+      "reqd": 1,
+      "description": "The persona/instructions given to the LLM when this agent answers a query."
+    }
+  ],
+  "index_web_view": 0,
+  "links": [],
+  "modified": "2026-07-05 00:00:00",
+  "modified_by": "Administrator",
+  "module": "Frappe AI",
+  "name": "AI Agent",
+  "owner": "Administrator",
+  "permissions": [
+    {
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1,
+      "read": 1,
+      "report": 1,
+      "role": "System Manager",
+      "share": 1,
+      "write": 1
+    }
+  ],
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "track_changes": 1
+}

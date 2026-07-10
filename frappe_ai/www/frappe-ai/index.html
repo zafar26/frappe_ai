@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Frappe AI</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0E1116;
+    --panel: #171B22;
+    --panel-2: #1D222B;
+    --border: #262B35;
+    --text: #EDEFF2;
+    --muted: #8A93A3;
+    --faint: #565E6C;
+    --system: #B98CE8;
+    --system-dim: #B98CE822;
+    --mono: 'IBM Plex Mono', monospace;
+    --sans: 'IBM Plex Sans', sans-serif;
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body {
+    margin: 0;
+    height: 100%;
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+  }
+
+  body { display: flex; flex-direction: column; }
+
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 22px;
+    border-bottom: 1px solid var(--border);
+    background: var(--panel);
+    flex-shrink: 0;
+  }
+
+  .header-left { display: flex; align-items: center; gap: 10px; }
+
+  .dot {
+    width: 8px; height: 8px; border-radius: 50%;
+    background: var(--system); box-shadow: 0 0 8px var(--system);
+    animation: pulse 2.4s ease-in-out infinite;
+  }
+
+  @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+
+  .header-title { font-family: var(--mono); font-weight: 600; font-size: 14px; letter-spacing: 0.08em; text-transform: uppercase; }
+  .header-title span { color: var(--muted); font-weight: 400; }
+
+  .legend { display: flex; gap: 14px; flex-wrap: wrap; }
+  .legend-item { display: flex; align-items: center; gap: 6px; font-family: var(--mono); font-size: 11px; color: var(--muted); }
+  .legend-chip { width: 8px; height: 8px; border-radius: 2px; }
+
+  .header-right { display: flex; align-items: center; gap: 14px; }
+  .user-tag { font-family: var(--mono); font-size: 11px; color: var(--faint); }
+
+  .main { flex: 1; display: flex; overflow: hidden; }
+  .chat-col { flex: 1; display: flex; flex-direction: column; min-width: 0; }
+
+  .messages { flex: 1; overflow-y: auto; padding: 24px; display: flex; flex-direction: column; gap: 18px; }
+  .messages::-webkit-scrollbar { width: 8px; }
+  .messages::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
+
+  .empty-state { margin: auto; text-align: center; color: var(--faint); font-family: var(--mono); font-size: 13px; max-width: 380px; line-height: 1.7; }
+  .empty-state strong { color: var(--muted); }
+
+  .msg-row { display: flex; gap: 12px; max-width: 78%; }
+  .msg-row.user { align-self: flex-end; flex-direction: row-reverse; }
+
+  .avatar {
+    flex-shrink: 0; width: 30px; height: 30px; border-radius: 6px;
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--mono); font-size: 10px; font-weight: 600; text-transform: uppercase;
+    background: var(--panel-2); border: 1px solid var(--border); color: var(--muted);
+  }
+
+  .msg-body { min-width: 0; }
+  .msg-meta { font-family: var(--mono); font-size: 10.5px; color: var(--faint); margin-bottom: 5px; display: flex; gap: 8px; align-items: center; }
+  .msg-row.user .msg-meta { justify-content: flex-end; }
+  .agent-tag { padding: 1px 6px; border-radius: 3px; font-weight: 600; letter-spacing: 0.03em; }
+
+  .bubble { padding: 11px 14px; border-radius: 10px; line-height: 1.55; font-size: 14.5px; white-space: pre-wrap; }
+  .msg-row.user .bubble { background: var(--panel-2); border: 1px solid var(--border); border-top-right-radius: 3px; }
+  .msg-row.agent .bubble { background: var(--panel); border: 1px solid var(--border); border-top-left-radius: 3px; }
+
+  .context-toggle { margin-top: 8px; font-family: var(--mono); font-size: 10.5px; color: var(--faint); cursor: pointer; user-select: none; display: inline-flex; align-items: center; gap: 4px; }
+  .context-toggle:hover { color: var(--muted); }
+  .context-box { display: none; margin-top: 8px; padding: 10px 12px; background: var(--bg); border: 1px solid var(--border); border-radius: 6px; font-family: var(--mono); font-size: 11.5px; color: var(--muted); line-height: 1.6; }
+  .context-box.open { display: block; }
+  .context-box .chunk { padding: 4px 0; border-bottom: 1px dashed var(--border); }
+  .context-box .chunk:last-child { border-bottom: none; }
+  .context-box .none { color: var(--faint); font-style: italic; }
+
+  .typing { display: flex; gap: 4px; padding: 4px 0; }
+  .typing span { width: 5px; height: 5px; border-radius: 50%; background: var(--system); animation: bounce 1.2s infinite ease-in-out; }
+  .typing span:nth-child(2) { animation-delay: 0.15s; }
+  .typing span:nth-child(3) { animation-delay: 0.3s; }
+  @keyframes bounce { 0%, 60%, 100% { transform: translateY(0); opacity: 0.4; } 30% { transform: translateY(-4px); opacity: 1; } }
+
+  .input-bar { display: flex; gap: 10px; padding: 16px 22px; border-top: 1px solid var(--border); background: var(--panel); flex-shrink: 0; }
+  .input-bar input { flex: 1; background: var(--bg); border: 1px solid var(--border); color: var(--text); font-family: var(--sans); font-size: 14px; padding: 12px 14px; border-radius: 8px; }
+  .input-bar input:focus { outline: none; border-color: var(--system); }
+  .input-bar input::placeholder { color: var(--faint); }
+
+  .send-btn { font-family: var(--mono); font-size: 12px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; background: var(--system-dim); color: var(--system); border: 1px solid var(--system); padding: 0 20px; border-radius: 8px; cursor: pointer; transition: background 0.15s ease; }
+  .send-btn:hover { background: #B98CE838; }
+  .send-btn:disabled { opacity: 0.4; cursor: not-allowed; }
+
+  .console { width: 300px; flex-shrink: 0; background: var(--panel); border-left: 1px solid var(--border); padding: 20px; overflow-y: auto; display: flex; flex-direction: column; gap: 24px; }
+  .console-section-label { font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--faint); margin-bottom: 12px; display: flex; align-items: center; justify-content: space-between; }
+
+  .lane { margin-bottom: 14px; }
+  .lane:last-child { margin-bottom: 0; }
+  .lane-label { display: flex; justify-content: space-between; font-family: var(--mono); font-size: 11.5px; margin-bottom: 6px; }
+  .lane-name { color: var(--muted); }
+  .lane-pct { color: var(--faint); }
+  .lane-track { height: 7px; background: var(--bg); border-radius: 4px; overflow: hidden; border: 1px solid var(--border); }
+  .lane-fill { height: 100%; width: 0%; border-radius: 4px; transition: width 0.6s cubic-bezier(0.16, 1, 0.3, 1); }
+  .lane.active .lane-name { color: var(--text); font-weight: 600; }
+
+  .console-empty { font-family: var(--mono); font-size: 11.5px; color: var(--faint); line-height: 1.6; }
+  .status-line { font-family: var(--mono); font-size: 11px; color: var(--faint); display: flex; align-items: center; gap: 6px; padding-top: 4px; border-top: 1px solid var(--border); }
+  .status-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--faint); }
+  .status-dot.ok { background: #4FE3A3; }
+  .status-dot.err { background: #E35F4F; }
+
+  @media (max-width: 820px) {
+    .main { flex-direction: column; }
+    .console { width: auto; border-left: none; border-top: 1px solid var(--border); flex-direction: row; overflow-x: auto; gap: 20px; }
+    .console > div { min-width: 220px; }
+    .legend { display: none; }
+    .msg-row { max-width: 92%; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .dot, .typing span { animation: none; }
+    .lane-fill { transition: none; }
+  }
+
+  :focus-visible { outline: 2px solid var(--system); outline-offset: 2px; }
+</style>
+</head>
+<body>
+
+  <div class="header">
+    <div class="header-left">
+      <div class="dot"></div>
+      <div class="header-title">Frappe AI <span>/ multi-agent support console</span></div>
+    </div>
+    <div class="legend" id="legend"></div>
+    <div class="header-right">
+      <span class="user-tag">{{ user }}</span>
+    </div>
+  </div>
+
+  <div class="main">
+    <div class="chat-col">
+      <div class="messages" id="messages">
+        <div class="empty-state" id="emptyState">
+          Ask a question below.<br/>
+          It'll be classified by a <strong>neural network router</strong> and handed to whichever agent is best suited to answer it.
+        </div>
+      </div>
+      <form class="input-bar" id="inputForm">
+        <input type="text" id="queryInput" placeholder="Ask something…" autocomplete="off" />
+        <button type="submit" class="send-btn" id="sendBtn">Send</button>
+      </form>
+    </div>
+
+    <div class="console">
+      <div>
+        <div class="console-section-label">Routing console</div>
+        <div id="routingLanes">
+          <div class="console-empty">No query classified yet.</div>
+        </div>
+      </div>
+      <div>
+        <div class="console-section-label">Retrieved context</div>
+        <div id="contextPanel" class="console-empty">Nothing retrieved yet.</div>
+      </div>
+      <div class="status-line" id="statusLine">
+        <div class="status-dot" id="statusDot"></div>
+        <span id="statusText">Loading agents…</span>
+      </div>
+    </div>
+  </div>
+
+<script>
+  const CSRF_TOKEN = "{{ csrf_token }}";
+  const FALLBACK_COLORS = ["#4FA3E3", "#E3A34F", "#4FE3A3", "#E35F9F", "#4FE0E3"];
+
+  let AGENTS = {};       // agent_key -> { agent_label, color }
+  let sessionId = crypto.randomUUID();
+
+  const messagesEl = document.getElementById('messages');
+  const emptyState = document.getElementById('emptyState');
+  const form = document.getElementById('inputForm');
+  const input = document.getElementById('queryInput');
+  const sendBtn = document.getElementById('sendBtn');
+  const legendEl = document.getElementById('legend');
+  const routingLanes = document.getElementById('routingLanes');
+  const contextPanel = document.getElementById('contextPanel');
+  const statusDot = document.getElementById('statusDot');
+  const statusText = document.getElementById('statusText');
+
+  async function callMethod(method, args = {}) {
+    const body = new URLSearchParams(args);
+    const res = await fetch(`/api/method/${method}`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+        'X-Frappe-CSRF-Token': CSRF_TOKEN,
+      },
+      body,
+    });
+    const data = await res.json();
+    if (!res.ok) {
+      throw new Error(data.exc || data.message || `Request failed (${res.status})`);
+    }
+    return data.message;
+  }
+
+  function escapeHtml(str) {
+    const div = document.createElement('div');
+    div.textContent = str;
+    return div.innerHTML;
+  }
+
+  async function loadAgents() {
+    try {
+      const agentList = await callMethod('frappe_ai.api.list_agents');
+      AGENTS = {};
+      agentList.forEach((a, i) => {
+        AGENTS[a.agent_key] = {
+          label: a.agent_label,
+          color: a.color || FALLBACK_COLORS[i % FALLBACK_COLORS.length],
+        };
+      });
+
+      legendEl.innerHTML = Object.entries(AGENTS)
+        .map(([key, a]) => `<div class="legend-item"><div class="legend-chip" style="background:${a.color}"></div>${escapeHtml(a.label)}</div>`)
+        .join('');
+
+      renderLanes(null, null);
+      statusDot.className = 'status-dot ok';
+      statusText.textContent = `${agentList.length} agent(s) online`;
+    } catch (err) {
+      statusDot.className = 'status-dot err';
+      statusText.textContent = 'Could not load agents — is the router trained?';
+    }
+  }
+
+  function renderLanes(scores, predicted) {
+    const keys = Object.keys(AGENTS);
+    if (keys.length === 0) {
+      routingLanes.innerHTML = '<div class="console-empty">No agents configured yet.</div>';
+      return;
+    }
+
+    routingLanes.innerHTML = '';
+    keys.forEach(agentKey => {
+      const agent = AGENTS[agentKey];
+      const pct = scores && scores[agentKey] !== undefined ? Math.round(scores[agentKey] * 100) : 0;
+      const isActive = agentKey === predicted;
+
+      const lane = document.createElement('div');
+      lane.className = 'lane' + (isActive ? ' active' : '');
+      lane.innerHTML = `
+        <div class="lane-label">
+          <span class="lane-name">${escapeHtml(agent.label)}</span>
+          <span class="lane-pct">${pct}%</span>
+        </div>
+        <div class="lane-track"><div class="lane-fill" style="width:0%;background:${agent.color}"></div></div>
+      `;
+      routingLanes.appendChild(lane);
+      requestAnimationFrame(() => { lane.querySelector('.lane-fill').style.width = pct + '%'; });
+    });
+  }
+
+  function renderContext(chunks) {
+    if (!chunks || chunks.length === 0) {
+      contextPanel.className = 'console-empty';
+      contextPanel.textContent = 'No matching knowledge base entries found for this query.';
+      return;
+    }
+    contextPanel.className = '';
+    contextPanel.style.fontFamily = 'var(--mono)';
+    contextPanel.style.fontSize = '11.5px';
+    contextPanel.style.color = 'var(--muted)';
+    contextPanel.style.lineHeight = '1.6';
+    contextPanel.innerHTML = chunks.map(c => `<div class="chunk">${escapeHtml(c)}</div>`).join('');
+  }
+
+  function addUserMessage(text) {
+    emptyState.style.display = 'none';
+    const row = document.createElement('div');
+    row.className = 'msg-row user';
+    row.innerHTML = `<div class="avatar">You</div><div class="msg-body"><div class="msg-meta">you</div><div class="bubble"></div></div>`;
+    row.querySelector('.bubble').textContent = text;
+    messagesEl.appendChild(row);
+    messagesEl.scrollTop = messagesEl.scrollHeight;
+  }
+
+  // Indicative process stages shown while waiting for the (single,
+  // synchronous) chat response. These are NOT literally synced to the
+  // backend's real progress -- the API call is one blocking request, not
+  // a stream -- but they're honest about what's actually happening in
+  // roughly the right order, so users aren't left staring at a static
+  // "..." with no idea whether anything is happening.
+  const PROCESS_STAGES = [
+    'Classifying which agent should handle this…',
+    'Searching the agent\'s knowledge base…',
+    'Reviewing retrieved context…',
+    'Generating a precise answer…',
+    'Still working — this may include a live ERPNext data lookup…',
+  ];
+
+  let stageInterval = null;
+
+  function addTypingIndicator() {
+    const row = document.createElement('div');
+    row.className = 'msg-row agent';
+    row.id = 'typingRow';
+    row.innerHTML = `<div class="avatar">···</div><div class="msg-body"><div class="msg-meta" id="typingStageText">${PROCESS_STAGES[0]}</div><div class="bubble"><div class="typing"><span></span><span></span><span></span></div></div></div>`;
+    messagesEl.appendChild(row);
+    messagesEl.scrollTop = messagesEl.scrollHeight;
+
+    let stageIndex = 0;
+    stageInterval = setInterval(() => {
+      const stageEl = document.getElementById('typingStageText');
+      if (!stageEl) return; // indicator already removed
+      // Advance through the stages, then hold on the last ("still working")
+      // message rather than looping back, since looping would look broken
+      // for a genuinely slow request (e.g. cold model load, tool calls).
+      stageIndex = Math.min(stageIndex + 1, PROCESS_STAGES.length - 1);
+      stageEl.textContent = PROCESS_STAGES[stageIndex];
+    }, 1400);
+  }
+
+  function removeTypingIndicator() {
+    if (stageInterval) {
+      clearInterval(stageInterval);
+      stageInterval = null;
+    }
+    const row = document.getElementById('typingRow');
+    if (row) row.remove();
+  }
+
+  function addAgentMessage(agentKey, agentLabel, answer, contextChunks, toolTrace) {
+    const row = document.createElement('div');
+    row.className = 'msg-row agent';
+    const contextId = 'ctx_' + Date.now();
+    const toolId = 'tool_' + Date.now();
+    const color = AGENTS[agentKey] ? AGENTS[agentKey].color : '#8A93A3';
+
+    const contextHtml = contextChunks && contextChunks.length > 0
+      ? contextChunks.map(c => `<div class="chunk">${escapeHtml(c)}</div>`).join('')
+      : `<div class="none">No knowledge base entries matched.</div>`;
+
+    const toolHtml = toolTrace && toolTrace.length > 0
+      ? toolTrace.map(t => `<div class="chunk">→ ${escapeHtml(t.tool)}(${escapeHtml(JSON.stringify(t.args))})<br/>${escapeHtml(t.observation)}</div>`).join('')
+      : '';
+
+    const toolToggleHtml = toolTrace && toolTrace.length > 0
+      ? `<div class="context-toggle" onclick="document.getElementById('${toolId}').classList.toggle('open')">▸ show live data lookups (${toolTrace.length})</div>
+         <div class="context-box" id="${toolId}">${toolHtml}</div>`
+      : '';
+
+    row.innerHTML = `
+      <div class="avatar" style="color:${color};border-color:${color}">${escapeHtml((agentLabel || '??').slice(0,2))}</div>
+      <div class="msg-body">
+        <div class="msg-meta"><span class="agent-tag" style="background:${color}22;color:${color}">${escapeHtml(agentLabel || agentKey)}</span></div>
+        <div class="bubble"></div>
+        <div class="context-toggle" onclick="document.getElementById('${contextId}').classList.toggle('open')">▸ show retrieved context (${contextChunks ? contextChunks.length : 0})</div>
+        <div class="context-box" id="${contextId}">${contextHtml}</div>
+        ${toolToggleHtml}
+      </div>
+    `;
+    row.querySelector('.bubble').textContent = answer;
+    messagesEl.appendChild(row);
+    messagesEl.scrollTop = messagesEl.scrollHeight;
+  }
+
+  function addErrorMessage(text) {
+    const row = document.createElement('div');
+    row.className = 'msg-row agent';
+    row.innerHTML = `<div class="avatar" style="color:#E35F4F;border-color:#E35F4F">!</div><div class="msg-body"><div class="msg-meta" style="color:#E35F4F">error</div><div class="bubble" style="border-color:#E35F4F55"></div></div>`;
+    row.querySelector('.bubble').textContent = text;
+    messagesEl.appendChild(row);
+    messagesEl.scrollTop = messagesEl.scrollHeight;
+  }
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const query = input.value.trim();
+    if (!query) return;
+
+    addUserMessage(query);
+    input.value = '';
+    sendBtn.disabled = true;
+    addTypingIndicator();
+
+    try {
+      const data = await callMethod('frappe_ai.api.chat', { query, session_id: sessionId });
+      removeTypingIndicator();
+
+      renderLanes(data.routing?.confidence_scores, data.routing?.predicted_agent);
+      renderContext(data.retrieved_context);
+      addAgentMessage(data.agent, data.agent_label, data.answer, data.retrieved_context, data.tool_trace);
+
+      statusDot.className = 'status-dot ok';
+      statusText.textContent = `${Object.keys(AGENTS).length} agent(s) online`;
+    } catch (err) {
+      removeTypingIndicator();
+      addErrorMessage(err.message || 'Something went wrong.');
+      statusDot.className = 'status-dot err';
+      statusText.textContent = 'Last request failed — see message above';
+    } finally {
+      sendBtn.disabled = false;
+      input.focus();
+    }
+  });
+
+  loadAgents();
+</script>
+
+</body>
+</html>
