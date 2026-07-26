@@ -1,0 +1,17 @@
+{
+  "content": null,
+  "creation": "2026-07-25 00:00:00",
+  "docstatus": 0,
+  "doctype": "Page",
+  "idx": 0,
+  "modified": "2026-07-25 00:00:00",
+  "modified_by": "Administrator",
+  "module": "Frappe AI",
+  "name": "agent-caller",
+  "owner": "Administrator",
+  "page_name": "agent-caller",
+  "roles": [],
+  "standard": "Yes",
+  "system_page": 0,
+  "title": "Agent Caller"
+}
