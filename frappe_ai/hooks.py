@@ -23,6 +23,7 @@ app_license = "MIT"
 fixtures = [
     {"doctype": "AI Agent"},
     {"doctype": "Router Training Example"},
+    {"doctype": "Agent Function"},
 ]
 
 # Custom bench commands: `bench --site <site> train-router`
