@@ -1,0 +1,146 @@
+{
+  "actions": [],
+  "creation": "2026-07-05 00:00:00",
+  "doctype": "DocType",
+  "engine": "InnoDB",
+  "field_order": [
+    "model_backend",
+    "llm_model_name",
+    "embedding_model_name",
+    "column_break_1",
+    "top_k",
+    "max_new_tokens",
+    "section_break_gguf",
+    "gguf_model_repo",
+    "gguf_model_filename",
+    "gguf_model_path",
+    "column_break_gguf",
+    "gguf_n_ctx",
+    "gguf_n_threads",
+    "gguf_chat_format",
+    "section_break_hf",
+    "hf_token"
+  ],
+  "fields": [
+    {
+      "fieldname": "model_backend",
+      "fieldtype": "Select",
+      "label": "Model Backend",
+      "options": "Transformers (PyTorch)\nGGUF (llama.cpp)",
+      "default": "GGUF (llama.cpp)",
+      "description": "GGUF is 3-5x faster on CPU and uses less RAM. Transformers is the original slower backend, kept as a fallback / for easy A-B comparison."
+    },
+    {
+      "fieldname": "llm_model_name",
+      "fieldtype": "Data",
+      "label": "Local LLM Model",
+      "default": "Qwen/Qwen2.5-0.5B-Instruct",
+      "description": "Used only when Model Backend = Transformers (PyTorch). Any transformers-compatible causal LM."
+    },
+    {
+      "fieldname": "embedding_model_name",
+      "fieldtype": "Data",
+      "label": "Embedding Model",
+      "default": "sentence-transformers/all-mpnet-base-v2",
+      "description": "Upgraded default: all-mpnet-base-v2 gives noticeably better semantic separation than MiniLM, which improves both agent routing accuracy and RAG retrieval quality. Any sentence-transformers model works."
+    },
+    {
+      "fieldname": "column_break_1",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "top_k",
+      "fieldtype": "Int",
+      "label": "Retrieved Chunks (top_k)",
+      "default": "3"
+    },
+    {
+      "fieldname": "max_new_tokens",
+      "fieldtype": "Int",
+      "label": "Max Response Tokens",
+      "default": "256"
+    },
+    {
+      "fieldname": "section_break_gguf",
+      "fieldtype": "Section Break",
+      "label": "GGUF Backend (llama.cpp)"
+    },
+    {
+      "fieldname": "gguf_model_repo",
+      "fieldtype": "Data",
+      "label": "GGUF Repo (Hugging Face)",
+      "default": "Qwen/Qwen2.5-0.5B-Instruct-GGUF",
+      "description": "Official pre-quantized GGUF repo to auto-download from. Ignored if GGUF Model Path is set manually (e.g. from the standalone convert_to_gguf.py script for a custom model)."
+    },
+    {
+      "fieldname": "gguf_model_filename",
+      "fieldtype": "Data",
+      "label": "GGUF Filename",
+      "default": "qwen2.5-0.5b-instruct-q4_k_m.gguf",
+      "description": "Exact filename within the repo above. q4_k_m is recommended: ~320MB, good quality, works on 512MB+ RAM."
+    },
+    {
+      "fieldname": "gguf_model_path",
+      "fieldtype": "Data",
+      "label": "GGUF Model Path (override)",
+      "description": "Optional. Leave blank to auto-download the repo/filename above via warm_up_models. Set this to point at a custom .gguf file instead (e.g. output of scripts/convert_to_gguf.py)."
+    },
+    {
+      "fieldname": "column_break_gguf",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "gguf_n_ctx",
+      "fieldtype": "Int",
+      "label": "Context Window (n_ctx)",
+      "default": "2048"
+    },
+    {
+      "fieldname": "gguf_n_threads",
+      "fieldtype": "Int",
+      "label": "CPU Threads (n_threads)",
+      "default": "4"
+    },
+    {
+      "fieldname": "gguf_chat_format",
+      "fieldtype": "Data",
+      "label": "Chat Format",
+      "default": "chatml",
+      "description": "Prompt template used by llama-cpp-python. Qwen models use ChatML -- leave as chatml unless you swap in a model with a different template."
+    },
+    {
+      "fieldname": "section_break_hf",
+      "fieldtype": "Section Break",
+      "label": "Hugging Face (Optional)"
+    },
+    {
+      "fieldname": "hf_token",
+      "fieldtype": "Password",
+      "label": "Hugging Face Token",
+      "description": "Optional. Without this, model downloads work but are rate-limited and show an 'unauthenticated requests' warning. Get a free token at huggingface.co/settings/tokens. Can also be set via the HF_TOKEN environment variable instead."
+    }
+  ],
+  "index_web_view": 0,
+  "issingle": 1,
+  "links": [],
+  "modified": "2026-07-05 00:00:00",
+  "modified_by": "Administrator",
+  "module": "Frappe AI",
+  "name": "Frappe AI Settings",
+  "owner": "Administrator",
+  "permissions": [
+    {
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "print": 1,
+      "read": 1,
+      "role": "System Manager",
+      "share": 1,
+      "write": 1
+    }
+  ],
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "track_changes": 1
+}
