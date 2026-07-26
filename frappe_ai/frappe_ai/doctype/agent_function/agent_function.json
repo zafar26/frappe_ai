@@ -1,0 +1,105 @@
+{
+  "actions": [],
+  "allow_rename": 1,
+  "autoname": "field:function_name",
+  "creation": "2026-07-26 00:00:00",
+  "doctype": "DocType",
+  "engine": "InnoDB",
+  "field_order": [
+    "function_name",
+    "description",
+    "enabled",
+    "column_break_1",
+    "target_doctype",
+    "section_break_params",
+    "parameters",
+    "section_break_script",
+    "script"
+  ],
+  "fields": [
+    {
+      "fieldname": "function_name",
+      "fieldtype": "Data",
+      "label": "Function Name",
+      "reqd": 1,
+      "unique": 1,
+      "description": "The exact name the model uses in its JSON response, e.g. create_sales_order. No spaces."
+    },
+    {
+      "fieldname": "description",
+      "fieldtype": "Small Text",
+      "label": "Description",
+      "reqd": 1,
+      "description": "Shown to the model so it knows when this function applies, e.g. 'Create a Sales Order'."
+    },
+    {
+      "fieldname": "enabled",
+      "fieldtype": "Check",
+      "label": "Enabled",
+      "default": "1",
+      "description": "Disabled functions are hidden from the model entirely and cannot be run."
+    },
+    {
+      "fieldname": "column_break_1",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "target_doctype",
+      "fieldtype": "Link",
+      "options": "DocType",
+      "label": "Target DocType",
+      "reqd": 1,
+      "description": "Used to check the calling user has Create permission on it before the script runs."
+    },
+    {
+      "fieldname": "section_break_params",
+      "fieldtype": "Section Break",
+      "label": "Parameters"
+    },
+    {
+      "fieldname": "parameters",
+      "fieldtype": "Code",
+      "options": "JSON",
+      "label": "Parameters (JSON)",
+      "reqd": 1,
+      "description": "Describes the arguments the model should pass, shown verbatim in the prompt. Example: {\"customer\": \"string (required)\", \"items\": \"list of {item_name, qty}\", \"due_date\": \"string (optional)\"}"
+    },
+    {
+      "fieldname": "section_break_script",
+      "fieldtype": "Section Break",
+      "label": "Script"
+    },
+    {
+      "fieldname": "script",
+      "fieldtype": "Code",
+      "options": "Python",
+      "label": "Script",
+      "reqd": 1,
+      "description": "Runs sandboxed via frappe.utils.safe_exec, the same mechanism Server Script uses. The arguments dict is available as `args`. You MUST set a `result` dict before the script ends, e.g. result = {\"created\": True, \"name\": doc.name, \"doctype\": \"Sales Order\"}. On a soft failure you can instead set result = {\"created\": False, \"error\": \"...\"} or propose a next step: result = {\"created\": False, \"next_action\": {\"name\": \"create_customer\", \"arguments\": {...}}, \"then\": {\"name\": \"create_sales_order\", \"arguments\": args}}. Only System Managers can edit this -- treat it like Server Script."
+    }
+  ],
+  "index_web_view": 0,
+  "links": [],
+  "modified": "2026-07-26 00:00:00",
+  "modified_by": "Administrator",
+  "module": "Frappe AI",
+  "name": "Agent Function",
+  "owner": "Administrator",
+  "permissions": [
+    {
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1,
+      "read": 1,
+      "report": 1,
+      "role": "System Manager",
+      "share": 1,
+      "write": 1
+    }
+  ],
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "track_changes": 1
+}
