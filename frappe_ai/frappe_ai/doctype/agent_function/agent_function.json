@@ -1,0 +1,98 @@
+{
+  "actions": [],
+  "allow_rename": 1,
+  "autoname": "field:function_name",
+  "creation": "2026-07-25 00:00:00",
+  "doctype": "DocType",
+  "engine": "InnoDB",
+  "field_order": [
+    "function_name",
+    "description",
+    "enabled",
+    "column_break_1",
+    "target_doctype",
+    "dispatch_handler",
+    "section_break_params",
+    "parameters"
+  ],
+  "fields": [
+    {
+      "fieldname": "function_name",
+      "fieldtype": "Data",
+      "label": "Function Name",
+      "reqd": 1,
+      "unique": 1,
+      "description": "The exact name the model uses in its JSON response, e.g. create_sales_order. No spaces."
+    },
+    {
+      "fieldname": "description",
+      "fieldtype": "Small Text",
+      "label": "Description",
+      "reqd": 1,
+      "description": "Shown to the model so it knows when this function applies, e.g. 'Create a Sales Order'."
+    },
+    {
+      "fieldname": "enabled",
+      "fieldtype": "Check",
+      "label": "Enabled",
+      "default": "1",
+      "description": "Disabled functions are hidden from the model entirely and cannot be run."
+    },
+    {
+      "fieldname": "column_break_1",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "target_doctype",
+      "fieldtype": "Link",
+      "options": "DocType",
+      "label": "Target DocType",
+      "reqd": 1,
+      "description": "The DocType this function creates. Used to check the calling user has Create permission on it before running."
+    },
+    {
+      "fieldname": "dispatch_handler",
+      "fieldtype": "Data",
+      "label": "Dispatch Handler",
+      "reqd": 1,
+      "description": "Dotted Python path to the function that actually performs the write, e.g. frappe_ai.agent_caller.create_sales_order. Must accept the fields under Parameters as keyword arguments and return the created document's name. Only System Managers can set this, so treat it like any other trusted server-side config."
+    },
+    {
+      "fieldname": "section_break_params",
+      "fieldtype": "Section Break",
+      "label": "Parameters"
+    },
+    {
+      "fieldname": "parameters",
+      "fieldtype": "Code",
+      "options": "JSON",
+      "label": "Parameters (JSON)",
+      "reqd": 1,
+      "description": "Describes the arguments the model should pass, shown verbatim in the prompt. Example: {\"customer\": \"string (required)\", \"items\": \"list of {item_name, qty}\", \"due_date\": \"string (optional)\"}"
+    }
+  ],
+  "index_web_view": 0,
+  "links": [],
+  "modified": "2026-07-25 00:00:00",
+  "modified_by": "Administrator",
+  "module": "Frappe AI",
+  "name": "Agent Function",
+  "owner": "Administrator",
+  "permissions": [
+    {
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1,
+      "read": 1,
+      "report": 1,
+      "role": "System Manager",
+      "share": 1,
+      "write": 1
+    }
+  ],
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "track_changes": 1
+}
