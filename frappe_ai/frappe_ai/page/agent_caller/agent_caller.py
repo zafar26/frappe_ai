@@ -40,6 +40,7 @@ Notes:
 - Each item in "items" must be an object with "item_name" and "qty" (an
   integer). The user may say "quantity" or "qty" in plain English -- both
   map to the "qty" field.
+- Name of the function to call is in the "name" field, and its arguments are mandatory in the "arguments" field.
 
 When the user's request matches one of the functions above, respond with
 ONLY a single JSON object, for example:
@@ -201,7 +202,9 @@ def plan(query: str):
     raw_text = output["choices"][0]["message"]["content"].strip()
 
     try:
+        print(f"Raw model output: {raw_text}\n\n\n")
         fn_call = json.loads(_extract_json(raw_text))
+        print(f"Function call parsed: {fn_call}")
         fn_name = fn_call["name"]
         args = fn_call.get("arguments", {})
     except Exception as e:
@@ -222,6 +225,7 @@ def run(name: str, arguments):
     if isinstance(arguments, str):
         arguments = json.loads(arguments)
 
+    print(f"Running function {name} with arguments: {arguments} \n\n\n\n")
     functions = _get_functions()
     function = functions.get(name)
     if function is None:
@@ -232,8 +236,11 @@ def run(name: str, arguments):
         frappe.throw(f"You don't have permission to create {doctype}.")
 
     handler = frappe.get_attr(function["dispatch_handler"])
-    doc_name = handler(**arguments)
-    return {"created": doc_name, "doctype": doctype}
+    document = handler(**arguments)
+    if document["created"] == False:
+        print(f"Document creation failed: {document}\n\n\n")
+        return document
+    return {"created": True, "name": document.name, "doctype": document.doctype}
 
 
 # ---------------------------------------------------------------------------
@@ -246,7 +253,9 @@ def run(name: str, arguments):
 
 def create_sales_order(customer, items, due_date=None):
     if not frappe.db.exists("Customer", customer):
-        frappe.throw(f"Customer '{customer}' does not exist.")
+        return {"created": False, "name": "create_customer", "arguments": {"customer_name": customer, "doctype": "Customer"}}
+        # frappe.throw(f"Customer '{customer}' does not exist.")
+
     for item in items:
         if not frappe.db.exists("Item", item.get("item_name")):
             frappe.throw(f"Item '{item.get('item_name')}' does not exist.")
@@ -263,12 +272,13 @@ def create_sales_order(customer, items, due_date=None):
         }
     )
     doc.insert()
-    return doc.name
+    return {"created": True, "name": doc.name, "doctype": "Sales Order"}
 
 
 def create_sales_invoice(customer, items, due_date=None):
     if not frappe.db.exists("Customer", customer):
-        frappe.throw(f"Customer '{customer}' does not exist.")
+        return {"created": False, "name": "create_customer", "arguments": {"customer_name": customer, "doctype": "Customer"}}
+        # frappe.throw(f"Customer '{customer}' does not exist.")
     for item in items:
         if not frappe.db.exists("Item", item.get("item_name")):
             frappe.throw(f"Item '{item.get('item_name')}' does not exist.")
@@ -285,4 +295,4 @@ def create_sales_invoice(customer, items, due_date=None):
         }
     )
     doc.insert()
-    return doc.name
+    return {"created": True, "name": doc.name, "doctype": "Sales Invoice"}
