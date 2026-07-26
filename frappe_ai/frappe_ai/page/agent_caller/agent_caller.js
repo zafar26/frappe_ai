@@ -71,7 +71,7 @@ frappe_ai.AgentCaller = class AgentCaller {
 
 		frappe.dom.freeze(__('Asking the agent...'));
 		frappe.call({
-			method: 'frappe_ai.agent_caller.plan',
+			method: 'agent_caller.plan',
 			args: { query },
 			callback: (r) => {
 				frappe.dom.unfreeze();
@@ -100,7 +100,7 @@ frappe_ai.AgentCaller = class AgentCaller {
 			() => {
 				frappe.dom.freeze(__('Creating...'));
 				frappe.call({
-					method: 'frappe_ai.agent_caller.run',
+					method: 'agent_caller.run',
 					args: {
 						name: edited.name,
 						arguments: edited.arguments,

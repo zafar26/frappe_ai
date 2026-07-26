@@ -25,7 +25,7 @@ class AgentFunction(Document):
             frappe.throw(
                 f"Dispatch Handler '{self.dispatch_handler}' could not be imported: {e}. "
                 "It must be a dotted path to an existing Python function, e.g. "
-                "frappe_ai.agent_caller.create_sales_order."
+                "frappe_ai.frappe_ai.page.agent_caller.agent_caller.create_sales_order."
             )
         if not callable(handler):
             frappe.throw(f"Dispatch Handler '{self.dispatch_handler}' is not callable.")

@@ -3,9 +3,9 @@
     "doctype": "Agent Function",
     "function_name": "create_sales_order",
     "description": "Create a Sales Order",
-    "enabled": 1,
+    "enabled": 0,
     "target_doctype": "Sales Order",
-    "dispatch_handler": "frappe_ai.agent_caller.create_sales_order",
+    "dispatch_handler": "frappe_ai.page.agent_caller.agent_caller.create_sales_order",
     "parameters": "{\"customer\": \"string (required, must be an existing Customer)\", \"items\": \"list of {item_name, qty}\", \"due_date\": \"string (optional, YYYY-MM-DD)\"}",
     "name": "create_sales_order"
   },
@@ -13,9 +13,9 @@
     "doctype": "Agent Function",
     "function_name": "create_sales_invoice",
     "description": "Create a Sales Invoice",
-    "enabled": 1,
+    "enabled": 0,
     "target_doctype": "Sales Invoice",
-    "dispatch_handler": "frappe_ai.agent_caller.create_sales_invoice",
+    "dispatch_handler": "frappe_ai.page.agent_caller.agent_caller.create_sales_invoice",
     "parameters": "{\"customer\": \"string (required, must be an existing Customer)\", \"items\": \"list of {item_name, qty}\", \"due_date\": \"string (optional, YYYY-MM-DD)\"}",
     "name": "create_sales_invoice"
   }
