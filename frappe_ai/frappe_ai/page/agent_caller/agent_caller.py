@@ -53,8 +53,9 @@ Notes:
 - Each item in "items" must be an object with "item_name" and "qty" (an
   integer). The user may say "quantity" or "qty" in plain English -- both
   map to the "qty" field.
-- The function name goes in the "name" field, and its arguments go in the
-  "arguments" field. Every required argument must be present.
+- Function name must be present in response. Arguments must be a JSON object with the correct fields and types.
+- Do not include any extra text, explanation, or markdown formatting. Only respond with a single JSON object.
+- Include Name of the function in each response, even if the user only asked for arguments. The Name is required to identify which function to call.
 
 When the user's request matches one of the functions above, respond with
 ONLY a single JSON object, for example:
@@ -203,21 +204,38 @@ def plan(query: str):
             "under Agent Function in the Desk."
         )
 
-    llm = _get_llm()
-    output = llm.create_chat_completion(
-        messages=[
-            {"role": "system", "content": _system_prompt()},
-            {"role": "user", "content": query},
-        ],
-        max_tokens=512,
-        temperature=0.1,
-        response_format={"type": "json_object"},
-    )
-    raw_text = output["choices"][0]["message"]["content"].strip()
-    frappe.logger("frappe_ai.agent_caller").debug(f"raw model output: {raw_text}")
+    # llm = _get_llm()
+    # output = llm.create_chat_completion(
+    #     messages=[
+    #         {"role": "system", "content": _system_prompt()},
+    #         {"role": "user", "content": query},
+    #     ],
+    #     max_tokens=512,
+    #     temperature=0.1,
+    #     response_format={"type": "json_object"},
+    # )
+    # raw_text = output["choices"][0]["message"]["content"].strip()
+    # frappe.logger("frappe_ai.agent_caller").debug(f"raw model output: {raw_text}")
 
     try:
-        fn_call = json.loads(_extract_json(raw_text))
+        fn_call = ''
+        for i in range(10):
+            llm = _get_llm()
+            output = llm.create_chat_completion(
+                messages=[
+                    {"role": "system", "content": _system_prompt()},
+                    {"role": "user", "content": query},
+                ],
+                max_tokens=512,
+                temperature=0.1,
+                response_format={"type": "json_object"},
+            )
+            raw_text = output["choices"][0]["message"]["content"].strip()
+
+            fn_call = json.loads(_extract_json(raw_text))
+            print(fn_call, 'FN CALL', i, "NO")
+            if fn_call.get("name") is not None:
+                break
         fn_name = fn_call["name"]
         args = fn_call.get("arguments", {})
     except Exception as e:
@@ -233,7 +251,7 @@ def plan(query: str):
 
 
 @frappe.whitelist()
-def run(name: str, arguments):
+def run(name: str, arguments: any = None):
     """Run a function's Desk-authored script. Only call this after the user
     has reviewed (and can edit) the proposal in the page.
 

@@ -18,9 +18,10 @@ frappe_ai.AgentCaller = class AgentCaller {
 	}
 
 	render() {
-		this.$wrapper = $(`
-			<div class="agent-caller">
-				<p class="text-muted">
+		this.$wrapper = $(`	
+			<div style="padding: 20px;">
+				<div class="agent-caller">
+					<p class="text-muted">
 					Describe what you want to do in plain English, e.g.
 					<em>"Create a sales invoice for customer Jane with 3 keyboards,
 					due next Friday"</em>. The local model proposes a function call
@@ -29,13 +30,16 @@ frappe_ai.AgentCaller = class AgentCaller {
 					that doesn't exist yet (like a new Customer), the agent proposes
 					that as a follow-up step automatically -- still reviewed by you
 					before it runs.
-				</p>
-				<textarea class="form-control agent-caller-input" rows="3"
-					placeholder="What should the agent do?"></textarea>
-				<div class="agent-caller-actions" style="margin-top: 10px;">
-					<button class="btn btn-primary btn-sm btn-plan">
-						${__('Plan')}
-					</button>
+					</p>
+					<div style="display: flex; align-items: flex-end; margin-top: 10px; gap: 10px;">
+						<textarea class="form-control agent-caller-input" rows="3"
+							placeholder="What should the agent do?"></textarea>
+						<div class="agent-caller-actions" style="margin-top: 10px;">
+							<button class="btn btn-primary btn-sm btn-plan">
+								${__('Plan')}
+							</button>
+						</div>
+					</div>
 				</div>
 				<div class="agent-caller-steps" style="margin-top: 20px;"></div>
 			</div>
@@ -56,7 +60,7 @@ frappe_ai.AgentCaller = class AgentCaller {
 
 		frappe.dom.freeze(__('Asking the agent...'));
 		frappe.call({
-			method: 'frappe_ai.agent_caller.plan',
+			method: 'frappe_ai.frappe_ai.page.agent_caller.agent_caller.plan',
 			args: { query },
 			callback: (r) => {
 				frappe.dom.unfreeze();
@@ -101,6 +105,7 @@ frappe_ai.AgentCaller = class AgentCaller {
 			let edited;
 			try {
 				edited = JSON.parse($json.val());
+				console.log('Edited step:', edited);
 			} catch (e) {
 				frappe.msgprint(__('This step is not valid JSON. Fix it before running.'));
 				return;
@@ -117,14 +122,14 @@ frappe_ai.AgentCaller = class AgentCaller {
 			() => {
 				frappe.dom.freeze(__('Running...'));
 				frappe.call({
-					method: 'frappe_ai.agent_caller.run',
+					method: 'frappe_ai.frappe_ai.page.agent_caller.agent_caller.run',
 					args: { name: edited.name, arguments: edited.arguments },
 					callback: (r) => {
 						frappe.dom.unfreeze();
 						if (!r.message) return;
 						this.handle_result(r.message, $step, $result, then);
 					},
-					error: () => frappe.dom.unfreeze(),
+					error: (err) => {frappe.dom.unfreeze(); console.error('Error running step', err);},
 				});
 			}
 		);

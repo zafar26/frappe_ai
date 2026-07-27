@@ -1,32 +1,50 @@
 [
-  {
-    "doctype": "Agent Function",
-    "function_name": "create_sales_order",
-    "description": "Create a Sales Order",
-    "enabled": 1,
-    "target_doctype": "Sales Order",
-    "parameters": "{\"customer\": \"string (required)\", \"items\": \"list of {item_name, qty}\", \"due_date\": \"string (optional, YYYY-MM-DD)\"}",
-    "script": "customer = args.get(\"customer\")\nitems = args.get(\"items\") or []\ndue_date = args.get(\"due_date\")\n\nif not frappe.db.exists(\"Customer\", customer):\n    # Don't fail outright -- propose creating the missing Customer first,\n    # then automatically retry this same request once that's done. The\n    # user still approves each step in the Agent Caller page; nothing\n    # here runs without a click.\n    result = {\n        \"created\": False,\n        \"error\": f\"Customer '{customer}' does not exist.\",\n        \"next_action\": {\n            \"name\": \"create_customer\",\n            \"arguments\": {\"customer_name\": customer},\n        },\n        \"then\": {\n            \"name\": \"create_sales_order\",\n            \"arguments\": args,\n        },\n    }\nelse:\n    missing_items = [i[\"item_name\"] for i in items if not frappe.db.exists(\"Item\", i.get(\"item_name\"))]\n    if missing_items:\n        names = \", \".join(missing_items)\n        result = {\"created\": False, \"error\": f\"Item(s) not found: {names}\"}\n    else:\n        doc = frappe.get_doc({\n            \"doctype\": \"Sales Order\",\n            \"customer\": customer,\n            \"delivery_date\": due_date or frappe.utils.add_days(frappe.utils.nowdate(), 7),\n            \"items\": [{\"item_code\": i[\"item_name\"], \"qty\": i.get(\"qty\", 1)} for i in items],\n        })\n        doc.insert()\n        result = {\"created\": True, \"name\": doc.name, \"doctype\": \"Sales Order\"}\n",
-    "name": "create_sales_order"
-  },
-  {
-    "doctype": "Agent Function",
-    "function_name": "create_sales_invoice",
-    "description": "Create a Sales Invoice",
-    "enabled": 1,
-    "target_doctype": "Sales Invoice",
-    "parameters": "{\"customer\": \"string (required)\", \"items\": \"list of {item_name, qty}\", \"due_date\": \"string (optional, YYYY-MM-DD)\"}",
-    "script": "customer = args.get(\"customer\")\nitems = args.get(\"items\") or []\ndue_date = args.get(\"due_date\")\n\nif not frappe.db.exists(\"Customer\", customer):\n    result = {\n        \"created\": False,\n        \"error\": f\"Customer '{customer}' does not exist.\",\n        \"next_action\": {\n            \"name\": \"create_customer\",\n            \"arguments\": {\"customer_name\": customer},\n        },\n        \"then\": {\n            \"name\": \"create_sales_invoice\",\n            \"arguments\": args,\n        },\n    }\nelse:\n    missing_items = [i[\"item_name\"] for i in items if not frappe.db.exists(\"Item\", i.get(\"item_name\"))]\n    if missing_items:\n        names = \", \".join(missing_items)\n        result = {\"created\": False, \"error\": f\"Item(s) not found: {names}\"}\n    else:\n        doc = frappe.get_doc({\n            \"doctype\": \"Sales Invoice\",\n            \"customer\": customer,\n            \"due_date\": due_date,\n            \"items\": [{\"item_code\": i[\"item_name\"], \"qty\": i.get(\"qty\", 1)} for i in items],\n        })\n        doc.insert()\n        result = {\"created\": True, \"name\": doc.name, \"doctype\": \"Sales Invoice\"}\n",
-    "name": "create_sales_invoice"
-  },
-  {
-    "doctype": "Agent Function",
-    "function_name": "create_customer",
-    "description": "Create a Customer (usually run automatically as a follow-up step when a Sales Order/Invoice references a Customer that doesn't exist yet)",
-    "enabled": 1,
-    "target_doctype": "Customer",
-    "parameters": "{\"customer_name\": \"string (required)\"}",
-    "script": "customer_name = args.get(\"customer_name\")\n\nif frappe.db.exists(\"Customer\", customer_name):\n    result = {\"created\": True, \"name\": customer_name, \"doctype\": \"Customer\"}\nelse:\n    doc = frappe.get_doc({\n        \"doctype\": \"Customer\",\n        \"customer_name\": customer_name,\n    })\n    doc.insert()\n    result = {\"created\": True, \"name\": doc.name, \"doctype\": \"Customer\"}\n",
-    "name": "create_customer"
-  }
+ {
+  "description": "Create a Sales Order",
+  "docstatus": 0,
+  "doctype": "Agent Function",
+  "enabled": 1,
+  "function_name": "create_sales_order",
+  "modified": "2026-07-27 11:58:56.062608",
+  "name": "create_sales_order",
+  "parameters": "{\"customer\": \"string (required)\", \"items\": \"list of {item_name, qty}\", \"due_date\": \"string (optional, YYYY-MM-DD)\"}",
+  "script": "customer = args.get(\"customer\")\nitems = args.get(\"items\") or []\ndue_date = args.get(\"due_date\")\n\nif not frappe.db.exists(\"Customer\", customer):\n    # Don't fail outright -- propose creating the missing Customer first,\n    # then automatically retry this same request once that's done. The\n    # user still approves each step in the Agent Caller page; nothing\n    # here runs without a click.\n    result = {\n        \"created\": False,\n        \"error\": f\"Customer '{customer}' does not exist.\",\n        \"next_action\": {\n            \"name\": \"create_customer\",\n            \"arguments\": {\"customer_name\": customer},\n        },\n        \"then\": {\n            \"name\": \"create_sales_order\",\n            \"arguments\": args,\n        },\n    }\nelse:\n    missing_items = [i[\"item_name\"] for i in items if not frappe.db.exists(\"Item\", i.get(\"item_name\"))]\n    if missing_items:\n        names = \", \".join(missing_items)\n        result = {\n            \"created\": False,\n            \"error\": f\"Item '{names}' does not exist.\",\n            \"next_action\": {\n                \"name\": \"create_item\",\n                \"arguments\": {\"items\": names},\n            },\n            \"then\": {\n                \"name\": \"create_sales_order\",\n                \"arguments\": args,\n            },\n        }\n    else:\n        doc = frappe.get_doc({\n            \"doctype\": \"Sales Order\",\n            \"customer\": customer,\n            \"delivery_date\": due_date or frappe.utils.add_days(frappe.utils.nowdate(), 7),\n            \"items\": [{\"item_code\": i[\"item_name\"], \"qty\": i.get(\"qty\", 1)} for i in items],\n        })\n        doc.insert()\n        result = {\"created\": True, \"name\": doc.name, \"doctype\": \"Sales Order\"}\n",
+  "target_doctype": "Sales Order"
+ },
+ {
+  "description": "Create a Sales Invoice",
+  "docstatus": 0,
+  "doctype": "Agent Function",
+  "enabled": 1,
+  "function_name": "create_sales_invoice",
+  "modified": "2026-07-27 11:34:44.344696",
+  "name": "create_sales_invoice",
+  "parameters": "{\"customer\": \"string (required)\", \"items\": \"list of {item_name, qty}\", \"due_date\": \"string (optional, YYYY-MM-DD)\"}",
+  "script": "customer = args.get(\"customer\")\nitems = args.get(\"items\") or []\ndue_date = args.get(\"due_date\")\n\nif not frappe.db.exists(\"Customer\", customer):\n    result = {\n        \"created\": False,\n        \"error\": f\"Customer '{customer}' does not exist.\",\n        \"next_action\": {\n            \"name\": \"create_customer\",\n            \"arguments\": {\"customer_name\": customer},\n        },\n        \"then\": {\n            \"name\": \"create_sales_invoice\",\n            \"arguments\": args,\n        },\n    }\nelse:\n    missing_items = [i[\"item_name\"] for i in items if not frappe.db.exists(\"Item\", i.get(\"item_name\"))]\n    if missing_items:\n        names = \", \".join(missing_items)\n        result = {\n            \"created\": False,\n            \"error\": f\"Item '{names}' does not exist.\",\n            \"next_action\": {\n                \"name\": \"create_item\",\n                \"arguments\": {\"items\": names},\n            },\n            \"then\": {\n                \"name\": \"create_sales_invoice\",\n                \"arguments\": args,\n            },\n        }\n        \n    else:\n        doc = frappe.get_doc({\n            \"doctype\": \"Sales Invoice\",\n            \"customer\": customer,\n            \"due_date\": due_date,\n            \"items\": [{\"item_code\": i[\"item_name\"], \"qty\": i.get(\"qty\", 1)} for i in items],\n        })\n        doc.insert()\n        result = {\"created\": True, \"name\": doc.name, \"doctype\": \"Sales Invoice\"}\n",
+  "target_doctype": "Sales Invoice"
+ },
+ {
+  "description": "Create a Customer (usually run automatically as a follow-up step when a Sales Order/Invoice references a Customer that doesn't exist yet)",
+  "docstatus": 0,
+  "doctype": "Agent Function",
+  "enabled": 1,
+  "function_name": "create_customer",
+  "modified": "2026-07-27 02:18:56.574318",
+  "name": "create_customer",
+  "parameters": "{\"customer_name\": \"string (required)\"}",
+  "script": "customer_name = args.get(\"customer_name\")\n\nif frappe.db.exists(\"Customer\", customer_name):\n    result = {\"created\": True, \"name\": customer_name, \"doctype\": \"Customer\"}\nelse:\n    doc = frappe.get_doc({\n        \"doctype\": \"Customer\",\n        \"customer_name\": customer_name,\n    })\n    doc.insert()\n    result = {\"created\": True, \"name\": doc.name, \"doctype\": \"Customer\"}\n",
+  "target_doctype": "Customer"
+ },
+ {
+  "description": "Create an Item",
+  "docstatus": 0,
+  "doctype": "Agent Function",
+  "enabled": 1,
+  "function_name": "create_item",
+  "modified": "2026-07-27 11:33:32.507752",
+  "name": "create_item",
+  "parameters": "{\"items\": \"string (required)\"}",
+  "script": "items = args.get(\"items\").split(\", \")\n\ntry:\n    for each in items:\n        doc = frappe.get_doc({\n            \"doctype\": \"Item\",\n            \"item_group\": \"Consumable\",\n            \"item_name\": each,\n            \"item_code\": each\n        })\n        doc.insert()\n        result = {\"created\": True, \"name\": doc.name, \"doctype\": \"Item\"}\nexcept:\n    result = {\"created\": False, \"name\": None, \"doctype\": \"Item\"}\n    ",
+  "target_doctype": "Item"
+ }
 ]
