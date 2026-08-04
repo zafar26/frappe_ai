@@ -1,7 +1,7 @@
 [project]
 name = "frappe_ai"
 authors = [
-    { name = "Your Name", email = "you@example.com" }
+    { name = "Zafar", email = "zafar.erp@gmail.com" }
 ]
 description = "Natural-language agent that proposes and (on approval) creates Frappe/ERPNext documents, via a local GGUF model."
 requires-python = ">=3.10"
