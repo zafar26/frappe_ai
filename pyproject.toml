@@ -1,0 +1,18 @@
+[project]
+name = "frappe_ai"
+authors = [
+    { name = "Your Name", email = "you@example.com" }
+]
+description = "Natural-language agent that proposes and (on approval) creates Frappe/ERPNext documents, via a local GGUF model."
+requires-python = ">=3.10"
+readme = "README.md"
+dynamic = ["version"]
+dependencies = [
+    "llama-cpp-python",
+]
+
+[build-system]
+requires = ["flit_core >=3.4,<4"]
+build-backend = "flit_core.buildapi"
+
+[tool.bench.dev-dependencies]

@@ -1,0 +1,302 @@
+[
+  {
+    "description": "Create a Sales Order",
+    "doctype": "Agent Function",
+    "enabled": 1,
+    "function_name": "create_sales_order",
+    "name": "create_sales_order",
+    "parameters": "{\"customer\": \"string (required)\", \"items\": \"list of {item_name, qty}\", \"due_date\": \"string (optional, YYYY-MM-DD)\"}",
+    "script": "customer = args.get(\"customer\")\nitems = args.get(\"items\") or []\ndue_date = args.get(\"due_date\")\n\nif not frappe.db.exists(\"Customer\", customer):\n    result = {\n        \"created\": False,\n        \"error\": f\"Customer '{customer}' does not exist.\",\n        \"next_action\": {\n            \"name\": \"create_customer\",\n            \"arguments\": {\"customer_name\": customer},\n        },\n        \"then\": {\n            \"name\": \"create_sales_order\",\n            \"arguments\": args,\n        },\n    }\nelse:\n    missing_items = [i[\"item_name\"] for i in items if not frappe.db.exists(\"Item\", i.get(\"item_name\"))]\n    if missing_items:\n        names = \", \".join(missing_items)\n        result = {\n            \"created\": False,\n            \"error\": f\"Item '{names}' does not exist.\",\n            \"next_action\": {\n                \"name\": \"create_item\",\n                \"arguments\": {\"items\": names},\n            },\n            \"then\": {\n                \"name\": \"create_sales_order\",\n                \"arguments\": args,\n            },\n        }\n    else:\n        doc = frappe.get_doc({\n            \"doctype\": \"Sales Order\",\n            \"customer\": customer,\n            \"delivery_date\": due_date or frappe.utils.add_days(frappe.utils.nowdate(), 7),\n            \"items\": [{\"item_code\": i[\"item_name\"], \"qty\": i.get(\"qty\", 1)} for i in items],\n        })\n        doc.insert()\n        result = {\"created\": True, \"name\": doc.name, \"doctype\": \"Sales Order\"}\n",
+    "target_doctype": "Sales Order"
+  },
+  {
+    "description": "Create a Sales Invoice",
+    "doctype": "Agent Function",
+    "enabled": 1,
+    "function_name": "create_sales_invoice",
+    "name": "create_sales_invoice",
+    "parameters": "{\"customer\": \"string (required)\", \"items\": \"list of {item_name, qty}\", \"due_date\": \"string (optional, YYYY-MM-DD)\"}",
+    "script": "customer = args.get(\"customer\")\nitems = args.get(\"items\") or []\ndue_date = args.get(\"due_date\")\n\nif not frappe.db.exists(\"Customer\", customer):\n    result = {\n        \"created\": False,\n        \"error\": f\"Customer '{customer}' does not exist.\",\n        \"next_action\": {\n            \"name\": \"create_customer\",\n            \"arguments\": {\"customer_name\": customer},\n        },\n        \"then\": {\n            \"name\": \"create_sales_invoice\",\n            \"arguments\": args,\n        },\n    }\nelse:\n    missing_items = [i[\"item_name\"] for i in items if not frappe.db.exists(\"Item\", i.get(\"item_name\"))]\n    if missing_items:\n        names = \", \".join(missing_items)\n        result = {\n            \"created\": False,\n            \"error\": f\"Item '{names}' does not exist.\",\n            \"next_action\": {\n                \"name\": \"create_item\",\n                \"arguments\": {\"items\": names},\n            },\n            \"then\": {\n                \"name\": \"create_sales_invoice\",\n                \"arguments\": args,\n            },\n        }\n        \n    else:\n        doc = frappe.get_doc({\n            \"doctype\": \"Sales Invoice\",\n            \"customer\": customer,\n            \"due_date\": due_date,\n            \"items\": [{\"item_code\": i[\"item_name\"], \"qty\": i.get(\"qty\", 1)} for i in items],\n        })\n        doc.insert()\n        result = {\"created\": True, \"name\": doc.name, \"doctype\": \"Sales Invoice\"}\n",
+    "target_doctype": "Sales Invoice"
+  },
+  {
+    "description": "Create a Customer (usually run automatically as a follow-up step when a Sales Order/Invoice references a Customer that doesn't exist yet)",
+    "doctype": "Agent Function",
+    "enabled": 1,
+    "function_name": "create_customer",
+    "name": "create_customer",
+    "parameters": "{\"customer_name\": \"string (required)\"}",
+    "script": "customer_name = args.get(\"customer_name\")\n\nif frappe.db.exists(\"Customer\", customer_name):\n    result = {\"created\": True, \"name\": customer_name, \"doctype\": \"Customer\"}\nelse:\n    doc = frappe.get_doc({\n        \"doctype\": \"Customer\",\n        \"customer_name\": customer_name,\n    })\n    doc.insert()\n    result = {\"created\": True, \"name\": doc.name, \"doctype\": \"Customer\"}\n",
+    "target_doctype": "Customer"
+  },
+  {
+    "doctype": "Agent Function",
+    "function_name": "create_item",
+    "description": "Create an Item (or multiple, comma-separated)",
+    "enabled": 1,
+    "target_doctype": "Item",
+    "parameters": "{\"items\": \"string (required) -- comma-separated item names\"}",
+    "script": "item_names = [s.strip() for s in args.get(\"items\", \"\").split(\",\") if s.strip()]\n\ncreated = []\nfailed = []\nfor item_name in item_names:\n    if frappe.db.exists(\"Item\", item_name):\n        created.append(item_name)\n        continue\n    try:\n        doc = frappe.get_doc({\n            \"doctype\": \"Item\",\n            \"item_group\": \"Consumable\",\n            \"item_name\": item_name,\n            \"item_code\": item_name,\n            \"stock_uom\": \"Nos\",\n        })\n        doc.insert()\n        created.append(doc.name)\n    except Exception as e:\n        failed.append({\"item_name\": item_name, \"error\": str(e)})\n\nif failed:\n    result = {\"created\": False, \"error\": f\"Could not create: {failed}\", \"created_items\": created}\nelse:\n    result = {\"created\": True, \"name\": \", \".join(created), \"doctype\": \"Item\"}\n",
+    "name": "create_item"
+  },
+  {
+    "doctype": "Agent Function",
+    "function_name": "create_supplier",
+    "description": "Create a Supplier (usually run automatically as a follow-up step when a Purchase Order/Invoice/Receipt references a Supplier that doesn't exist yet)",
+    "enabled": 1,
+    "target_doctype": "Supplier",
+    "parameters": "{\"supplier_name\": \"string (required)\"}",
+    "script": "supplier_name = args.get(\"supplier_name\")\n\nif frappe.db.exists(\"Supplier\", supplier_name):\n    result = {\"created\": True, \"name\": supplier_name, \"doctype\": \"Supplier\"}\nelse:\n    doc = frappe.get_doc({\n        \"doctype\": \"Supplier\",\n        \"supplier_name\": supplier_name,\n    })\n    doc.insert()\n    result = {\"created\": True, \"name\": doc.name, \"doctype\": \"Supplier\"}\n",
+    "name": "create_supplier"
+  },
+  {
+    "doctype": "Agent Function",
+    "function_name": "create_purchase_order",
+    "description": "Create a Purchase Order",
+    "enabled": 1,
+    "target_doctype": "Purchase Order",
+    "parameters": "{\"supplier\": \"string (required)\", \"items\": \"list of {item_name, qty}\", \"due_date\": \"string (optional, YYYY-MM-DD) -- used as each item's schedule date\"}",
+    "script": "supplier = args.get(\"supplier\")\nitems = args.get(\"items\") or []\ndue_date = args.get(\"due_date\")\n\nif not frappe.db.exists(\"Supplier\", supplier):\n    result = {\n        \"created\": False,\n        \"error\": f\"Supplier '{supplier}' does not exist.\",\n        \"next_action\": {\n            \"name\": \"create_supplier\",\n            \"arguments\": {\"supplier_name\": supplier},\n        },\n        \"then\": {\n            \"name\": \"create_purchase_order\",\n            \"arguments\": args,\n        },\n    }\nelse:\n    missing_items = [i[\"item_name\"] for i in items if not frappe.db.exists(\"Item\", i.get(\"item_name\"))]\n    if missing_items:\n        names = \", \".join(missing_items)\n        result = {\n            \"created\": False,\n            \"error\": f\"Item '{names}' does not exist.\",\n            \"next_action\": {\n                \"name\": \"create_item\",\n                \"arguments\": {\"items\": names},\n            },\n            \"then\": {\n                \"name\": \"create_purchase_order\",\n                \"arguments\": args,\n            },\n        }\n    else:\n        doc = frappe.get_doc({\n            \"doctype\": \"Purchase Order\",\n            \"supplier\": supplier,\n            \"items\": [{\"item_code\": i[\"item_name\"], \"qty\": i.get(\"qty\", 1), \"schedule_date\": due_date or frappe.utils.add_days(frappe.utils.nowdate(), 7)} for i in items],\n        })\n        doc.insert()\n        result = {\"created\": True, \"name\": doc.name, \"doctype\": \"Purchase Order\"}\n",
+    "name": "create_purchase_order"
+  },
+  {
+    "doctype": "Agent Function",
+    "function_name": "create_purchase_invoice",
+    "description": "Create a Purchase Invoice",
+    "enabled": 1,
+    "target_doctype": "Purchase Invoice",
+    "parameters": "{\"supplier\": \"string (required)\", \"items\": \"list of {item_name, qty}\", \"due_date\": \"string (optional, YYYY-MM-DD)\"}",
+    "script": "supplier = args.get(\"supplier\")\nitems = args.get(\"items\") or []\ndue_date = args.get(\"due_date\")\n\nif not frappe.db.exists(\"Supplier\", supplier):\n    result = {\n        \"created\": False,\n        \"error\": f\"Supplier '{supplier}' does not exist.\",\n        \"next_action\": {\n            \"name\": \"create_supplier\",\n            \"arguments\": {\"supplier_name\": supplier},\n        },\n        \"then\": {\n            \"name\": \"create_purchase_invoice\",\n            \"arguments\": args,\n        },\n    }\nelse:\n    missing_items = [i[\"item_name\"] for i in items if not frappe.db.exists(\"Item\", i.get(\"item_name\"))]\n    if missing_items:\n        names = \", \".join(missing_items)\n        result = {\n            \"created\": False,\n            \"error\": f\"Item '{names}' does not exist.\",\n            \"next_action\": {\n                \"name\": \"create_item\",\n                \"arguments\": {\"items\": names},\n            },\n            \"then\": {\n                \"name\": \"create_purchase_invoice\",\n                \"arguments\": args,\n            },\n        }\n    else:\n        doc = frappe.get_doc({\n            \"doctype\": \"Purchase Invoice\",\n            \"supplier\": supplier,\n            \"due_date\": due_date,\n            \"items\": [{\"item_code\": i[\"item_name\"], \"qty\": i.get(\"qty\", 1)} for i in items],\n        })\n        doc.insert()\n        result = {\"created\": True, \"name\": doc.name, \"doctype\": \"Purchase Invoice\"}\n",
+    "name": "create_purchase_invoice"
+  },
+  {
+    "doctype": "Agent Function",
+    "function_name": "create_purchase_receipt",
+    "description": "Create a Purchase Receipt",
+    "enabled": 1,
+    "target_doctype": "Purchase Receipt",
+    "parameters": "{\"supplier\": \"string (required)\", \"items\": \"list of {item_name, qty}\"}",
+    "script": "supplier = args.get(\"supplier\")\nitems = args.get(\"items\") or []\ndue_date = args.get(\"due_date\")\n\nif not frappe.db.exists(\"Supplier\", supplier):\n    result = {\n        \"created\": False,\n        \"error\": f\"Supplier '{supplier}' does not exist.\",\n        \"next_action\": {\n            \"name\": \"create_supplier\",\n            \"arguments\": {\"supplier_name\": supplier},\n        },\n        \"then\": {\n            \"name\": \"create_purchase_receipt\",\n            \"arguments\": args,\n        },\n    }\nelse:\n    missing_items = [i[\"item_name\"] for i in items if not frappe.db.exists(\"Item\", i.get(\"item_name\"))]\n    if missing_items:\n        names = \", \".join(missing_items)\n        result = {\n            \"created\": False,\n            \"error\": f\"Item '{names}' does not exist.\",\n            \"next_action\": {\n                \"name\": \"create_item\",\n                \"arguments\": {\"items\": names},\n            },\n            \"then\": {\n                \"name\": \"create_purchase_receipt\",\n                \"arguments\": args,\n            },\n        }\n    else:\n        doc = frappe.get_doc({\n            \"doctype\": \"Purchase Receipt\",\n            \"supplier\": supplier,\n            \"items\": [{\"item_code\": i[\"item_name\"], \"qty\": i.get(\"qty\", 1)} for i in items],\n        })\n        doc.insert()\n        result = {\"created\": True, \"name\": doc.name, \"doctype\": \"Purchase Receipt\"}\n",
+    "name": "create_purchase_receipt"
+  },
+  {
+    "doctype": "Agent Function",
+    "function_name": "create_delivery_note",
+    "description": "Create a Delivery Note",
+    "enabled": 1,
+    "target_doctype": "Delivery Note",
+    "parameters": "{\"customer\": \"string (required)\", \"items\": \"list of {item_name, qty}\", \"due_date\": \"string (optional, YYYY-MM-DD) -- used as the posting date\"}",
+    "script": "customer = args.get(\"customer\")\nitems = args.get(\"items\") or []\ndue_date = args.get(\"due_date\")\n\nif not frappe.db.exists(\"Customer\", customer):\n    result = {\n        \"created\": False,\n        \"error\": f\"Customer '{customer}' does not exist.\",\n        \"next_action\": {\n            \"name\": \"create_customer\",\n            \"arguments\": {\"customer_name\": customer},\n        },\n        \"then\": {\n            \"name\": \"create_delivery_note\",\n            \"arguments\": args,\n        },\n    }\nelse:\n    missing_items = [i[\"item_name\"] for i in items if not frappe.db.exists(\"Item\", i.get(\"item_name\"))]\n    if missing_items:\n        names = \", \".join(missing_items)\n        result = {\n            \"created\": False,\n            \"error\": f\"Item '{names}' does not exist.\",\n            \"next_action\": {\n                \"name\": \"create_item\",\n                \"arguments\": {\"items\": names},\n            },\n            \"then\": {\n                \"name\": \"create_delivery_note\",\n                \"arguments\": args,\n            },\n        }\n    else:\n        doc = frappe.get_doc({\n            \"doctype\": \"Delivery Note\",\n            \"customer\": customer,\n            \"posting_date\": due_date or frappe.utils.nowdate(),\n            \"items\": [{\"item_code\": i[\"item_name\"], \"qty\": i.get(\"qty\", 1)} for i in items],\n        })\n        doc.insert()\n        result = {\"created\": True, \"name\": doc.name, \"doctype\": \"Delivery Note\"}\n",
+    "name": "create_delivery_note"
+  },
+  {
+    "doctype": "Agent Function",
+    "function_name": "create_quotation",
+    "description": "Create a Quotation for a Customer",
+    "enabled": 1,
+    "target_doctype": "Quotation",
+    "parameters": "{\"customer\": \"string (required)\", \"items\": \"list of {item_name, qty}\", \"valid_till\": \"string (optional, YYYY-MM-DD)\"}",
+    "script": "party_name = args.get(\"customer\")\nitems = args.get(\"items\") or []\nvalid_till = args.get(\"valid_till\")\n\nif not frappe.db.exists(\"Customer\", party_name):\n    result = {\n        \"created\": False,\n        \"error\": f\"Customer '{party_name}' does not exist.\",\n        \"next_action\": {\"name\": \"create_customer\", \"arguments\": {\"customer_name\": party_name}},\n        \"then\": {\"name\": \"create_quotation\", \"arguments\": args},\n    }\nelse:\n    missing_items = [i[\"item_name\"] for i in items if not frappe.db.exists(\"Item\", i.get(\"item_name\"))]\n    if missing_items:\n        names = \", \".join(missing_items)\n        result = {\n            \"created\": False,\n            \"error\": f\"Item '{names}' does not exist.\",\n            \"next_action\": {\"name\": \"create_item\", \"arguments\": {\"items\": names}},\n            \"then\": {\"name\": \"create_quotation\", \"arguments\": args},\n        }\n    else:\n        doc = frappe.get_doc({\n            \"doctype\": \"Quotation\",\n            \"quotation_to\": \"Customer\",\n            \"party_name\": party_name,\n            \"valid_till\": valid_till,\n            \"items\": [{\"item_code\": i[\"item_name\"], \"qty\": i.get(\"qty\", 1)} for i in items],\n        })\n        doc.insert()\n        result = {\"created\": True, \"name\": doc.name, \"doctype\": \"Quotation\"}\n",
+    "name": "create_quotation"
+  },
+  {
+    "doctype": "Agent Function",
+    "function_name": "create_supplier_quotation",
+    "description": "Create a Supplier Quotation",
+    "enabled": 1,
+    "target_doctype": "Supplier Quotation",
+    "parameters": "{\"supplier\": \"string (required)\", \"items\": \"list of {item_name, qty}\", \"valid_till\": \"string (optional, YYYY-MM-DD)\"}",
+    "script": "supplier = args.get(\"supplier\")\nitems = args.get(\"items\") or []\nvalid_till = args.get(\"valid_till\")\n\nif not frappe.db.exists(\"Supplier\", supplier):\n    result = {\n        \"created\": False,\n        \"error\": f\"Supplier '{supplier}' does not exist.\",\n        \"next_action\": {\"name\": \"create_supplier\", \"arguments\": {\"supplier_name\": supplier}},\n        \"then\": {\"name\": \"create_supplier_quotation\", \"arguments\": args},\n    }\nelse:\n    missing_items = [i[\"item_name\"] for i in items if not frappe.db.exists(\"Item\", i.get(\"item_name\"))]\n    if missing_items:\n        names = \", \".join(missing_items)\n        result = {\n            \"created\": False,\n            \"error\": f\"Item '{names}' does not exist.\",\n            \"next_action\": {\"name\": \"create_item\", \"arguments\": {\"items\": names}},\n            \"then\": {\"name\": \"create_supplier_quotation\", \"arguments\": args},\n        }\n    else:\n        doc = frappe.get_doc({\n            \"doctype\": \"Supplier Quotation\",\n            \"supplier\": supplier,\n            \"valid_till\": valid_till,\n            \"items\": [{\"item_code\": i[\"item_name\"], \"qty\": i.get(\"qty\", 1)} for i in items],\n        })\n        doc.insert()\n        result = {\"created\": True, \"name\": doc.name, \"doctype\": \"Supplier Quotation\"}\n",
+    "name": "create_supplier_quotation"
+  },
+  {
+    "doctype": "Agent Function",
+    "function_name": "create_sales_return",
+    "description": "Create a Sales Return (credit note) against an existing Sales Invoice",
+    "enabled": 1,
+    "target_doctype": "Sales Invoice",
+    "parameters": "{\"sales_invoice\": \"string (required) -- name of the existing Sales Invoice to return\"}",
+    "script": "invoice_name = args.get(\"sales_invoice\")\n\nif not frappe.db.exists(\"Sales Invoice\", invoice_name):\n    result = {\"created\": False, \"error\": f\"Sales Invoice '{invoice_name}' does not exist.\"}\nelse:\n    original = frappe.get_doc(\"Sales Invoice\", invoice_name)\n    doc = frappe.get_doc({\n        \"doctype\": \"Sales Invoice\",\n        \"customer\": original.customer,\n        \"is_return\": 1,\n        \"return_against\": original.name,\n        \"items\": [\n            {\"item_code\": i.item_code, \"qty\": -abs(i.qty)}\n            for i in original.items\n        ],\n    })\n    doc.insert()\n    result = {\"created\": True, \"name\": doc.name, \"doctype\": \"Sales Invoice\"}\n",
+    "name": "create_sales_return"
+  },
+  {
+    "doctype": "Agent Function",
+    "function_name": "create_purchase_return",
+    "description": "Create a Purchase Return (debit note) against an existing Purchase Receipt",
+    "enabled": 1,
+    "target_doctype": "Purchase Receipt",
+    "parameters": "{\"purchase_receipt\": \"string (required) -- name of the existing Purchase Receipt to return\"}",
+    "script": "receipt_name = args.get(\"purchase_receipt\")\n\nif not frappe.db.exists(\"Purchase Receipt\", receipt_name):\n    result = {\"created\": False, \"error\": f\"Purchase Receipt '{receipt_name}' does not exist.\"}\nelse:\n    original = frappe.get_doc(\"Purchase Receipt\", receipt_name)\n    doc = frappe.get_doc({\n        \"doctype\": \"Purchase Receipt\",\n        \"supplier\": original.supplier,\n        \"is_return\": 1,\n        \"return_against\": original.name,\n        \"items\": [\n            {\"item_code\": i.item_code, \"qty\": -abs(i.qty)}\n            for i in original.items\n        ],\n    })\n    doc.insert()\n    result = {\"created\": True, \"name\": doc.name, \"doctype\": \"Purchase Receipt\"}\n",
+    "name": "create_purchase_return"
+  },
+  {
+    "doctype": "Agent Function",
+    "function_name": "create_material_request",
+    "description": "Create a Material Request",
+    "enabled": 1,
+    "target_doctype": "Material Request",
+    "parameters": "{\"items\": \"list of {item_name, qty}\", \"material_request_type\": \"string (optional, default 'Purchase')\", \"schedule_date\": \"string (optional, YYYY-MM-DD)\"}",
+    "script": "items = args.get(\"items\") or []\nrequest_type = args.get(\"material_request_type\") or \"Purchase\"\nschedule_date = args.get(\"schedule_date\")\n\nmissing_items = [i[\"item_name\"] for i in items if not frappe.db.exists(\"Item\", i.get(\"item_name\"))]\nif missing_items:\n    names = \", \".join(missing_items)\n    result = {\n        \"created\": False,\n        \"error\": f\"Item '{names}' does not exist.\",\n        \"next_action\": {\"name\": \"create_item\", \"arguments\": {\"items\": names}},\n        \"then\": {\"name\": \"create_material_request\", \"arguments\": args},\n    }\nelse:\n    doc = frappe.get_doc({\n        \"doctype\": \"Material Request\",\n        \"material_request_type\": request_type,\n        \"schedule_date\": schedule_date or frappe.utils.add_days(frappe.utils.nowdate(), 7),\n        \"items\": [\n            {\n                \"item_code\": i[\"item_name\"],\n                \"qty\": i.get(\"qty\", 1),\n                \"schedule_date\": schedule_date or frappe.utils.add_days(frappe.utils.nowdate(), 7),\n            }\n            for i in items\n        ],\n    })\n    doc.insert()\n    result = {\"created\": True, \"name\": doc.name, \"doctype\": \"Material Request\"}\n",
+    "name": "create_material_request"
+  },
+  {
+    "doctype": "Agent Function",
+    "function_name": "create_stock_entry",
+    "description": "Create a Stock Entry (Material Receipt, Issue, or Transfer)",
+    "enabled": 1,
+    "target_doctype": "Stock Entry",
+    "parameters": "{\"items\": \"list of {item_name, qty}\", \"purpose\": \"string (optional, default 'Material Receipt'; one of 'Material Receipt', 'Material Issue', 'Material Transfer')\", \"source_warehouse\": \"string (required for Issue/Transfer)\", \"target_warehouse\": \"string (required for Receipt/Transfer)\"}",
+    "script": "items = args.get(\"items\") or []\npurpose = args.get(\"purpose\") or \"Material Receipt\"\ntarget_warehouse = args.get(\"target_warehouse\")\nsource_warehouse = args.get(\"source_warehouse\")\n\nmissing_items = [i[\"item_name\"] for i in items if not frappe.db.exists(\"Item\", i.get(\"item_name\"))]\nif missing_items:\n    names = \", \".join(missing_items)\n    result = {\n        \"created\": False,\n        \"error\": f\"Item '{names}' does not exist.\",\n        \"next_action\": {\"name\": \"create_item\", \"arguments\": {\"items\": names}},\n        \"then\": {\"name\": \"create_stock_entry\", \"arguments\": args},\n    }\nelif purpose in (\"Material Receipt\",) and not target_warehouse:\n    result = {\"created\": False, \"error\": \"target_warehouse is required for a Material Receipt.\"}\nelif purpose in (\"Material Issue\",) and not source_warehouse:\n    result = {\"created\": False, \"error\": \"source_warehouse is required for a Material Issue.\"}\nelif purpose == \"Material Transfer\" and not (source_warehouse and target_warehouse):\n    result = {\"created\": False, \"error\": \"Both source_warehouse and target_warehouse are required for a Material Transfer.\"}\nelse:\n    row_items = []\n    for i in items:\n        row = {\"item_code\": i[\"item_name\"], \"qty\": i.get(\"qty\", 1)}\n        if source_warehouse:\n            row[\"s_warehouse\"] = source_warehouse\n        if target_warehouse:\n            row[\"t_warehouse\"] = target_warehouse\n        row_items.append(row)\n    doc = frappe.get_doc({\n        \"doctype\": \"Stock Entry\",\n        \"stock_entry_type\": purpose,\n        \"items\": row_items,\n    })\n    doc.insert()\n    result = {\"created\": True, \"name\": doc.name, \"doctype\": \"Stock Entry\"}\n",
+    "name": "create_stock_entry"
+  },
+  {
+    "doctype": "Agent Function",
+    "function_name": "create_stock_reconciliation",
+    "description": "Create a Stock Reconciliation for a warehouse",
+    "enabled": 1,
+    "target_doctype": "Stock Reconciliation",
+    "parameters": "{\"warehouse\": \"string (required)\", \"items\": \"list of {item_name, qty, valuation_rate}\"}",
+    "script": "items = args.get(\"items\") or []\nwarehouse = args.get(\"warehouse\")\n\nif not warehouse:\n    result = {\"created\": False, \"error\": \"warehouse is required.\"}\nelse:\n    missing_items = [i[\"item_name\"] for i in items if not frappe.db.exists(\"Item\", i.get(\"item_name\"))]\n    if missing_items:\n        names = \", \".join(missing_items)\n        result = {\n            \"created\": False,\n            \"error\": f\"Item '{names}' does not exist.\",\n            \"next_action\": {\"name\": \"create_item\", \"arguments\": {\"items\": names}},\n            \"then\": {\"name\": \"create_stock_reconciliation\", \"arguments\": args},\n        }\n    else:\n        doc = frappe.get_doc({\n            \"doctype\": \"Stock Reconciliation\",\n            \"purpose\": \"Stock Reconciliation\",\n            \"items\": [\n                {\n                    \"item_code\": i[\"item_name\"],\n                    \"warehouse\": warehouse,\n                    \"qty\": i.get(\"qty\", 0),\n                    \"valuation_rate\": i.get(\"valuation_rate\", 0),\n                }\n                for i in items\n            ],\n        })\n        doc.insert()\n        result = {\"created\": True, \"name\": doc.name, \"doctype\": \"Stock Reconciliation\"}\n",
+    "name": "create_stock_reconciliation"
+  },
+  {
+    "doctype": "Agent Function",
+    "function_name": "create_payment_entry",
+    "description": "Record a Payment Entry (receive from a Customer or pay a Supplier). Real Chart of Accounts names required -- no defaults are guessed.",
+    "enabled": 1,
+    "target_doctype": "Payment Entry",
+    "parameters": "{\"party_type\": \"string (required) -- 'Customer' or 'Supplier'\", \"party\": \"string (required)\", \"amount\": \"number (required)\", \"payment_type\": \"string (optional, default 'Receive' for Customer / 'Pay' for Supplier)\", \"paid_from_account\": \"string (required) -- real account name from Chart of Accounts\", \"paid_to_account\": \"string (required) -- real account name from Chart of Accounts\"}",
+    "script": "party_type = args.get(\"party_type\")\nparty = args.get(\"party\")\npayment_type = args.get(\"payment_type\") or (\"Receive\" if party_type == \"Customer\" else \"Pay\")\npaid_amount = args.get(\"amount\")\npaid_from = args.get(\"paid_from_account\")\npaid_to = args.get(\"paid_to_account\")\n\nif party_type not in (\"Customer\", \"Supplier\"):\n    result = {\"created\": False, \"error\": \"party_type must be 'Customer' or 'Supplier'.\"}\nelif not frappe.db.exists(party_type, party):\n    next_fn = \"create_customer\" if party_type == \"Customer\" else \"create_supplier\"\n    arg_key = \"customer_name\" if party_type == \"Customer\" else \"supplier_name\"\n    result = {\n        \"created\": False,\n        \"error\": f\"{party_type} '{party}' does not exist.\",\n        \"next_action\": {\"name\": next_fn, \"arguments\": {arg_key: party}},\n        \"then\": {\"name\": \"create_payment_entry\", \"arguments\": args},\n    }\nelif not paid_amount:\n    result = {\"created\": False, \"error\": \"amount is required.\"}\nelif not (paid_from and paid_to):\n    # Deliberately not defaulted: guessing a plausible-looking GL account name\n    # is how you get money silently posted to the wrong ledger. The caller\n    # must supply the real account names from this company's chart of accounts.\n    result = {\n        \"created\": False,\n        \"error\": \"paid_from_account and paid_to_account are both required -- \"\n                 \"these must be real account names from your Chart of Accounts \"\n                 \"(Accounting > Chart of Accounts), there is no safe default.\",\n    }\nelse:\n    doc = frappe.get_doc({\n        \"doctype\": \"Payment Entry\",\n        \"payment_type\": payment_type,\n        \"party_type\": party_type,\n        \"party\": party,\n        \"paid_amount\": paid_amount,\n        \"received_amount\": paid_amount,\n        \"paid_from\": paid_from,\n        \"paid_to\": paid_to,\n    })\n    doc.insert()\n    result = {\"created\": True, \"name\": doc.name, \"doctype\": \"Payment Entry\"}\n",
+    "name": "create_payment_entry"
+  },
+  {
+    "doctype": "Agent Function",
+    "function_name": "create_journal_entry",
+    "description": "Create a balanced Journal Entry. Real Chart of Accounts names required -- no defaults are guessed.",
+    "enabled": 1,
+    "target_doctype": "Journal Entry",
+    "parameters": "{\"accounts\": \"list of {account, debit_in_account_currency, credit_in_account_currency} -- must balance (total debit == total credit)\", \"posting_date\": \"string (optional, YYYY-MM-DD)\"}",
+    "script": "accounts = args.get(\"accounts\") or []\nposting_date = args.get(\"posting_date\")\n\nif len(accounts) < 2:\n    result = {\n        \"created\": False,\n        \"error\": \"accounts must have at least 2 rows (a Journal Entry must balance -- \"\n                 \"total debit must equal total credit), e.g. \"\n                 \"[{\\\"account\\\": \\\"Cash - X\\\", \\\"debit_in_account_currency\\\": 100}, \"\n                 \"{\\\"account\\\": \\\"Sales - X\\\", \\\"credit_in_account_currency\\\": 100}]. \"\n                 \"Account names must be real accounts from your Chart of Accounts.\",\n    }\nelse:\n    total_debit = sum(a.get(\"debit_in_account_currency\", 0) for a in accounts)\n    total_credit = sum(a.get(\"credit_in_account_currency\", 0) for a in accounts)\n    if round(total_debit, 2) != round(total_credit, 2):\n        result = {\n            \"created\": False,\n            \"error\": f\"Entry does not balance: total debit {total_debit} != total credit {total_credit}.\",\n        }\n    else:\n        doc = frappe.get_doc({\n            \"doctype\": \"Journal Entry\",\n            \"posting_date\": posting_date or frappe.utils.nowdate(),\n            \"accounts\": accounts,\n        })\n        doc.insert()\n        result = {\"created\": True, \"name\": doc.name, \"doctype\": \"Journal Entry\"}\n",
+    "name": "create_journal_entry"
+  },
+  {
+    "doctype": "Agent Function",
+    "function_name": "create_employee",
+    "description": "Create an Employee record",
+    "enabled": 1,
+    "target_doctype": "Employee",
+    "parameters": "{\"first_name\": \"string (required)\", \"last_name\": \"string (optional)\", \"gender\": \"string (required) -- e.g. 'Male', 'Female', 'Other'\", \"date_of_joining\": \"string (optional, YYYY-MM-DD)\", \"company\": \"string (optional, defaults to the only/first Company)\"}",
+    "script": "first_name = args.get(\"first_name\")\ngender = args.get(\"gender\")\ndate_of_joining = args.get(\"date_of_joining\")\ncompany = args.get(\"company\")\n\nif not first_name:\n    result = {\"created\": False, \"error\": \"first_name is required.\"}\nelif not gender:\n    # Not defaulted on purpose: Employee.gender is mandatory in ERPNext HR\n    # and guessing it would just be wrong as often as not.\n    result = {\"created\": False, \"error\": \"gender is required (e.g. 'Male', 'Female', 'Other').\"}\nelse:\n    if not company:\n        companies = frappe.get_all(\"Company\", limit=1, fields=[\"name\"])\n        if not companies:\n            result = {\"created\": False, \"error\": \"No Company exists in this system yet -- create one first (outside the agent).\"}\n            company = None\n        else:\n            company = companies[0][\"name\"]\n    if company:\n        doc = frappe.get_doc({\n            \"doctype\": \"Employee\",\n            \"first_name\": first_name,\n            \"last_name\": args.get(\"last_name\"),\n            \"gender\": gender,\n            \"date_of_joining\": date_of_joining or frappe.utils.nowdate(),\n            \"company\": company,\n        })\n        doc.insert()\n        result = {\"created\": True, \"name\": doc.name, \"doctype\": \"Employee\"}\n",
+    "name": "create_employee"
+  },
+  {
+    "doctype": "Agent Function",
+    "function_name": "create_leave_application",
+    "description": "Create a Leave Application for an existing Employee",
+    "enabled": 1,
+    "target_doctype": "Leave Application",
+    "parameters": "{\"employee\": \"string (required) -- must be an existing Employee\", \"leave_type\": \"string (required)\", \"from_date\": \"string (required, YYYY-MM-DD)\", \"to_date\": \"string (required, YYYY-MM-DD)\"}",
+    "script": "employee = args.get(\"employee\")\nleave_type = args.get(\"leave_type\")\nfrom_date = args.get(\"from_date\")\nto_date = args.get(\"to_date\")\n\nif not frappe.db.exists(\"Employee\", employee):\n    result = {\n        \"created\": False,\n        \"error\": f\"Employee '{employee}' does not exist. Create the Employee record first \"\n                 \"(via create_employee) -- there isn't enough information in a leave request \"\n                 \"alone to safely create one automatically.\",\n    }\nelif not (leave_type and from_date and to_date):\n    result = {\"created\": False, \"error\": \"leave_type, from_date, and to_date are all required.\"}\nelif not frappe.db.exists(\"Leave Type\", leave_type):\n    result = {\"created\": False, \"error\": f\"Leave Type '{leave_type}' does not exist.\"}\nelse:\n    doc = frappe.get_doc({\n        \"doctype\": \"Leave Application\",\n        \"employee\": employee,\n        \"leave_type\": leave_type,\n        \"from_date\": from_date,\n        \"to_date\": to_date,\n    })\n    doc.insert()\n    result = {\"created\": True, \"name\": doc.name, \"doctype\": \"Leave Application\"}\n",
+    "name": "create_leave_application"
+  },
+  {
+    "doctype": "Agent Function",
+    "function_name": "create_attendance",
+    "description": "Mark Attendance for an existing Employee",
+    "enabled": 1,
+    "target_doctype": "Attendance",
+    "parameters": "{\"employee\": \"string (required) -- must be an existing Employee\", \"attendance_date\": \"string (optional, YYYY-MM-DD, default today)\", \"status\": \"string (optional, default 'Present') -- one of 'Present', 'Absent', 'On Leave', 'Half Day', 'Work From Home'\"}",
+    "script": "employee = args.get(\"employee\")\nattendance_date = args.get(\"attendance_date\")\nstatus = args.get(\"status\") or \"Present\"\n\nif not frappe.db.exists(\"Employee\", employee):\n    result = {\n        \"created\": False,\n        \"error\": f\"Employee '{employee}' does not exist. Create the Employee record first \"\n                 \"(via create_employee).\",\n    }\nelif status not in (\"Present\", \"Absent\", \"On Leave\", \"Half Day\", \"Work From Home\"):\n    result = {\"created\": False, \"error\": f\"Unrecognized status '{status}'.\"}\nelse:\n    doc = frappe.get_doc({\n        \"doctype\": \"Attendance\",\n        \"employee\": employee,\n        \"attendance_date\": attendance_date or frappe.utils.nowdate(),\n        \"status\": status,\n    })\n    doc.insert()\n    result = {\"created\": True, \"name\": doc.name, \"doctype\": \"Attendance\"}\n",
+    "name": "create_attendance"
+  },
+  {
+    "doctype": "Agent Function",
+    "function_name": "create_bom",
+    "description": "Create a Bill of Materials for a production Item",
+    "enabled": 1,
+    "target_doctype": "BOM",
+    "parameters": "{\"production_item\": \"string (required)\", \"quantity\": \"number (optional, default 1)\", \"components\": \"list of {item_name, qty} (required, at least 1)\"}",
+    "script": "production_item = args.get(\"production_item\")\ncomponents = args.get(\"components\") or []\nquantity = args.get(\"quantity\", 1)\n\nif not frappe.db.exists(\"Item\", production_item):\n    result = {\n        \"created\": False,\n        \"error\": f\"Item '{production_item}' does not exist.\",\n        \"next_action\": {\"name\": \"create_item\", \"arguments\": {\"items\": production_item}},\n        \"then\": {\"name\": \"create_bom\", \"arguments\": args},\n    }\nelse:\n    missing = [c[\"item_name\"] for c in components if not frappe.db.exists(\"Item\", c.get(\"item_name\"))]\n    if missing:\n        names = \", \".join(missing)\n        result = {\n            \"created\": False,\n            \"error\": f\"Component item(s) not found: {names}\",\n            \"next_action\": {\"name\": \"create_item\", \"arguments\": {\"items\": names}},\n            \"then\": {\"name\": \"create_bom\", \"arguments\": args},\n        }\n    elif not components:\n        result = {\"created\": False, \"error\": \"At least one component is required in `components`.\"}\n    else:\n        doc = frappe.get_doc({\n            \"doctype\": \"BOM\",\n            \"item\": production_item,\n            \"quantity\": quantity,\n            \"is_active\": 1,\n            \"is_default\": 1,\n            \"items\": [{\"item_code\": c[\"item_name\"], \"qty\": c.get(\"qty\", 1)} for c in components],\n        })\n        doc.insert()\n        result = {\"created\": True, \"name\": doc.name, \"doctype\": \"BOM\"}\n",
+    "name": "create_bom"
+  },
+  {
+    "doctype": "Agent Function",
+    "function_name": "create_work_order",
+    "description": "Create a Work Order for a production Item, using its default BOM unless bom_no is given",
+    "enabled": 1,
+    "target_doctype": "Work Order",
+    "parameters": "{\"production_item\": \"string (required)\", \"qty\": \"number (optional, default 1)\", \"bom_no\": \"string (optional)\"}",
+    "script": "production_item = args.get(\"production_item\")\nqty = args.get(\"qty\", 1)\nbom_no = args.get(\"bom_no\")\n\nif not frappe.db.exists(\"Item\", production_item):\n    result = {\n        \"created\": False,\n        \"error\": f\"Item '{production_item}' does not exist.\",\n        \"next_action\": {\"name\": \"create_item\", \"arguments\": {\"items\": production_item}},\n        \"then\": {\"name\": \"create_work_order\", \"arguments\": args},\n    }\nelif not bom_no:\n    default_bom = frappe.db.exists(\"BOM\", {\"item\": production_item, \"is_default\": 1, \"is_active\": 1})\n    if not default_bom:\n        result = {\n            \"created\": False,\n            \"error\": f\"No default active BOM found for '{production_item}'. Create one first \"\n                     \"(via create_bom), or pass bom_no explicitly.\",\n            \"next_action\": {\"name\": \"create_bom\", \"arguments\": {\"production_item\": production_item, \"components\": []}},\n        }\n    else:\n        doc = frappe.get_doc({\n            \"doctype\": \"Work Order\",\n            \"production_item\": production_item,\n            \"qty\": qty,\n            \"bom_no\": default_bom,\n        })\n        doc.insert()\n        result = {\"created\": True, \"name\": doc.name, \"doctype\": \"Work Order\"}\nelse:\n    doc = frappe.get_doc({\n        \"doctype\": \"Work Order\",\n        \"production_item\": production_item,\n        \"qty\": qty,\n        \"bom_no\": bom_no,\n    })\n    doc.insert()\n    result = {\"created\": True, \"name\": doc.name, \"doctype\": \"Work Order\"}\n",
+    "name": "create_work_order"
+  },
+  {
+    "doctype": "Agent Function",
+    "function_name": "create_project",
+    "description": "Create a Project",
+    "enabled": 1,
+    "target_doctype": "Project",
+    "parameters": "{\"project_name\": \"string (required)\", \"expected_start_date\": \"string (optional, YYYY-MM-DD)\"}",
+    "script": "project_name = args.get(\"project_name\")\nexpected_start_date = args.get(\"expected_start_date\")\n\nif not project_name:\n    result = {\"created\": False, \"error\": \"project_name is required.\"}\nelif frappe.db.exists(\"Project\", project_name):\n    result = {\"created\": False, \"error\": f\"A Project named '{project_name}' already exists.\"}\nelse:\n    doc = frappe.get_doc({\n        \"doctype\": \"Project\",\n        \"project_name\": project_name,\n        \"expected_start_date\": expected_start_date,\n    })\n    doc.insert()\n    result = {\"created\": True, \"name\": doc.name, \"doctype\": \"Project\"}\n",
+    "name": "create_project"
+  },
+  {
+    "doctype": "Agent Function",
+    "function_name": "create_task",
+    "description": "Create a Task, optionally under an existing Project",
+    "enabled": 1,
+    "target_doctype": "Task",
+    "parameters": "{\"subject\": \"string (required)\", \"project\": \"string (optional)\"}",
+    "script": "subject = args.get(\"subject\")\nproject = args.get(\"project\")\n\nif not subject:\n    result = {\"created\": False, \"error\": \"subject is required.\"}\nelif project and not frappe.db.exists(\"Project\", project):\n    result = {\n        \"created\": False,\n        \"error\": f\"Project '{project}' does not exist.\",\n        \"next_action\": {\"name\": \"create_project\", \"arguments\": {\"project_name\": project}},\n        \"then\": {\"name\": \"create_task\", \"arguments\": args},\n    }\nelse:\n    doc = frappe.get_doc({\n        \"doctype\": \"Task\",\n        \"subject\": subject,\n        \"project\": project,\n        \"status\": \"Open\",\n    })\n    doc.insert()\n    result = {\"created\": True, \"name\": doc.name, \"doctype\": \"Task\"}\n",
+    "name": "create_task"
+  },
+  {
+    "doctype": "Agent Function",
+    "function_name": "create_crm_organization",
+    "description": "Create a CRM Organization (Frappe CRM app, not ERPNext). Usually run automatically as a follow-up step when a CRM Deal references an organization that doesn't exist yet.",
+    "enabled": 1,
+    "target_doctype": "CRM Organization",
+    "parameters": "{\"organization_name\": \"string (required)\"}",
+    "script": "organization_name = args.get(\"organization_name\")\n\nif not organization_name:\n    result = {\"created\": False, \"error\": \"organization_name is required.\"}\nelif frappe.db.exists(\"CRM Organization\", organization_name):\n    result = {\"created\": True, \"name\": organization_name, \"doctype\": \"CRM Organization\"}\nelse:\n    doc = frappe.get_doc({\n        \"doctype\": \"CRM Organization\",\n        \"organization_name\": organization_name,\n    })\n    doc.insert()\n    result = {\"created\": True, \"name\": doc.name, \"doctype\": \"CRM Organization\"}\n",
+    "name": "create_crm_organization"
+  },
+  {
+    "doctype": "Agent Function",
+    "function_name": "create_crm_lead",
+    "description": "Create a Lead in Frappe CRM (the standalone CRM app -- separate from ERPNext's Lead doctype).",
+    "enabled": 1,
+    "target_doctype": "CRM Lead",
+    "parameters": "{\"first_name\": \"string (required)\", \"email\": \"string (optional)\", \"organization\": \"string (optional)\", \"source\": \"string (optional, default 'Agent Caller')\"}",
+    "script": "first_name = args.get(\"first_name\")\nemail = args.get(\"email\")\norganization = args.get(\"organization\")\n\nif not first_name:\n    result = {\"created\": False, \"error\": \"first_name is required.\"}\nelse:\n    doc = frappe.get_doc({\n        \"doctype\": \"CRM Lead\",\n        \"first_name\": first_name,\n        \"email\": email,\n        \"organization\": organization,\n        \"source\": args.get(\"source\") or \"Agent Caller\",\n        \"status\": \"New\",\n    })\n    doc.insert()\n    result = {\"created\": True, \"name\": doc.name, \"doctype\": \"CRM Lead\"}\n",
+    "name": "create_crm_lead"
+  },
+  {
+    "doctype": "Agent Function",
+    "function_name": "create_crm_deal",
+    "description": "Create a Deal in Frappe CRM against an existing CRM Organization.",
+    "enabled": 1,
+    "target_doctype": "CRM Deal",
+    "parameters": "{\"organization\": \"string (required)\", \"annual_revenue\": \"number (optional)\", \"status\": \"string (optional, default 'Qualification')\"}",
+    "script": "organization = args.get(\"organization\")\nannual_revenue = args.get(\"annual_revenue\")\n\nif not organization:\n    result = {\"created\": False, \"error\": \"organization is required.\"}\nelif not frappe.db.exists(\"CRM Organization\", organization):\n    result = {\n        \"created\": False,\n        \"error\": f\"CRM Organization '{organization}' does not exist.\",\n        \"next_action\": {\"name\": \"create_crm_organization\", \"arguments\": {\"organization_name\": organization}},\n        \"then\": {\"name\": \"create_crm_deal\", \"arguments\": args},\n    }\nelse:\n    doc = frappe.get_doc({\n        \"doctype\": \"CRM Deal\",\n        \"organization\": organization,\n        \"annual_revenue\": annual_revenue,\n        \"status\": args.get(\"status\") or \"Qualification\",\n    })\n    doc.insert()\n    result = {\"created\": True, \"name\": doc.name, \"doctype\": \"CRM Deal\"}\n",
+    "name": "create_crm_deal"
+  },
+  {
+    "doctype": "Agent Function",
+    "function_name": "create_hd_customer",
+    "description": "Create a Customer in Frappe Helpdesk (HD Customer). Field names for this doctype had the least documentation coverage of everything added so far -- verify against your installed Helpdesk version if it errors.",
+    "enabled": 1,
+    "target_doctype": "HD Customer",
+    "parameters": "{\"customer_name\": \"string (required)\"}",
+    "script": "customer_name = args.get(\"customer_name\")\n\nif not customer_name:\n    result = {\"created\": False, \"error\": \"customer_name is required.\"}\nelif frappe.db.exists(\"HD Customer\", customer_name):\n    result = {\"created\": True, \"name\": customer_name, \"doctype\": \"HD Customer\"}\nelse:\n    doc = frappe.get_doc({\n        \"doctype\": \"HD Customer\",\n        \"name\": customer_name,\n    })\n    doc.insert()\n    result = {\"created\": True, \"name\": doc.name, \"doctype\": \"HD Customer\"}\n",
+    "name": "create_hd_customer"
+  },
+  {
+    "doctype": "Agent Function",
+    "function_name": "create_hd_ticket",
+    "description": "Create a Support Ticket in Frappe Helpdesk.",
+    "enabled": 1,
+    "target_doctype": "HD Ticket",
+    "parameters": "{\"subject\": \"string (required)\", \"description\": \"string (optional)\", \"priority\": \"string (optional, default 'Medium') -- one of 'Low','Medium','High','Urgent'\", \"raised_by\": \"string (optional) -- email of the reporter\", \"ticket_type\": \"string (optional)\"}",
+    "script": "subject = args.get(\"subject\")\ndescription = args.get(\"description\")\npriority = args.get(\"priority\") or \"Medium\"\nraised_by = args.get(\"raised_by\")\n\nif not subject:\n    result = {\"created\": False, \"error\": \"subject is required.\"}\nelif priority not in (\"Low\", \"Medium\", \"High\", \"Urgent\"):\n    result = {\"created\": False, \"error\": f\"Unrecognized priority '{priority}'.\"}\nelse:\n    doc = frappe.get_doc({\n        \"doctype\": \"HD Ticket\",\n        \"subject\": subject,\n        \"description\": description,\n        \"priority\": priority,\n        \"raised_by\": raised_by,\n        \"ticket_type\": args.get(\"ticket_type\"),\n    })\n    doc.insert()\n    result = {\"created\": True, \"name\": doc.name, \"doctype\": \"HD Ticket\"}\n",
+    "name": "create_hd_ticket"
+  }
+]

@@ -1,0 +1,62 @@
+{
+  "actions": [],
+  "creation": "2026-07-28 00:00:00",
+  "doctype": "DocType",
+  "engine": "InnoDB",
+  "field_order": [
+    "section_break_agent_caller",
+    "agent_caller_gguf_path",
+    "gguf_n_ctx",
+    "agent_caller_system_prompt"
+  ],
+  "fields": [
+    {
+      "fieldname": "section_break_agent_caller",
+      "fieldtype": "Section Break",
+      "label": "Agent Caller (Function Calling)"
+    },
+    {
+      "fieldname": "agent_caller_gguf_path",
+      "fieldtype": "Data",
+      "label": "Agent Caller GGUF Path",
+      "description": "Path to a GGUF model fine-tuned for function calling, e.g. LFM2.5-1.2B-Nova-Function-Calling. Needs to be good at emitting structured JSON. Leave blank to use the default location under this site's private files/frappe_ai/models/."
+    },
+    {
+      "fieldname": "gguf_n_ctx",
+      "fieldtype": "Int",
+      "label": "GGUF Context Size (n_ctx)",
+      "default": "4096",
+      "description": "Passed to llama-cpp-python's Llama() constructor for the Agent Caller model."
+    },
+    {
+      "fieldname": "agent_caller_system_prompt",
+      "fieldtype": "Long Text",
+      "label": "Agent Caller System Prompt",
+      "default": "You are a function-calling assistant for a Frappe/ERPNext system.\n\nAvailable functions:\n{{FUNCTIONS}}\n\nNotes:\n- Each item in \"items\" must be an object with \"item_name\" and \"qty\" (an\n  integer). The user may say \"quantity\" or \"qty\" in plain English -- both\n  map to the \"qty\" field.\n- The function name goes in the \"name\" field, and its arguments go in the\n  \"arguments\" field. Every required argument must be present.\n\nWhen the user's request matches one of the functions above, respond with\nONLY a single JSON object, for example:\n{\"name\": \"create_sales_invoice\", \"arguments\": {\"customer\": \"Jane\", \"items\": [{\"item_name\": \"Keyboard\", \"qty\": 3}], \"due_date\": \"2026-08-01\"}}\n\nDo not use Python list / tool_call_start syntax. Do not include any other\ntext, explanation, or markdown formatting -- JSON only.",
+      "description": "Editable from the Desk. Must contain the literal token {{FUNCTIONS}} somewhere -- it gets replaced at runtime with the live JSON description of all enabled Agent Function records. Leave blank to use the built-in default."
+    }
+  ],
+  "index_web_view": 0,
+  "issingle": 1,
+  "links": [],
+  "modified": "2026-07-28 00:00:00",
+  "modified_by": "Administrator",
+  "module": "Frappe AI",
+  "name": "Frappe AI Settings",
+  "owner": "Administrator",
+  "permissions": [
+    {
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "print": 1,
+      "read": 1,
+      "role": "System Manager",
+      "share": 1,
+      "write": 1
+    }
+  ],
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "track_changes": 1
+}
