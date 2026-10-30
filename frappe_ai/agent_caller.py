@@ -225,7 +225,7 @@ def plan(query: str, request_id: str = None):
             {"role": "user", "content": query},
         ],
         max_tokens=512,
-        temperature=0.1,
+        temperature=0.2,
         response_format={"type": "json_object"},
     )
     raw_text = output["choices"][0]["message"]["content"].strip()
